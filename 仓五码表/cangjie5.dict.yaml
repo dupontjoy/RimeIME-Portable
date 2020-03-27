@@ -37,7 +37,7 @@
 name: "cangjie5"
 version: "2020.03.16"
 sort: original
-use_preset_vocabulary: true
+use_preset_vocabulary: false
 max_phrase_length: 1
 columns:
   - text
