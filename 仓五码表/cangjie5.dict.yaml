@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.04.23
+# 2020.05.19
 # License: GPL
 #
 # 標註：
@@ -18827,7 +18827,6 @@ encoder:
 𤏓	fhbs
 烅	fhbt
 省	fhbu
-𤒅	fhbu
 𮙷	fhbuc
 㶶	fhbv
 烐	fhby
@@ -18998,7 +18997,7 @@ encoder:
 㷐	fhxg
 𤊓	fhxu
 𪚯	fhxu
-𪚱	fhxu
+𤒅	fhxu
 𰟨	fhxv
 𥅷	fhybu
 𪹙	fhye
@@ -38352,7 +38351,6 @@ encoder:
 麶	jeyub
 𪌁	jeyv
 灾	jf
-𡗜	jf
 宵	jfb
 𥈷	jfbu
 𧹆	jfbuc
@@ -38413,8 +38411,6 @@ encoder:
 𡫑	jgig
 𡫓	jgig
 𡫭	jgjd
-𡬀	jgjgg
-𡬏	jgjgg
 㝪	jgji
 㝪	jgjk
 𦘏	jgjwp
@@ -38468,7 +38464,6 @@ encoder:
 𡬚	jher
 𡧸	jheu
 𪧞	jhey
-𧸹	jhfc
 宷	jhfd
 𡑁	jhg
 𡪓	jhgc
@@ -38537,6 +38532,7 @@ encoder:
 𬔕	jhvfu
 𭩩	jhvh
 𡫘	jhws
+𧸹	jhxc
 寫	jhxf
 𡨯	jhxj
 𡩔	jhxk
@@ -39664,6 +39660,7 @@ encoder:
 𫳰	jmge
 𡫚	jmgf
 𤎟	jmgf
+𡬀	jmgg
 𪧧	jmgg
 𫳽	jmgg
 𫳚	jmgh
@@ -39691,6 +39688,7 @@ encoder:
 𰃓	jmhxu
 𨊢	jmi
 室	jmig
+𡬏	jmii
 𤠊	jmik
 𭅬	jmjbf
 𪧡	jmjdi
@@ -40974,6 +40972,7 @@ encoder:
 㾣	kc
 𡗕	kc
 𤴭	kc
+𡗜	kc
 昚	kca
 尞	kcaf
 𤊽	kcaf
@@ -62794,7 +62793,6 @@ encoder:
 餦	oismv
 𠌩	oisn
 𩚯	oisp
-𫩧	oisr
 𰂌	oisr
 饇	oisrr
 𠉱	oiss
@@ -63463,7 +63461,7 @@ encoder:
 𪵍	olhne
 𮨨	olhni
 𨁀	olho
-𠐃	olhp
+𠐃	olhp	[O]
 𠎕	olhq	[Ou]
 𣬹	olhqu
 𠌪	olhu
@@ -63544,6 +63542,7 @@ encoder:
 翛	olom
 𪬪	olonp
 𨁀	oloo
+𠐃	olop	[Ou]
 𠎕	oloq	[O]
 𰏥	oloq
 𠌪	olou
@@ -63882,6 +63881,7 @@ encoder:
 𠉦	omow
 钅	omp
 𢗁	omp
+𢢱	omp
 𠍎	ompc
 𬾍	ompd
 𠇢	ompk
@@ -63931,6 +63931,7 @@ encoder:
 屔	omsp
 𪚙	omsp
 𫝉	omsr
+𫩧	omsr
 伌	omsu
 𥅍	omsu
 𬡌	omsv
@@ -66494,7 +66495,6 @@ encoder:
 𢿴	oyok
 𬾗	oyok
 𭯉	oyoyu
-𢢱	oyp
 𫣞	oypc
 偨	oypd
 𠋵	oypk
@@ -95059,7 +95059,7 @@ encoder:
 𨳠	xanbk
 𨷸	xanbr
 䦩	xanbu
-𭧬	xancr
+閲	xancr
 㫗	xand
 𨶺	xanee
 𨶖	xaneh
@@ -97714,7 +97714,6 @@ encoder:
 𭜧	xfgp
 𤐵	xfgrr
 𡭽	xfhaf
-𤒅	xfhbu
 炿	xfhby
 𠬵	xfhe
 㸅	xfhhl
@@ -98119,7 +98118,7 @@ encoder:
 𰉦	xgkb
 𮌳	xgkbl
 𥂢	xgkbt
-𰥾	xgkbu
+贄	xgkbu
 䥍	xgkc
 𣘢	xgkd
 𠭷	xgke
@@ -99012,7 +99011,7 @@ encoder:
 𫥠	xhngl
 𩙦	xhnha
 𱃜	xhnhd
-𠘱	xhnhh
+飗	xhnhh
 𩗝	xhnhl
 𠘻	xhnhn
 𤙲	xhnhq
@@ -99107,7 +99106,7 @@ encoder:
 䉶	xhoge
 𢖂	xhogo
 𢖡	xhogt
-𰐭	xhoha
+鴩	xhoha
 𪁛	xhohe
 𫋯	xhohg
 𫹠	xhohh
@@ -99168,7 +99167,7 @@ encoder:
 𢓑	xhono
 𨾤	xhoog
 𫿘	xhook
-𤬀	xhoom
+彾	xhoom
 𢓅	xhooo
 𮕣	xhoor
 𠃀	xhoos
@@ -99289,7 +99288,7 @@ encoder:
 𬂫	xhrd
 𰤥	xhrdh
 𮡐	xhrf
-𬐊	xhrha
+鴰	xhrha
 𠭔	xhrhe
 𫇔	xhrhn
 𥱠	xhrhr
@@ -99504,13 +99503,13 @@ encoder:
 𥱢	xhwlp
 𩔲	xhwmb
 𬏎	xhwmj
-𥯜	xhwmv
+粤	xhwmv
 䇱	xhwni
 恖	xhwp
 𣬉	xhwpp
 𬸪	xhwpy
 𢍄	xhwt
-𨈑	xhx
+𦥑	xhx
 𣇀	xhxa
 𦥷	xhxbc
 𥂞	xhxbt
@@ -100177,7 +100176,6 @@ encoder:
 𪍦	xjeyj
 𧈌	xjeyp
 𰕂	xjeyt
-𡗜	xjf
 𫳍	xjfd
 𮭈	xjfha
 𣫠	xjfhn
@@ -100186,7 +100184,6 @@ encoder:
 𬬆	xjgc
 𪆉	xjgha
 𡫓	xjgig
-𡬏	xjgjg
 𡫓	xjgkg
 𬺱	xjh
 𡨗	xjhap
@@ -100322,7 +100319,7 @@ encoder:
 𭔟	xjmgc
 𫳰	xjmge
 𤎟	xjmgf
-𫳽	xjmgg
+𪧧	xjmgg
 𫴄	xjmgk
 𡩧	xjmgu
 䳦	xjmha
@@ -101058,7 +101055,7 @@ encoder:
 𰲽	xlitb
 𧞋	xlitc
 𧎉	xlitg
-𬠬	xlitm
+蟥	xlitm
 𮕘	xlito
 蝆	xlitq
 𬟷	xlitt
@@ -101200,7 +101197,7 @@ encoder:
 𫔰	xlsit
 𫌇	xlsje
 𫋲	xlsk
-𰿥	xlsl
+𠁧	xlsl
 𧷤	xlslc
 𬮚	xlsm
 𧛐	xlsmg
@@ -101337,7 +101334,7 @@ encoder:
 𩆏	xmbpt
 鸸	xmbpy
 𬰑	xmbrr
-𩁿	xmbsm
+翩	xmbsm
 𮕜	xmbt
 覇	xmbtj
 𩂦	xmbtt
@@ -101423,7 +101420,7 @@ encoder:
 㓹	xmfln
 𤉓	xmflw
 𬒬	xmfm
-𫀌	xmfmb
+顠	xmfmb
 𥙫	xmfmc
 𥚳	xmfmf
 𥘛	xmfmg
@@ -101444,7 +101441,7 @@ encoder:
 𬸤	xmfpy
 𥛍	xmfrb
 𥘱	xmfrh
-𥛀	xmfsm
+祤	xmfsm
 𥜨	xmfuj
 祵	xmfwd
 𥛴	xmfwt
@@ -101514,7 +101511,7 @@ encoder:
 𭹲	xmgll
 𪻺	xmglm
 㺫	xmgln
-𤫦	xmgmb
+顧	xmgmb
 𤨁	xmgmc
 𮍡	xmgme
 𦤹	xmgmf
@@ -101539,7 +101536,7 @@ encoder:
 𭹀	xmgof
 𨾽	xmgog
 𪻴	xmgoh
-玪	xmgoi
+琀	xmgoi
 玫	xmgok
 𪼔	xmgom
 𪻐	xmgoo
@@ -101662,7 +101659,7 @@ encoder:
 𭄏	xmkln
 𭆆	xmkm
 𠛬	xmkmj
-𰋩	xmkmk
+𰋟	xmkmk
 𭑇	xmkmm
 𮁑	xmkmr
 㼲	xmkmv
@@ -101755,7 +101752,7 @@ encoder:
 𡊝	xmng
 𭮒	xmngl
 𧰓	xmngr
-𪵿	xmnha
+鴷	xmnha
 𬠼	xmnhb
 𥞥	xmnhd
 𭇏	xmnhe
@@ -101934,7 +101931,7 @@ encoder:
 𥒑	xmrmh
 𢆖	xmrmj
 𰦦	xmrmk
-𭇄	xmrmn
+哥	xmrmn
 𥓠	xmrmr
 𥑉	xmrms
 𰦾	xmrmt
@@ -102061,7 +102058,7 @@ encoder:
 𭀖	xmui
 𧊢	xmulm
 㓰	xmuln
-頋	xmumb
+顽	xmumb
 㒬	xmumg
 㒮	xmums
 𠙿	xmumu
@@ -102454,7 +102451,7 @@ encoder:
 𢐤	xnmaa
 𬶢	xnmah
 𬶩	xnmaj
-𱇞	xnmam
+𫘨	xnmam
 𫘥	xnmap
 𩨌	xnmas
 𢐝	xnmau
@@ -102467,7 +102464,7 @@ encoder:
 𱅛	xnmcw
 檃	xnmd
 𫘟	xnmdh
-𱅔	xnmdl
+𬶟	xnmdl
 𱇭	xnmdt
 鳋	xnmei
 𭚶	xnmfb
@@ -102486,7 +102483,7 @@ encoder:
 𬴀	xnmia
 𱇳	xnmic
 𱅉	xnmij
-𱅄	xnmik
+鲹	xnmik
 鲐	xnmir
 鳊	xnmis
 𱇣	xnmiv
@@ -102651,7 +102648,7 @@ encoder:
 𨛉	xnunl
 𣣖	xnuno
 𰕙	xnuok
-𱍅	xnupi
+𰅝	xnupi
 𱉭	xnupy
 𠜰	xnush
 𠓄	xnusq
@@ -102748,7 +102745,7 @@ encoder:
 𠊌	xoff
 𠎽	xoffj
 𠋴	xoffn
-𬉯	xofha
+鷡	xofha
 𠠆	xofln
 𩒀	xofmb
 𠈑	xofmu
@@ -102891,7 +102888,6 @@ encoder:
 𬿍	xoisg
 𬛤	xoisl
 𩛐	xoism
-𰂌	xoisr
 𩛘	xoitc
 𩟌	xoitg
 𱃪	xoitm
@@ -103059,6 +103055,7 @@ encoder:
 𦏾	xomsm
 𡦈	xomso
 𪚙	xomsp
+𫩧	xomsr
 𥅍	xomsu
 𠇋	xomt
 𭀆	xomtc
@@ -103186,7 +103183,7 @@ encoder:
 𠋧	xopmm
 𬬷	xopmr
 𫓦	xopnd
-𰽣	xopnl
+𰻥	xopnl
 𣢉	xopno
 镵	xopnr
 𰾹	xopog
@@ -103437,7 +103434,7 @@ encoder:
 曶	xpha
 𫻅	xphae
 𩾕	xphaf
-𰢲	xphbq
+𰢰	xphbq
 𥁑	xphbt
 𢙆	xphbu
 𢖻	xphe
@@ -104535,7 +104532,7 @@ encoder:
 𮛧	xrmhl
 𧿧	xrmhm
 𮜏	xrmhn
-𮛼	xrmho
+蹝	xrmho
 𧿌	xrmhp
 𨁸	xrmhs
 𨃡	xrmhu
@@ -105129,7 +105126,7 @@ encoder:
 𡲮	xshwp
 𪟀	xshyh
 𭃢	xshyk
-𰙩	xshyl
+𰙜	xshyl
 𭃑	xshym
 𫥸	xshyr
 𩬦	xshyt
@@ -105309,7 +105306,7 @@ encoder:
 𨞗	xsqnl
 𮩴	xsqst
 𡰪	xsr
-𰴙	xsrbh
+𰴖	xsrbh
 𥂠	xsrbt
 覠	xsrbu
 𡬿	xsrdi
@@ -105883,7 +105880,7 @@ encoder:
 𦱏	xtkce
 𰰵	xtkd
 𡮔	xtkf
-𮐫	xtkha
+鴱	xtkha
 𮐑	xtkhb
 𫉬	xtkhe
 𦿲	xtkhf
@@ -106254,7 +106251,7 @@ encoder:
 𤐂	xtsf
 𬟦	xtshe
 𦬄	xtshi
-莬	xtshu
+苉	xtshu
 藯	xtsip
 𦲅	xtsjb
 𧄀	xtsjd
@@ -107069,7 +107066,7 @@ encoder:
 𥾲	xvfye
 𫄔	xvfyh
 𦀠	xvfyi
-㪻	xvfyj
+絣	xvfyj
 𦄴	xvfyk
 𦇞	xvfyl
 𮉕	xvfym
@@ -107702,10 +107699,10 @@ encoder:
 𰥀	xxbub
 𥇶	xxbuc
 𪳐	xxbud
-𰛙	xxbue
+𰆸	xxbue
 𤊯	xxbuf
 𪄙	xxbuh
-𥋰	xxbuj
+𬑒	xxbuj
 𭾚	xxbuk
 𠝴	xxbul
 𥍕	xxbum
@@ -107715,7 +107712,6 @@ encoder:
 𧠌	xxbut
 𠕐	xxbuu
 𫌜	xxbuv
-𥋽	xxbuw
 𥄎	xxbuy
 𠕷	xxbv
 𦣐	xxbvf
@@ -108007,7 +108003,7 @@ encoder:
 𭒞	xxerv
 𣹣	xxesh
 𣿛	xxesj
-𭰖	xxesm
+洭	xxesm
 𣸨	xxetb
 𭱩	xxetc
 𤀡	xxetg
@@ -108082,7 +108078,6 @@ encoder:
 𰟤	xxfkc
 𤎨	xxfkf
 𢄞	xxfkl
-𩔬	xxfkm
 𤈙	xxfkn
 𢾗	xxfko
 𢢌	xxfkp
@@ -108134,7 +108129,7 @@ encoder:
 𥖗	xxgem
 𧤂	xxgen
 𢠱	xxgep
-𰔕	xxgeq
+𰉣	xxgeq
 𪡹	xxger
 𮋻	xxges
 𪔨	xxget
@@ -108169,7 +108164,7 @@ encoder:
 𤎅	xxgkf
 𪃇	xxgkh
 𫝑	xxgkk
-𰏞	xxgkl
+蟄	xxgkl
 𩻉	xxgkn
 𢟻	xxgkp
 摰	xxgkq
@@ -108224,7 +108219,6 @@ encoder:
 𪽻	xxhad
 𤽄	xxhaf
 𪅉	xxhah
-𭽜	xxhal
 𩑻	xxham
 𪽽	xxhao
 𢘣	xxhap
@@ -108259,7 +108253,7 @@ encoder:
 𣎋	xxhdb
 𬇻	xxhde
 𤇠	xxhdf
-穒	xxhdh
+𰨲	xxhdh
 𢧊	xxhdi
 𮅃	xxhdk
 䇿	xxhdl
@@ -108268,7 +108262,7 @@ encoder:
 𨾲	xxhdo
 𢝱	xxhdp
 𠱒	xxhdr
-𨤠	xxhds
+𬓤	xxhds
 𢍏	xxhdt
 𠃷	xxhdu
 𫀪	xxhdw
@@ -108381,7 +108375,7 @@ encoder:
 凩	xxhnd
 𠘫	xxhne
 𤉉	xxhnf
-鵚	xxhnh
+𩖛	xxhnh
 𪛝	xxhni
 𥳔	xxhnl
 𠙒	xxhnm
@@ -108406,7 +108400,7 @@ encoder:
 惥	xxhop
 𫆎	xxhos
 鰴	xxhou
-𧗿	xxhoy
+𰺵	xxhoy
 𬕇	xxhpb
 𪀻	xxhph
 𰀭	xxhpk
@@ -108478,7 +108472,7 @@ encoder:
 𩕏	xxhwm
 𢙥	xxhwp
 𢍉	xxhwt
-𦥑	xxhx
+𨈑	xxhx
 𦦪	xxhxb
 𪠨	xxhxe
 䳔	xxhxh
@@ -108486,7 +108480,6 @@ encoder:
 𮍭	xxhxm
 𦥞	xxhxn
 𢍱	xxhxt
-𦦊	xxhxw
 𥵭	xxhyb
 𦫀	xxhyf
 𩿪	xxhyh
@@ -108506,7 +108499,7 @@ encoder:
 鷛	xxibh
 𭄊	xxibl
 𫆡	xxibn
-𱊤	xxibp
+𱊋	xxibp
 𣀾	xxiby
 𪇵	xxich
 𠠎	xxicl
@@ -108527,7 +108520,6 @@ encoder:
 𭙱	xxifb
 𤏜	xxiff
 𩿷	xxifh
-𥛌	xxifm
 𨞻	xxifn
 𫿒	xxifo
 𥘇	xxifp
@@ -108619,7 +108611,6 @@ encoder:
 𣟘	xxjbo
 𥃭	xxjbu
 𮈖	xxjbv
-𧢘	xxjcb
 鴪	xxjch
 𥧑	xxjcj
 𰩜	xxjck
@@ -108660,6 +108651,7 @@ encoder:
 𡪏	xxjma
 𮗗	xxjmb
 𡧢	xxjmc
+𫳽	xxjmg
 𤍘	xxjmm
 𫳜	xxjmu
 𡨡	xxjnb
@@ -108681,7 +108673,7 @@ encoder:
 𢾒	xxjry
 𡪬	xxjsj
 𠦃	xxjt
-𬈡	xxjtc
+𬸣	xxjtc
 𭓵	xxjtd
 鵍	xxjuh
 𡧚	xxjuk
@@ -108719,7 +108711,6 @@ encoder:
 𤻧	xxkhe
 𤵠	xxkhh
 𬌩	xxkhi
-𤣔	xxkhm
 𭼼	xxkho
 犳	xxkhp
 𤣣	xxkhr
@@ -108786,16 +108777,12 @@ encoder:
 𢧠	xxlib
 𫋆	xxlic
 𰗘	xxlid
-𧏀	xxlih
 𧈴	xxlii
 𰹾	xxlik
 𮓰	xxlim
-𰲾	xxlin	[u]
-𬠑	xxlio
 𭜫	xxlip
 𧎜	xxlis
 𬠟	xxlit
-𧔘	xxliw
 𰲻	xxliy
 𩿶	xxlkh
 𫩣	xxlkr
@@ -108825,7 +108812,6 @@ encoder:
 𮕪	xxlyh
 𰳻	xxlyk
 𨝶	xxman
-䨳	xxmbb
 𨮪	xxmbc
 𩂍	xxmbe
 𤆱	xxmbf
@@ -108837,9 +108823,8 @@ encoder:
 𩕁	xxmbm
 䣓	xxmbn
 𩁃	xxmbo
-𢣭	xxmbp
-𩆼	xxmbr
-𪈊	xxmbs
+鹝	xxmbp
+䨒	xxmbs
 𠩠	xxmbu
 𡠈	xxmbv
 𩇓	xxmbw
@@ -108868,7 +108853,7 @@ encoder:
 𩑢	xxmfm
 𨝓	xxmfn
 𢗫	xxmfp
-𥛆	xxmfs
+𥛈	xxmfs
 𥚌	xxmfw
 𥛳	xxmfy
 圧	xxmg
@@ -108883,13 +108868,13 @@ encoder:
 丟	xxmgi
 𤫖	xxmgj
 𰢄	xxmgl
-𰢏	xxmgm
+𩑙	xxmgm
 𤥺	xxmgn
 𰢇	xxmgo
-𭣑	xxmgp
+𱉍	xxmgp
 𤣹	xxmgs
 𤪄	xxmgw
-𤩼	xxmgy
+𪻥	xxmgy
 乛	xxmh
 𠪥	xxmha
 𩱔	xxmhd
@@ -108911,7 +108896,7 @@ encoder:
 𡊼	xxmkg
 𪅷	xxmkh
 蛩	xxmkl
-𰋟	xxmkm
+𰋩	xxmkm
 𩜸	xxmko
 恐	xxmkp
 㧬	xxmkq
@@ -108999,7 +108984,6 @@ encoder:
 𰉸	xxmug
 䲮	xxmuh
 𧌩	xxmul
-䪲	xxmum
 𨚁	xxmun
 𢚧	xxmup
 𫩶	xxmur
@@ -109016,7 +109000,6 @@ encoder:
 𩈥	xxmwi
 𩈐	xxmwj
 𠡳	xxmwk
-𫖃	xxmwl
 𨢾	xxmwm
 𩈦	xxmwn
 𮖿	xxmwo
@@ -109079,7 +109062,6 @@ encoder:
 𮤾	xxnli
 𩩜	xxnlk
 𨸖	xxnlm
-𨹩	xxnlo
 㢧	xxnm
 𩱠	xxnmb
 𫠏	xxnmd
@@ -109126,7 +109108,7 @@ encoder:
 𤈖	xxnuf
 𪁅	xxnuh
 𨞭	xxnun
-𰅝	xxnup
+𱍅	xxnup
 𢎞	xxnv
 𮫬	xxnwf
 𰁏	xxnyj
@@ -109158,7 +109140,6 @@ encoder:
 𬪤	xxofn
 𭝶	xxofp
 玍	xxog
-𧡞	xxogb
 𣜫	xxogd
 㸈	xxogf
 𡒟	xxogg
@@ -109184,7 +109165,6 @@ encoder:
 𰂐	xxoik
 𱃣	xxoim
 𢻶	xxoin
-𩝞	xxoio
 𪫫	xxoip
 𠋅	xxois	[u]
 𮩊	xxoit
@@ -109204,7 +109184,7 @@ encoder:
 𢙠	xxokp
 𭒘	xxokv
 𬫜	xxolc
-𪂤	xxolh
+儵	xxolh
 𰁨	xxoll
 𠇧	xxoln
 儵	xxolo
@@ -109220,6 +109200,7 @@ encoder:
 𠓞	xxomm
 𨝫	xxomn
 𠇮	xxomo
+𢢱	xxomp
 𠇅	xxomr
 𨗜	xxoms
 𥠌	xxomw
@@ -109253,7 +109234,7 @@ encoder:
 𬷴	xxoph
 𫓨	xxopi
 𰽶	xxopl
-𰻥	xxopn
+𰽣	xxopn
 𪜪	xxopp
 𠰰	xxopr
 伅	xxopu
@@ -109304,7 +109285,7 @@ encoder:
 𭴁	xxpf
 顈	xxpfm
 㫚	xxpha
-𰢰	xxphb
+𰢲	xxphb
 𢗖	xxphg
 𢖾	xxphh
 𢜢	xxpho
@@ -109325,7 +109306,7 @@ encoder:
 𰀋	xxpll
 𢥻	xxpmb
 𭏃	xxpmg
-𱉣	xxpmi	[u]
+𱉌	xxpmi
 𢟈	xxpmk
 𢣒	xxpmm
 𢖸	xxpn
@@ -109488,12 +109469,11 @@ encoder:
 𫩮	xxrlm
 𫫅	xxrln
 𤕪	xxrlr
-𨇲	xxrma
 𨂃	xxrmb
 𭊇	xxrmc
 𡁜	xxrmf
 𮛄	xxrmg
-𨈋	xxrmh
+𨃝	xxrmh
 𫩫	xxrmi
 𮛏	xxrmk
 𮛆	xxrml
@@ -109582,7 +109562,6 @@ encoder:
 𭵢	xxsff
 𩥶	xxsfl
 𩦣	xxsfm
-𩥾	xxsfo
 𢟀	xxsfp
 𩣌	xxsft
 𪅤	xxsgh
@@ -109631,14 +109610,14 @@ encoder:
 𦐪	xxsml
 𬺴	xxsmm
 𨾆	xxsmo
-𰞞	xxsms
+𰭠	xxsms
 𥪡	xxsmy
 𣢂	xxsno
 𡰦	xxso
 𨾋	xxsog
 𠤮	xxsoi
 𮠇	xxspn
-𰴖	xxsrb
+𰴙	xxsrb
 𪠯	xxsre
 𤍥	xxsrf
 鵘	xxsrh
@@ -109719,7 +109698,7 @@ encoder:
 𬋖	xxtgi
 𤑔	xxtgk
 𭄈	xxtgl
-𮠆	xxtgn
+莰	xxtgn
 𩁣	xxtgo
 䓌	xxtgp
 𧄦	xxtha
@@ -109727,7 +109706,7 @@ encoder:
 𮑭	xxthd
 𦴂	xxthj
 𮓀	xxthn
-𮐒	xxtho
+蓏	xxtho
 𦶃	xxthw
 𦱉	xxthx
 𰲕	xxthy
@@ -109746,7 +109725,7 @@ encoder:
 𮑀	xxtji
 𠣅	xxtjk
 𪟋	xxtjl
-𩔈	xxtjm
+𧅤	xxtjm
 𰃝	xxtjn
 䩓	xxtjp
 𩉥	xxtjs
@@ -109755,7 +109734,7 @@ encoder:
 𫵄	xxtkf
 𪁾	xxtkh
 𠝫	xxtkl
-𢐧	xxtkn
+鄚	xxtkn
 𢤍	xxtkp
 𭋆	xxtkr
 𫉌	xxtks
@@ -109816,7 +109795,7 @@ encoder:
 𧃱	xxtrr
 𰱸	xxtse
 𤓘	xxtsf
-苉	xxtsh
+莬	xxtsh
 𮒶	xxtsj
 𮎼	xxtsl
 𦵲	xxtsm
@@ -109832,11 +109811,10 @@ encoder:
 𩕭	xxttm
 䒎	xxttn
 𩁑	xxtto
-剙	xxtts	[O]
 𦬏	xxtu
 𫦕	xxtul
 𩕫	xxtum
-𧃴	xxtvf
+蔠	xxtvf
 孶	xxtvi
 𦯏	xxtvk
 薅	xxtvm
@@ -109844,14 +109822,14 @@ encoder:
 𮓐	xxtwf
 𱈦	xxtwh
 𦭤	xxtwk
-𦷹	xxtwl
+甍	xxtwl
 𦺃	xxtyb
 𧃰	xxtyc
 𦹐	xxtyd
 𮓋	xxtyj
 𧆍	xxtyn
 𬞯	xxtyp
-𦿫	xxtyr
+蕸	xxtyr
 𭣺	xxtys
 𦾼	xxtyt
 𮏞	xxtyv
@@ -109944,17 +109922,16 @@ encoder:
 𦄋	xxvfh
 絨	xxvfi
 𬗷	xxvfl
-𬘐	xxvfm
+𦂲	xxvfm
 𮈂	xxvfn
 𮈄	xxvfo
 𢥩	xxvfp
 𥾹	xxvfq
 𡅀	xxvfr
-𦀿	xxvfs
+𫃱	xxvfs
 𦇪	xxvft
 𮈁	xxvfu
-𦆎	xxvfw
-𦇶	xxvfy
+䜌	xxvfy
 𫮸	xxvgg
 𢣘	xxvgp
 𪦰	xxvgr
@@ -110028,7 +110005,6 @@ encoder:
 㽖	xxwks
 𡆫	xxwlb
 𤰽	xxwll
-𦌅	xxwlv
 𮊂	xxwlw
 𤰩	xxwni
 𡆣	xxwo
@@ -110051,7 +110027,6 @@ encoder:
 𭨣	xxxao
 𤋜	xxxar
 𬁧	xxxat
-𣯦	xxxau
 䳛	xxxav
 𣌪	xxxay
 𠔽	xxxbb
@@ -110067,27 +110042,26 @@ encoder:
 𪹭	xxxbr
 𤋝	xxxbs
 𠕁	xxxbt
-𧡾	xxxbu
+𭾘	xxxbu
 𪅚	xxxbv
 𦞗	xxxbw
 𰗊	xxxby
 𠔁	xxxcc
 𫒎	xxxce
 𮣚	xxxch
-𮣱	xxxci
+𮣀	xxxci
 𨭱	xxxcj
 𠙴	xxxcm
 𫒉	xxxcn
 𱁅	xxxco
 𰼟	xxxcr
-𪋨	xxxcs
 𨬷	xxxcy
 𣡞	xxxda
 𣞠	xxxdb
 𣠈	xxxdd
 𰗒	xxxde
 𤆰	xxxdf
-𥂸	xxxdh
+𰅡	xxxdh
 𰗓	xxxdi
 𪴥	xxxdj
 𣑖	xxxdk
@@ -110096,19 +110070,17 @@ encoder:
 𭩘	xxxdn
 𣐍	xxxdo
 𣘰	xxxdp
-𰘕	xxxds
+𪬈	xxxds
 𬄿	xxxdt
 𣘆	xxxdv
 𪲗	xxxdw
 𭫳	xxxdy
-𰝏	xxxea
-𪠥	xxxeb
+懘	xxxeb
 𨥗	xxxec
 𰊖	xxxed
 㕛	xxxee
 𩾼	xxxeh
 㳀	xxxei
-𣷆	xxxej
 𰛒	xxxek
 𰊢	xxxel
 𣽈	xxxem
@@ -110116,11 +110088,9 @@ encoder:
 𣱿	xxxeo
 𣳊	xxxep
 𰊇	xxxer
-𣼣	xxxes
 𭲞	xxxet
 𪶁	xxxeu
 𬉳	xxxev
-𣾞	xxxew
 𣾌	xxxey
 𰃮	xxxfb
 𣏦	xxxfd
@@ -110132,7 +110102,7 @@ encoder:
 𰝹	xxxfn
 𤓀	xxxfo
 𮟵	xxxfq
-𣪎	xxxgb
+𭏕	xxxgb
 㝅	xxxgd
 𭿲	xxxge
 𣫇	xxxgf
@@ -110147,7 +110117,7 @@ encoder:
 𭐕	xxxgt
 𣫁	xxxgu
 𬊻	xxxha
-𰃦	xxxhb
+鵳	xxxhb
 𪇬	xxxhc
 𤇫	xxxhd
 𥫸	xxxhe
@@ -110166,8 +110136,8 @@ encoder:
 鴭	xxxhr
 𥬁	xxxhs
 𠜄	xxxht
-𧡎	xxxhu
-𮇂	xxxhv
+㷗	xxxhu
+𪕆	xxxhv
 𤓞	xxxhw
 𫓓	xxxhx
 𪅻	xxxhy
@@ -110182,24 +110152,24 @@ encoder:
 𭟮	xxxim
 𢇣	xxxin
 𭩮	xxxio
-𢍺	xxxip
+麀	xxxip
 𣓫	xxxir
 𪆢	xxxjb
-𰴓	xxxjc
+䴅	xxxjc
 𱈩	xxxjd
 𭏳	xxxje
 𰅄	xxxjf
 𠥼	xxxjj
 𡧶	xxxjk
-𭝛	xxxjm
+𫴫	xxxjm
 𪅢	xxxjn
 𭺫	xxxjp
 𰶖	xxxjr
 𠦄	xxxjt
 𪄋	xxxju
-𡪘	xxxjv
 𡫖	xxxjw
 𪅣	xxxkb
+𡗜	xxxkc
 𤴷	xxxkd
 𪠣	xxxke
 𤆍	xxxkf
@@ -110216,18 +110186,17 @@ encoder:
 㞭	xxxku
 𤺞	xxxky
 𧔼	xxxli
-𫦅	xxxll
 𠃎	xxxlm
 𠁡	xxxln
 𤋅	xxxlu
 𫾺	xxxlv
 𨟕	xxxma
-𧢝	xxxmb
+鴯	xxxmb
 𭦚	xxxmc
 𭫔	xxxmd
 𣱷	xxxme
 𡭕	xxxmf
-𡉐	xxxmg
+玊	xxxmg
 𪛙	xxxmh
 𩿱	xxxmi
 𰉛	xxxmk
@@ -110237,7 +110206,7 @@ encoder:
 𠆣	xxxmo
 𪈹	xxxmp
 𫩑	xxxmr
-𭄆	xxxms
+𫟫	xxxms
 𫑬	xxxmt
 𩿑	xxxmu
 𬛔	xxxmv
@@ -110263,7 +110232,7 @@ encoder:
 㲻	xxxoe
 仦	xxxof
 𭍺	xxxog
-𬾐	xxxoh
+𪫱	xxxoh
 𠆲	xxxoi
 𠓝	xxxoj
 𪜧	xxxok
@@ -110273,9 +110242,8 @@ encoder:
 𠓜	xxxoo
 𠇍	xxxop
 𪁟	xxxor
-㒛	xxxos
+𢘢	xxxos
 𢠚	xxxov
-𫣧	xxxow
 𮕦	xxxoy
 𩔑	xxxpd
 𰑒	xxxph
@@ -110288,16 +110256,15 @@ encoder:
 𭵇	xxxpu
 𢺅	xxxqh
 𢦒	xxxqi
-𢲷	xxxqj
+𣓵	xxxqj
 𡗗	xxxqk
 𢩬	xxxql
 𰓬	xxxqm
 𰀈	xxxqn
-𭠫	xxxqo
+𪭮	xxxqo
 𢳖	xxxqp
 𭠸	xxxqq
 𪭦	xxxqr
-𰒿	xxxqs
 𢺐	xxxqt
 𢩳	xxxqu
 𰓕	xxxqy
@@ -110305,7 +110272,7 @@ encoder:
 𠞫	xxxrb
 𫬨	xxxrf
 𭋔	xxxrh
-𫬟	xxxrj
+𫬐	xxxrj
 𠯯	xxxrl
 𨀩	xxxrm
 𡋾	xxxrn
@@ -110316,28 +110283,28 @@ encoder:
 𫪾	xxxrt
 𨛗	xxxru
 𭋀	xxxrv
-𭊌	xxxry
+𡃑	xxxry
 𫿗	xxxsb
 𭴸	xxxse
 𥸨	xxxsf
 𨞩	xxxsg
 𤃄	xxxsh
 𰻰	xxxsi
-𡰸	xxxsj
+𭃎	xxxsj
 刃	xxxsk
 𠭃	xxxsl
 𡰱	xxxsm
-𬐱	xxxsr
+𭵳	xxxsr
 𬋀	xxxss
 𫧋	xxxsu
 𧅌	xxxta
-𰥞	xxxtb
+𣓝	xxxtb
 䒔	xxxtc
 𠟪	xxxtd
 𬟚	xxxte
 𰟷	xxxtf
 𮗚	xxxtg
-𦼍	xxxth
+𦤅	xxxth
 𪆆	xxxti
 𰰜	xxxtj
 𠀠	xxxtk
@@ -110351,9 +110318,9 @@ encoder:
 𮓒	xxxts
 𠀎	xxxtt
 𬜡	xxxtu
-𬞙	xxxtv
-𦿛	xxxtw
-𰲈	xxxty
+荮	xxxtv
+藅	xxxtw
+䕶	xxxty
 𰎗	xxxub
 𡵰	xxxue
 𤉞	xxxuf
@@ -110362,12 +110329,9 @@ encoder:
 𭖎	xxxul
 㞢	xxxum
 𰎉	xxxun
-𡾑	xxxuo
-𡼑	xxxur
 𡴼	xxxus
 𡽵	xxxut
 岀	xxxuu
-𰎓	xxxuv
 𭖟	xxxuy
 𮣩	xxxvf
 𰌒	xxxvh
@@ -110383,7 +110347,6 @@ encoder:
 𰢺	xxxwo
 𫺄	xxxwp
 𣫬	xxxwt
-𤳏	xxxww
 〇	xxxxx
 𭪢	xxxyb
 𠧶	xxxyc
@@ -110429,7 +110392,6 @@ encoder:
 𮟮	xxycn
 戅	xxycp
 𪆶	xxydh
-𭓔	xxydk
 𬨻	xxydl
 𨜎	xxydn
 𮦀	xxydo
@@ -110471,7 +110433,6 @@ encoder:
 㤣	xxyjp
 𫐢	xxyjr
 𨐐	xxyju
-𰐨	xxyjy
 达	xxyk
 𫿯	xxykb
 𨪣	xxykc
@@ -110511,7 +110472,6 @@ encoder:
 𣊑	xxyna
 𰷮	xxynb
 𤍋	xxynf
-𩾤	xxynh
 𫻺	xxyni
 𧆻	xxynj
 𰲦	xxynl	[u]
@@ -110525,7 +110485,7 @@ encoder:
 𣫖	xxyoh
 𬂃	xxyok
 𠜇	xxyol
-𩕺	xxyom
+𤪰	xxyom
 𣣕	xxyon
 𫐩	xxyoo
 𭞗	xxyop
@@ -110549,16 +110509,15 @@ encoder:
 𧥾	xxyri
 𡘯	xxyrk
 䚯	xxyrl
-𧩬	xxyrm
+𧥶	xxyrm
 𪸿	xxyrn
 𬨨	xxyro
 䚰	xxyrp
 𠆆	xxyrr
 𧥤	xxyrs
-譵	xxyrt
 𨑖	xxyru
 𫱿	xxyrv
-𧫀	xxyry
+𢿪	xxyry
 𭤨	xxyso
 𬨭	xxyst
 𣂆	xxysy
@@ -110579,7 +110538,6 @@ encoder:
 𠮏	xxyue
 𡮾	xxyuf
 𪅑	xxyuh
-𠒩	xxyuj	[u]
 𪥛	xxyuk
 𰲦	xxyul
 𩖁	xxyum
@@ -110650,7 +110608,7 @@ encoder:
 䯪	xybmb
 𬽈	xybmm
 𨖡	xybmo
-𮕫	xybmv
+甗	xybmv
 𨛖	xybnl
 欳	xybno
 𠧖	xybo
@@ -110793,7 +110751,7 @@ encoder:
 𫝸	xyhho
 𰺺	xyhhv
 𨘲	xyhjg
-𨖺	xyhmb
+顏	xyhmb
 𨗹	xyhmo
 𪜠	xyhni
 𨛒	xyhnl
@@ -111086,7 +111044,7 @@ encoder:
 迆	xypd
 𫵋	xypf
 㘹	xypg
-𬨰	xypha
+鸗	xypha
 𪊋	xyphn
 𰲛	xyphu	[u]
 𪚔	xypk
@@ -111230,7 +111188,7 @@ encoder:
 𠅷	xyrrj
 𮞬	xyrrr
 𨕬	xyrru
-𧚾	xyrrv
+譔	xyrrv
 𧥟	xyrs
 𠛤	xyrsh
 䜀	xyrsi
@@ -111268,7 +111226,7 @@ encoder:
 𮘣	xyryi
 𧧩	xyryl
 𧭻	xyrym
-𮘭	xyryp
+謯	xyryp
 𧪊	xyryr
 𧩽	xyrys
 𧭘	xyryt
@@ -111366,7 +111324,7 @@ encoder:
 𬩗	xyubu
 𬺖	xyubw
 𧙵	xyucv
-𬺔	xyudd
+𬺓	xyudd
 𡭎	xyudi
 𠮉	xyue
 𤏅	xyuf
@@ -111418,7 +111376,7 @@ encoder:
 龁	xyuon
 𱌬	xyuos
 龀	xyup
-𫠚	xyupr
+龅	xyupr
 𨰒	xyurc
 𮯋	xyurr
 龊	xyury
