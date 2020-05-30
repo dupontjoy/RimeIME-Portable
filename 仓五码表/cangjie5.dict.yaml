@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.05.19
+# 2020.05.30
 # License: GPL
 #
 # 標註：
@@ -6066,6 +6066,7 @@ encoder:
 睕	bujnu
 𪾸	bujoc
 𭿤	bujoe
+𬑨	bujok
 𥄻	bujp
 𥉙	bujpa
 矃	bujpn
@@ -6474,7 +6475,6 @@ encoder:
 𥄑	buqo
 𥋋	buqoa
 𥌦	buqoj
-𬑨	buqoo
 瞡	buqou
 𰥪	buqou
 𥆭	buqqo
@@ -20578,7 +20578,6 @@ encoder:
 𡊟	gbu
 垻	gbuc
 埧	gbuc
-𥈜	gbuc
 䵺	gbul
 𪔄	gbul
 䵺	gbun
@@ -37307,6 +37306,7 @@ encoder:
 𰶱	jbuc
 𡩈	jbud
 𡕹	jbue
+𥈜	jbuk
 𰥑	jbum
 𢜇	jbup
 𡩇	jbuu
@@ -39433,6 +39433,7 @@ encoder:
 㹈	jkhq
 㲠	jkhqu
 𦒷	jkhqu
+𣰠	jkhqu
 𩲘	jkhui
 宏	jki
 者	jkia
@@ -39523,6 +39524,7 @@ encoder:
 𰭧	jku
 𡧞	jkuh
 𡟋	jkv
+𣂐	jkyj
 𣦔	jkylm
 𮋝	jkyma
 𧩥	jkymr
@@ -39610,6 +39612,7 @@ encoder:
 𡧇	jm
 𰌼	jma
 𰍒	jmad
+𠁗	jmak
 宣	jmam
 𡩦	jmam
 𡪏	jmam
@@ -39998,7 +40001,6 @@ encoder:
 𫴊	jojf
 𡧰	joju
 𡧦	jok
-𠁊	jok
 𫳌	jokr
 𡪽	joku
 𢂯	jolb
@@ -46292,6 +46294,7 @@ encoder:
 𧙲	ljks
 𧚨	ljlo
 褄	ljlv
+𧞲	ljmk
 䙋	ljmm
 䘢	ljmn
 䘺	ljmo
@@ -47267,7 +47270,6 @@ encoder:
 裱	lqmv
 𧛔	lqmy
 衭	lqo
-𧞲	lqoa
 𫌖	lqoj
 𧜴	lqou
 𦘨	lqphh
@@ -52066,6 +52068,7 @@ encoder:
 𠩓	mlmo
 𥔻	mlmr
 𮀰	mlmr
+𣃞	mlms
 厞	mlmy
 㓚	mln
 𪛜	mln
@@ -56118,7 +56121,6 @@ encoder:
 焉	mylf
 𧲕	myllv
 正	mylm
-𣃞	myls
 𭭘	myls
 㠪	mym
 𠩏	mymf
@@ -68852,7 +68854,6 @@ encoder:
 𢶹	qaya
 𢾎	qaye
 撔	qayf
-𣂐	qayj
 𣁤	qaykk
 抈	qb
 㨠	qbac
@@ -71065,7 +71066,6 @@ encoder:
 𫯰	qohjg
 𩖬	qohni
 𢰑	qoho
-𣰠	qohqu
 𢬜	qohv
 𢬩	qoi
 𰔣	qoic
@@ -100365,7 +100365,6 @@ encoder:
 𭱁	xjoe
 㝦	xjogs
 𮭻	xjohe
-𠁊	xjok
 𩔧	xjomb
 𮭻	xjoni
 𢾶	xjook
@@ -101197,7 +101196,7 @@ encoder:
 𫔰	xlsit
 𫌇	xlsje
 𫋲	xlsk
-𠁧	xlsl
+𰿥	xlsl
 𧷤	xlslc
 𬮚	xlsm
 𧛐	xlsmg
@@ -102187,7 +102186,6 @@ encoder:
 𩇆	xmwyw
 𬻁	xmyg
 𭂳	xmyhn
-𭭘	xmyls
 𠩆	xmymp
 㒫	xmymu
 亅	xn
@@ -108116,7 +108114,6 @@ encoder:
 𪢻	xxgb
 𭏁	xxgbh
 𡔾	xxgbm
-𥈜	xxgbu
 𧹦	xxgcb
 糓	xxgdh
 𢧺	xxgdi
@@ -108643,6 +108640,7 @@ encoder:
 𬧱	xxjjp
 𮝀	xxjjs
 軕	xxjju
+𣰠	xxjkh
 𢠜	xxjkp
 𡧣	xxjkr
 𰗐	xxjld
@@ -110290,7 +110288,7 @@ encoder:
 𨞩	xxxsg
 𤃄	xxxsh
 𰻰	xxxsi
-𭃎	xxxsj
+𡰸	xxxsj
 刃	xxxsk
 𠭃	xxxsl
 𡰱	xxxsm
@@ -119323,6 +119321,11 @@ encoder:
 ⿶	ziwu
 ⿺	ziwv
 ⿻	ziww
+𝍲	znm
+𝍳	znml
+𝍴	znmy
+𝍵	znmyl
+𝍶	znmyl
 ⽇	zra
 ⽈	zra
 ⾨	zran
