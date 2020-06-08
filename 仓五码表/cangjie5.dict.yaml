@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.05.30
+# 2020.06.06
 # License: GPL
 #
 # 標註：
@@ -10770,6 +10770,7 @@ encoder:
 𣛘	dhhk
 柳	dhhl
 櫛	dhhl
+𣏆	dhhn
 𣛗	dhhr
 㭛	dhhv
 榴	dhhw
@@ -10838,7 +10839,6 @@ encoder:
 栀	dhmu
 柝	dhmy
 机	dhn
-𣏆	dhn
 𣑲	dhnb
 𣑫	dhnd
 𣙔	dhnd
@@ -10851,7 +10851,6 @@ encoder:
 𬂢	dhni
 枫	dhnk
 𡙚	dhnk
-𬂢	dhnk
 𨙴	dhnl
 𪲊	dhnn
 𣟨	dhoc
@@ -17920,6 +17919,7 @@ encoder:
 䊁	fdhgu
 𥻧	fdhhc
 𫃖	fdhhl
+𥸱	fdhhn
 𮇶	fdhhw
 𮇚	fdhie
 粁	fdhj
@@ -17931,7 +17931,6 @@ encoder:
 䉼	fdhml
 𬖙	fdhmr
 籶	fdhn
-𥸱	fdhn
 䊃	fdhnb
 𥺵	fdhnb
 𣪿	fdhne
@@ -26685,11 +26684,9 @@ encoder:
 𨊍	hhncr
 𥬲	hhnd
 𥲧	hhnd
-𥸫	hhnd
 𥭰	hhnd
 竼	hhni
 𬕜	hhni
-𭂫	hhni
 𨉈	hhnkg
 𨈕	hhnl
 𨈧	hhnl
@@ -28432,6 +28429,7 @@ encoder:
 𠙘	hnfbt
 𥼒	hnfd
 𩗐	hnfd
+𥸫	hnfd
 颷	hnff
 𩙪	hnff
 𱃑	hnffe
@@ -28528,6 +28526,7 @@ encoder:
 凡	hni
 𠫗	hni
 𪛝	hni
+𭂫	hni
 𩗖	hniav
 筩	hnib
 𩖶	hnid
@@ -32754,7 +32753,6 @@ encoder:
 𬜜	hyhhe
 䑣	hyhhh
 𦪪	hyhhj
-舧	hyhhn
 𧡬	hyhhu
 𮎊	hyhio
 篷	hyhj
@@ -32768,6 +32766,7 @@ encoder:
 笐	hyhn
 般	hyhne
 舤	hyhni
+舧	hyhni
 䑺	hyhni
 船	hyhnr
 䒀	hyhoi
@@ -34639,6 +34638,7 @@ encoder:
 𫷺	ihhi
 㡻	ihhl
 𢦲	ihhml
+𢦕	ihhn
 𣪶	ihhne
 毿	ihhqu
 毵	ihhqu
@@ -34688,7 +34688,6 @@ encoder:
 𢧦	ihmwv
 𠘭	ihn
 𠘯	ihn
-𢦕	ihn
 𠫗	ihn
 𭙍	ihn
 𭙔	ihne
@@ -34696,7 +34695,6 @@ encoder:
 𨝐	ihnl
 𠫠	ihnn
 𢳅	ihnq
-𡦹	ihnr
 𮚥	ihoc
 𪪖	ihoe
 𭙠	ihoe
@@ -50317,6 +50315,7 @@ encoder:
 㻈	mghmr
 𤤐	mghmy
 玑	mghn
+𣃪	mghn
 珮	mghnb
 𤤸	mghnd
 𭹳	mghnd
@@ -52101,7 +52100,6 @@ encoder:
 丏	mlvs
 𮓞	mlwb
 更	mlwk
-𠪳	mlwk
 𮓠	mlwm
 𪠄	mlwu
 二	mm
@@ -52528,7 +52526,6 @@ encoder:
 𭇏	mnher
 𣧩	mnhey
 𣧯	mnhfd
-𠁈	mnhfr
 𣨓	mnhgr
 𤭚	mnhgr
 㱡	mnhgu
@@ -52694,6 +52691,7 @@ encoder:
 𣨂	mnmig
 𭮊	mnmii
 𰐊	mnmjj	[u]
+𠁈	mnmjr
 𰐊	mnmkj	[u]
 𠀞	mnmln
 𣨇	mnmls
@@ -52940,7 +52938,6 @@ encoder:
 𣩌	mnyeq
 𬆝	mnyev
 殧	mnyfu
-𣃪	mnyhs
 裂	mnyhv
 𧞕	mnyhv
 𧞙	mnyhv
@@ -62232,7 +62229,6 @@ encoder:
 餷	oidbm	[Ouv]
 𠍨	oidd
 𠉷	oide
-𠍋	oidi
 䬴	oidj
 𩚟	oidk
 餗	oidl
@@ -62465,6 +62461,7 @@ encoder:
 𠈵	oikh
 𫢺	oikh
 𰂐	oikh
+𠍋	oiki
 𩝉	oikit
 𩟲	oikjc
 餴	oikjt
@@ -62743,6 +62740,7 @@ encoder:
 𩜺	oipyr
 𠈙	oiq
 𩝺	oiqbv
+𠇇	oiqk
 𩜎	oiqmb
 𫗙	oiqmc
 𩝥	oiqmf
@@ -62750,7 +62748,6 @@ encoder:
 𬲋	oiqo
 𩞲	oiqoa
 𩟪	oiqoc
-𠇇	oiqr
 𩚊	oiqu
 佁	oir
 䭂	oirau
@@ -79114,7 +79111,6 @@ encoder:
 聕	sjhgr
 𦖾	sjhhc
 聊	sjhhl
-𠙱	sjhhn
 𰭳	sjhi
 䎷	sjhjd
 𦖋	sjhjm
@@ -79124,6 +79120,7 @@ encoder:
 𦕰	sjhne
 𠙮	sjhni
 𩙝	sjhni
+𠙱	sjhni
 𦘋	sjhoc
 𦗸	sjhok
 𦘇	sjhok
@@ -96369,7 +96366,6 @@ encoder:
 𣔆	xdhml
 𪲉	xdhmr
 栀	xdhmu
-𣏆	xdhn
 𣙔	xdhnd
 杋	xdhni
 𡙚	xdhnk
@@ -97623,7 +97619,7 @@ encoder:
 𬷷	xfdha
 𭴗	xfdhe
 𰫈	xfdhj
-𥸱	xfdhn
+𥺵	xfdhn
 𬖸	xfdho
 𬖎	xfdi
 㶬	xfdj
@@ -99549,7 +99545,7 @@ encoder:
 䳉	xhyha
 𬖄	xhyhc
 𫇚	xhyhj
-䑺	xhyhn
+舧	xhyhn
 舮	xhyhs
 𦩊	xhyhx
 𦨚	xhyik
@@ -101484,7 +101480,7 @@ encoder:
 𤥱	xmghb
 𤧦	xmghd
 𦤶	xmghe
-𭹳	xmghn
+𣃪	xmghn
 𤪱	xmgho
 𭸶	xmghq
 𬎀	xmghs
@@ -101694,7 +101690,6 @@ encoder:
 𫺡	xmlp
 𭈝	xmlr
 𢀓	xmlsm
-𠪳	xmlwk
 𠄞	xmm
 𫨅	xmma
 𨳏	xmman
@@ -108302,7 +108297,7 @@ encoder:
 𮆛	xxhhd
 𨈥	xxhhh
 𭄠	xxhhk
-𥸫	xxhhn
+𥭰	xxhhn
 𭱮	xxhho
 𰑢	xxhhp
 𥳈	xxhhu
@@ -108530,7 +108525,7 @@ encoder:
 𢧩	xxihi
 𢋜	xxihj
 𩒿	xxihm
-𢦕	xxihn
+𠫗	xxihn
 𭙷	xxiho
 厸	xxii
 𭩮	xxiid
@@ -110081,7 +110076,7 @@ encoder:
 㳀	xxxei
 𰛒	xxxek
 𰊢	xxxel
-𣽈	xxxem
+𭰀	xxxem
 𪵼	xxxen
 𣱿	xxxeo
 𣳊	xxxep
@@ -116457,6 +116452,7 @@ encoder:
 𫿨	ysoku
 𫿕	ysoku
 𣄑	ysokv
+𫿕	ysokv
 𣃘	ysol
 𮮻	ysol
 斾	ysolb
