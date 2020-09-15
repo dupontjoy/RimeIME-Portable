@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.07.11
+# 2020.09.13
 # License: GPL
 #
 # 標註：
@@ -1464,6 +1464,7 @@ encoder:
 𨶆	anomr
 𨵦	anomv
 䦍	anon
+𣈩	anoo
 䦟	anoog
 閦	anooo
 𨴟	anooo
@@ -2125,6 +2126,7 @@ encoder:
 𧒛	avli
 㓭	avln
 𠛵	avln
+𢑢	avmb	[u]
 䫘	avmbc
 䫀	avmbc
 𩒳	avmbc
@@ -30483,8 +30485,8 @@ encoder:
 𤚚	hqqmy
 𥲶	hqqq
 𤘛	hqqu
-筘	hqr
 吿	hqr
+筘	hqr
 𤘘	hqr
 𤙝	hqrau
 𬌞	hqrhr
@@ -32595,6 +32597,7 @@ encoder:
 𦦇	hxumb
 𡢗	hxv
 𦈇	hxvff
+𦥠	hxvhe
 𦥠	hxvle
 𦦒	hxvle
 𬛿	hxvml
@@ -58767,10 +58770,10 @@ encoder:
 𨸢	nlhml
 𨼹	nlhmo
 𬯝	nlhmp
+𨸔	nlhn
 𨹄	nlhnd
 𮥟	nlhnd
 𨸜	nlhne
-𨸔	nlhni
 𨺢	nlhni
 𨽠	nlhoc
 𨼦	nlhog
@@ -59745,7 +59748,6 @@ encoder:
 𱄿	nmnvm
 𬶳	nmnwa
 𩷷	nmnwf
-𬻘	nmnym
 𬶁	nmo
 鳆	nmoae
 𪪻	nmob
@@ -66689,6 +66691,7 @@ encoder:
 𪬢	paus
 恨	pav
 𡘬	pavk
+𣊸	pavmb	[u]
 𢢚	pavo
 䭬	pavvu
 慢	pawe
@@ -70261,6 +70264,7 @@ encoder:
 艳	qjnau
 邦	qjnl
 鄻	qjnl
+𦥆	qjnog
 𫡗	qjnq
 捥	qjnu
 摍	qjoa
@@ -77335,7 +77339,6 @@ encoder:
 𩤻	sfbmo
 𩥃	sfbmo
 駧	sfbmr
-𩤗	sfbou
 𩥣	sfbou
 騆	sfbqr
 駉	sfbr
@@ -77755,6 +77758,7 @@ encoder:
 騤	sfnok
 騛	sfnoo
 䮴	sfnot
+𩤗	sfnou
 䮪	sfnqd
 𱄭	sfnuw
 𱄱	sfnwa
@@ -79526,6 +79530,7 @@ encoder:
 匲	skrr
 𡰧	sks
 𡱉	sksk
+𬻘	sksk
 𬳪	sksqf
 𩠷	skthu
 𩯢	skthu
@@ -90978,6 +90983,7 @@ encoder:
 娤	vgv
 嬻	vgwc
 裝	vgyhv
+𠂈	vh
 𡛳	vha
 𪦴	vhaa
 婂	vhab
@@ -91011,6 +91017,7 @@ encoder:
 𰌛	vhdu
 婑	vhdv
 嬏	vhdw
+𠬞	vhe
 㛔	vhej
 㚵	vhem
 𡜠	vheq
@@ -99289,7 +99296,7 @@ encoder:
 𤛃	xhqpf
 𥳺	xhqpp
 𥮼	xhqpu
-吿	xhqr
+筘	xhqr
 𰑣	xhqrp	[u]
 𥲳	xhqsb
 𮅻	xhqsk
@@ -105020,7 +105027,6 @@ encoder:
 𩦔	xsfan
 𩢋	xsfb
 𩥃	xsfbm
-𩥣	xsfbo
 𠤻	xsfd
 㷉	xsfdi
 𩥹	xsfdl
@@ -105228,6 +105234,7 @@ encoder:
 𡱐	xskn
 𫑝	xsknl
 忍	xskp
+𬻘	xsksk
 𩯢	xskth
 𰕉	xskye
 𰆊	xsl
@@ -110104,7 +110111,7 @@ encoder:
 𣱿	xxxeo
 𣳊	xxxep
 𰊇	xxxer
-𭲞	xxxet
+𤂧	xxxet
 𪶁	xxxeu
 𬉳	xxxev
 𣾌	xxxey
@@ -110794,7 +110801,6 @@ encoder:
 𬽑	xyhxo
 𫐰	xyhxu
 𬩚	xyhxv
-𧭹	xyhym
 𨕳	xyhyu
 𫻴	xyib
 𬩢	xyibt
@@ -112147,6 +112153,7 @@ encoder:
 𫋴	ycyhv
 𫿳	ycyj
 𠅯	ycylc
+𧭹	ycymr
 𠅅	yd
 𫐠	yd
 𨓳	yda
@@ -112825,7 +112832,6 @@ encoder:
 𨕴	yhye
 𨒂	yhym
 𧧑	yhymr
-𧭹	yhymr
 遞	yhyn
 𠨂	yhyph
 遞	yhyu
