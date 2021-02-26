@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.09.13
+# 2020.10.25
 # License: GPL
 #
 # 標註：
@@ -10964,6 +10964,7 @@ encoder:
 橇	dhuu
 𣖏	dhuu
 栎	dhvd
+𭩩	dhvh
 柢	dhvi
 枊	dhvl
 柧	dhvo
@@ -28125,6 +28126,7 @@ encoder:
 𣱎	hmhgu
 𥭕	hmhl
 斵	hmhml
+斲	hmhml
 𣂠	hmhml
 𣂩	hmhml
 㽓	hmhmm
@@ -38540,7 +38542,6 @@ encoder:
 𡪣	jhuu
 𡬃	jhuu
 𬔕	jhvfu
-𭩩	jhvh
 𡫘	jhws
 𧸹	jhxc
 寫	jhxf
@@ -46277,7 +46278,7 @@ encoder:
 𧚆	ljbd
 𧛻	ljbf
 𧞍	ljbf
-𦘝	ljbl
+𦘝	ljbl	[U]
 𮌆	ljbl
 𫌁	ljbm
 𧟘	ljbv
@@ -46686,6 +46687,7 @@ encoder:
 𧙸	lmbm
 贵	lmbo
 𧟙	lmbo
+𦘝	lmbpl
 𭾋	lmbt
 𥅌	lmbu
 貴	lmbuc
@@ -75245,8 +75247,8 @@ encoder:
 唌	rnkv
 吲	rnl
 𨙫	rnl
-𠶴	rnlb
 𡃴	rnlb
+𠶴	rnlb
 𠴻	rnld
 𪡷	rnld
 𠻱	rnle
@@ -78879,6 +78881,7 @@ encoder:
 镻	sihqo
 𨱞	sihqu
 𨲜	sihsb
+𨲰	sihub
 𨳄	sihuc
 𨲾	sihus
 𨱡	sihvp
@@ -80032,7 +80035,6 @@ encoder:
 𡱛	sohqo
 𪟰	sohr
 𡱚	soht
-𨲰	sohub
 䖙	sohyn
 䖙	sohyu
 㔲	soin
@@ -90992,6 +90994,7 @@ encoder:
 𡡅	vhaf
 媓	vhag
 郷	vhail
+𠨞	vhail
 𭅼	vhail
 𡟷	vhaj
 𡞃	vhak
@@ -91033,10 +91036,12 @@ encoder:
 嫌	vhhc
 㚹	vhhl
 鄕	vhhpl
+𠨞	vhhpl	[u]
 𭅼	vhhpl
 𨝅	vhhpu
 𰠺	vhhq
 鄕	vhhsl
+𠨞	vhhsl	[u]
 𭅼	vhhsl
 媹	vhhw
 𡚸	vhi
@@ -91127,6 +91132,7 @@ encoder:
 𡝢	vhsk
 𡞬	vhsk
 𡟧	vhsl
+𠨍	vhsl
 𡠣	vhsu
 𡛈	vht
 𨜕	vhtcl
@@ -91546,7 +91552,6 @@ encoder:
 𠂈	vl
 𪥮	vla
 𫩃	vlaie
-𠨞	vlail
 𢇋	vlapv
 㜢	vlav
 𰀧	vlbgr
@@ -91567,8 +91572,6 @@ encoder:
 𪢞	vlhbr
 𬳧	vlhda
 𫩃	vlhpe
-𠨞	vlhpl	[u]
-𠨞	vlhsl	[u]
 𫱕	vlit
 𡣤	vljbj
 𡞐	vljr
@@ -91604,7 +91607,6 @@ encoder:
 𰄽	vlsh
 𬻲	vlshi
 𬻲	vlsk
-𠨍	vlsl
 𭑽	vlsp
 𫝮	vlsw
 𩠹	vlthu
@@ -98981,7 +98983,7 @@ encoder:
 籈	xhmgn
 𰪅	xhmgt
 䲼	xhmha
-𣂠	xhmhm
+斲	xhmhm
 𥬑	xhmhn
 𢺾	xhmje
 𭠋	xhmkd
@@ -104674,7 +104676,7 @@ encoder:
 𠰄	xrnin
 𠻙	xrniw
 𨙫	xrnl
-𡃴	xrnlb
+𠶴	xrnlb
 𪡷	xrnld
 𠾐	xrnlm
 𭌇	xrnlq
@@ -107108,11 +107110,11 @@ encoder:
 㥨	xvgp
 𡣗	xvgrr
 𡟌	xvgrv
-𭅼	xvhai
+𠨞	xvhai
 𡞌	xvhat
 𪦂	xvhbk
-𭅼	xvhhp
-𭅼	xvhhs
+𠨞	xvhhp	[u]
+𠨞	xvhhs	[u]
 𡜁	xvhio
 𡝜	xvhjr
 𡟢	xvhju
@@ -107124,6 +107126,7 @@ encoder:
 𭒧	xvhok
 𭝇	xvhp
 𡝢	xvhsk
+𠨍	xvhsl
 𰀵	xvhu
 𡠌	xvhwp
 𪦪	xvhws
@@ -109958,6 +109961,8 @@ encoder:
 䜌	xxvfy
 𫮸	xxvgg
 𢣘	xxvgp
+𭅼	xxvha
+𭅼	xxvhh
 𡞬	xxvhs
 𡠴	xxvhw
 𭒥	xxvhx

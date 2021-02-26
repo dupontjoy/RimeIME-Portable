@@ -1,0 +1,86 @@
+
+#2021.01.19 默认标点改回中文
+#2020.11.18 取消全半角切换
+#2017.02.06 Shift鍵切換中英文
+#2016.08.01 添加两个符号
+#2016.07.26 取消顶字上屏, 防止"签到"这种词第一个字打错
+#2016.05.06 調整字根展示方式
+#2015.10.16 逗号句号顶字上屏
+#2015.10.14 开启连打像是要好些
+#2015.08.28 加入商標符號
+#2015.06.29 調整“|”和“/jt”
+#2015.04.24 添加參數和說明
+#           通过按 Shift + Enter可以上屏转换后的编码
+
+patch:
+#字频调整
+  translator/enable_user_dict: false
+#碼表輸入法連打
+  translator/enable_sentence: true
+#關閉倉頡與拼音混打
+  abc_segmentor/extra_tags: {}
+#顶字上屏
+  speller/auto_select: false
+  
+#調整字根展示方式
+  translator/preedit_format: 
+#    - xform/^([a-z]*)/$1/ 「字根在前（$1），字母在後（\U$1\E）」「([a-z]*)后面加了$是大写字母」
+#    - xform/^([a-z]*)/\U$1\E | $1/
+    - xform/^([a-z]*)/$1/
+    - "xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|abcdefghijklmnopqrstuvwxyz|"
+  translator/comment_format:
+#   字母在後，提示顯示爲字根
+    - xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符~|
+  
+#以下兩行爲去除朙月拼音依赖
+  "reverse_lookup/dictionary": {}
+  "schema/dependencies": {}
+
+#以下兩行爲輸入Symbols修正，修正後按「/」才能調出符號
+  "punctuator/import_preset": symbols
+  "recognizer/patterns/punct": "^/([a-z]+|[0-9])$"
+
+#加入常用符號
+  punctuator/symbols:
+#常用符號/物理
+    '/wuli': [ °, °C, Ω, Φ, m², cm², km², m³ ]
+#常用符號/數學
+    '/shuxue': [ ±, ×, ÷, ≤, ≥, ≠, ≈, ∞, ✓, x]
+#几何
+    '/jihe': [ ◄, ►, ▲, ▼]
+#箭頭
+    '/jiantou': [ ←, →, ↑, ↓, ↖, ↗, ↙, ↘]
+#商標
+    '/shangbiao': [ ®, ™]
+    
+#Shift鍵切換中英文
+  ascii_composer/switch_key:
+#    Control_L: inline_ascii
+#   Control_R: inline_ascii
+    Shift_L: inline_ascii
+    Shift_R: inline_ascii
+     
+
+#標點符號顶字上屏
+  key_binder/bindings:
+    - { when: has_menu, accept: comma, send: comma } #逗号
+    - { when: has_menu, accept: period, send: period } #句号
+    - { accept: "Shift+space", toggle: noop, when: always} #取消全半角切换
+
+#中文, 半角, 中文標點, 繁體漢字, 通用字集
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      reset: 0
+      states: ["半角", "全角"]
+    - name: ascii_punct
+      reset: 0
+      states: ["，。", "，．"]
+    - name: simplification
+      reset: 0
+      states: ["漢字", "汉字"]
+    - name: extended_charset
+      reset: 1
+      states: ["通用", "增廣"]
