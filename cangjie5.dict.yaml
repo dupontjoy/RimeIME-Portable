@@ -2,7 +2,7 @@
 #
 # <倉頡五代補完計劃> 來自 https://github.com/Jackchows/Cangjie5/blob/master/Cangjie5.txt
 #
-# 2020.10.25
+# 2021.03.04
 # License: GPL
 #
 # 標註：
@@ -2225,6 +2225,7 @@ encoder:
 𭥾	ayhv
 𣉐	ayid
 𭦓	ayiu
+𭦓	ayiv	[u]
 𪰍	ayj
 𣌘	ayje
 𭧒	ayjj
@@ -3025,6 +3026,7 @@ encoder:
 賄	bckb
 𬥨	bckbe
 𤣘	bckha
+𧶰	bckib
 𧶭	bckjt
 𧶖	bckkb
 𧵧	bckki
@@ -3159,7 +3161,6 @@ encoder:
 貤	bcpd
 𰷈	bcpfd
 𧵈	bcpi
-𧶰	bcpib
 䝧	bcpim
 𧴶	bcpj
 䝧	bcpmm
@@ -3281,6 +3282,7 @@ encoder:
 𧷹	bcyhr
 𫎒	bcyhs
 𧸉	bcyia
+𧶰	bcyib
 𧴼	bcyj
 賆	bcyjj
 𰶹	bcyk
@@ -4538,7 +4540,6 @@ encoder:
 𦟕	bmha
 鴡	bmhaf
 𫚷	bmhaf
-𥁔	bmhio
 𫇀	bmhm
 𣬭	bmhqu
 𪚮	bmhxu
@@ -5459,6 +5460,7 @@ encoder:
 𦡂	bthg
 𦡦	bthg
 𧖱	bthhl
+𥁔	bthio
 䐤	bthm
 𬛊	btho
 𪭓	bti
@@ -6434,7 +6436,6 @@ encoder:
 𥆲	buphu
 𪾠	bupi
 盷	bupim
-𥆨	bupiv
 𪾠	bupm
 𥅬	bupmi
 盷	bupmm
@@ -6774,6 +6775,8 @@ encoder:
 𥇱	buyid
 𥈚	buyio
 𥅻	buyiu
+𥆨	buyiu	[Ou]
+𥆨	buyiv	[Ou]
 䀞	buyj
 𧠕	buyj
 𥊩	buyjj
@@ -7023,6 +7026,7 @@ encoder:
 𦝑	byib
 𦜈	byid
 膟	byij
+𦚳	byiu	[u]
 𦙒	byj
 𠖫	byjc
 𰃴	byjc
@@ -9488,8 +9492,8 @@ encoder:
 𨫏	cyij
 𨬨	cyiq
 𫒻	cyiq
-鋶	cyiu
 銃	cyiu
+鋶	cyiu
 鋶	cyiv
 鈄	cyj
 𨰮	cyje
@@ -11233,7 +11237,7 @@ encoder:
 𣖋	djir
 𬃋	djir
 𣔮	djis
-𣚺	djisy
+𣚺	djisy	[U]
 𣚸	djiv
 𣛨	djjb
 𭬕	djjd
@@ -11268,7 +11272,6 @@ encoder:
 柠	djmn
 椗	djmo
 榢	djmo
-𤊟	djmo
 𣚅	djmp
 梡	djmu
 𩈘	djmwl
@@ -13302,6 +13305,7 @@ encoder:
 樴	dyia
 棛	dyib
 𣕛	dyib
+𣙆	dyid	[u]
 𭪱	dyid
 𣘚	dyij
 橀	dyit
@@ -15245,7 +15249,6 @@ encoder:
 灊	ekub
 𭳟	ekuf
 𰆷	ekun
-𣹳	ekve
 𬇜	eky
 𰛔	eky
 𤂾	ekyh
@@ -16026,7 +16029,6 @@ encoder:
 𭖜	eou
 𣼱	eowb
 海	eowj
-𬉕	eowu
 海	eowy
 𤀇	eoyf
 𭰠	eoyg
@@ -16034,6 +16036,7 @@ encoder:
 𰴸	eoymr
 𰜸	eoyr
 涖	eoyt
+𬉕	eoyu
 𣳁	eoyv
 沁	ep
 㲺	ep
@@ -16710,8 +16713,8 @@ encoder:
 洋	etq
 𣴱	etq
 𬉔	etqd
+𣺸	etqf
 溠	etqm
-𣺸	etqo
 㳾	etqu
 𣼑	etrd
 𤅞	etre
@@ -17164,8 +17167,9 @@ encoder:
 㳿	eyid
 𤀮	eyid
 𣼧	eyij
+𬉫	eyik
 𣼠	eyin
-𬉫	eyin
+𬉫	eyin	[u]
 㳰	eyit
 流	eyiu
 㳘	eyiu
@@ -19137,6 +19141,7 @@ encoder:
 𤉳	fjmf
 煊	fjmm
 𤆼	fjmn
+𤊟	fjmo
 𭶁	fjmp
 烷	fjmu
 𬋋	fjmw
@@ -24971,6 +24976,7 @@ encoder:
 𣗷	hdkd
 𮃃	hdkf
 𮂲	hdki
+𬓦	hdkiu
 稀	hdkkb
 𥡠	hdkkk
 𥢡	hdkkk
@@ -25598,7 +25604,7 @@ encoder:
 𥢧	hdyia
 𥡢	hdyij
 𥟋	hdyit
-𬓦	hdyiu
+𬓦	hdyiu	[u]
 科	hdyj
 𥴙	hdyj
 𮂹	hdyk
@@ -27657,7 +27663,6 @@ encoder:
 𥱘	hkid
 𦤚	hkike
 𦤚	hkikk
-𥬱	hkiu
 𫂑	hkiu
 𫇍	hkjcw
 𥽧	hkjd
@@ -32822,7 +32827,7 @@ encoder:
 𦩓	hyikm
 𦨩	hyikp
 𦪀	hyilr
-𬖊	hyin
+𬖊	hyin	[u]
 𦨬	hyine
 𦪅	hying
 𦩈	hyiok
@@ -32832,6 +32837,7 @@ encoder:
 䑷	hyisb
 𦪯	hyist
 艔	hyite
+𥬱	hyiu
 𦪇	hyixp
 𫁵	hyj
 𮎖	hyjak
@@ -33136,8 +33142,9 @@ encoder:
 𦩯	hystw
 𦨌	hysu
 𬜒	hysu
-𮆅	hysu
+𮆅	hysu	[u]
 𥰠	hysv
+𮆅	hysv
 箊	hysy
 笠	hyt
 𰪍	hyta
@@ -33530,8 +33537,9 @@ encoder:
 縻	icvif
 𫸍	icyaj
 𪎘	icye
-𪎣	icyiu
+𪎣	icyiu	[u]
 𫸊	icyiu
+𪎣	icyiv
 𬹏	icykr
 𢉲	icym
 𫸐	icymo
@@ -33696,6 +33704,7 @@ encoder:
 𪎟	idw
 𪎘	idye
 𪎣	idyiu
+𪎣	idyiv	[u]
 𬹏	idykr
 䜆	idymr
 𮮌	idytc
@@ -38002,6 +38011,7 @@ encoder:
 𬅄	jdisd
 𦗱	jdisj
 𤳡	jdisw
+𣚺	jdisy
 𰥡	jdiu
 𡦳	jdixf
 𡦲	jdixf
@@ -38947,6 +38957,7 @@ encoder:
 軚	jjki
 䡌	jjki
 𤒒	jjkif
+𨌙	jjkiv
 𮝔	jjkjt
 䡈	jjkk
 𤒒	jjkkf
@@ -39186,7 +39197,6 @@ encoder:
 𨊵	jjpi
 𰹋	jjpi
 𨊷	jjpim
-𨌙	jjpiv
 𨍉	jjpkp
 𰹋	jjpm	[u]
 𨊷	jjpmm
@@ -39386,7 +39396,9 @@ encoder:
 䡫	jjyhj
 䡉	jjyhn
 𨌯	jjyib
+𨌙	jjyiu	[u]
 𨏛	jjyiv
+𨌙	jjyiv	[u]
 轋	jjyjj
 輧	jjyjj
 𣁖	jjyk
@@ -40960,6 +40972,7 @@ encoder:
 𬏺	kbto
 𬏲	kbtu
 㾇	kbu
+𠃴	kbu
 𰥎	kbu
 𤻋	kbub
 𡙋	kbue
@@ -41174,6 +41187,7 @@ encoder:
 𠭅	kemym
 𬏱	kene
 瘫	keog
+𣼿	keowy
 𢞒	kep
 𢡯	kep
 𭼴	kesb
@@ -41706,6 +41720,7 @@ encoder:
 𤸣	khju
 㺙	khjwo
 𭸡	khkaf
+𤢉	khkbk
 𤢻	khkbp
 獠	khkcf
 𤢙	khkcf
@@ -41969,7 +41984,6 @@ encoder:
 狥	khpa
 痻	khpa
 𤠶	khpbc
-𤢉	khpbk
 𤜣	khpd
 㹼	khpfd
 𤜩	khph
@@ -42252,6 +42266,7 @@ encoder:
 𤼝	khxv
 㹿	khyaj
 𤟾	khybb
+𤢉	khybk	[u]
 𪚓	khybp
 𬌿	khybs
 𰡁	khyc
@@ -42347,6 +42362,7 @@ encoder:
 𧮯	kicor
 㾁	kid
 𣏂	kid
+𣏋	kid
 𭫅	kid
 𰞕	kif
 𰞖	kif
@@ -42361,8 +42377,8 @@ encoder:
 𤻑	kihc
 𡕞	kihe
 𰘼	kihed
-𠘺	kihn
 𠙆	kihn
+𪠜	kihnb
 䫺	kihni
 𤵔	kihu
 𤷃	kii
@@ -42448,6 +42464,9 @@ encoder:
 𬏟	kivj
 㾿	kivl
 𡘒	kiw
+𫎣	kiwk
+𬬘	kiwlk
+𫎣	kiwn	[u]
 𭁘	kiyc
 夲	kj
 廾	kj	[O]
@@ -43814,7 +43833,6 @@ encoder:
 𡯏	kuyj
 𡰠	kuykq
 𡰠	kuynq
-𠒨	kuyrf
 𡰒	kuytg
 𡯳	kuytr
 乄	kv
@@ -43861,6 +43879,7 @@ encoder:
 𬼵	kvrr
 𫠣	kvsc
 𢍤	kvt
+𧰖	kvtwt
 兂	kvu
 𭼺	kvuc
 癰	kvug
@@ -46774,7 +46793,6 @@ encoder:
 裋	lmrt
 褔	lmrw
 褊	lmsb
-𩇧	lmsim
 𩇧	lmsn
 𭀡	lmsp
 𩇦	lmss
@@ -49951,8 +49969,8 @@ encoder:
 祊	mfyhs
 𫀊	mfyhv
 𮂝	mfyib
-𥜆	mfyiu
-𥜆	mfyiv
+𥜆	mfyiu	[O]
+𥜆	mfyiv	[Ou]
 𮂉	mfykh
 𬓖	mfykl
 𥙅	mfylb
@@ -50859,6 +50877,7 @@ encoder:
 𭹞	mgokg
 𤥬	mgokh
 𭹐	mgokr
+𤪝	mgokv
 玠	mgoll
 𤩣	mgolu
 𰁘	mgom
@@ -50911,7 +50930,7 @@ encoder:
 𤪕	mgotq
 珻	mgowy
 𤨨	mgoyk
-𤪝	mgoyv
+𤪝	mgoyv	[u]
 𢜈	mgp
 𪻒	mgp
 珣	mgpa
@@ -50925,7 +50944,6 @@ encoder:
 𭣑	mgphp
 玓	mgpi
 𪻎	mgpim
-𤥡	mgpit
 𤦳	mgpjj
 𠁅	mgpkk
 𤪦	mgpko
@@ -51302,6 +51320,7 @@ encoder:
 㻙	mgyib
 㻭	mgyij
 𤩻	mgyiq
+𤥡	mgyit
 琉	mgyiu
 珫	mgyiu
 琉	mgyiv
@@ -52824,7 +52843,6 @@ encoder:
 𤬱	mnphh
 𣧀	mnpi
 𣧔	mnpi
-𣨧	mnpib
 𣧀	mnpm
 𣧬	mnpr
 𪵀	mnpru
@@ -52960,6 +52978,7 @@ encoder:
 裂	mnyhv
 𧞕	mnyhv
 𧞙	mnyhv
+𣨧	mnyib
 𣨚	mnyid
 𭮐	mnyii
 𭮃	mnyj
@@ -55617,6 +55636,7 @@ encoder:
 𨢔	mwkga
 酞	mwki
 𧟧	mwki
+𨡚	mwkib
 𮗁	mwkii
 𨡿	mwkit
 𨣍	mwkja
@@ -55851,7 +55871,6 @@ encoder:
 𨟸	mwphh
 䤉	mwpht
 酌	mwpi
-𨡚	mwpib
 𨟴	mwpim
 𨠞	mwpkk
 𩉏	mwpko
@@ -56051,6 +56070,7 @@ encoder:
 𨡥	mwyfr
 𨟼	mwyhn
 𮡀	mwyhr
+𨡚	mwyib	[u]
 𨠪	mwyij
 醯	mwyit
 酼	mwyiu
@@ -56093,7 +56113,7 @@ encoder:
 醨	mwyub
 𨠯	mwyuk
 醯	mwyut
-𬪲	mwyut
+𬪲	mwyut	[u]
 𨠳	mwyvo
 𣡷	mwywd
 𩇆	mwywd
@@ -57944,6 +57964,7 @@ encoder:
 魴	nfyhs
 𩽲	nfyhs
 𩺼	nfyib
+𫙢	nfyid	[u]
 鯍	nfyiu
 鯍	nfyiv
 𩷮	nfyiv
@@ -63174,6 +63195,7 @@ encoder:
 𥁮	okbt
 䀺	okbu
 𥎶	okbu
+𠋃	okbu
 𥏦	okbus
 䂓	okbuu
 鋚	okc
@@ -65858,6 +65880,7 @@ encoder:
 飳	osyg
 䭔	osyhr
 餏	osyhv
+𩛭	osyib	[u]
 𠌸	osyj
 餠	osyjj
 䭤	osylr
@@ -66396,7 +66419,7 @@ encoder:
 儱	oybp
 傍	oybs
 𠏻	oybu
-𠋃	oybu
+𠋃	oybu	[u]
 𠆾	oyc
 𰃞	oyc
 㒀	oycb
@@ -66903,7 +66926,6 @@ encoder:
 颍	pembo
 𢚽	pems
 𣤳	peno
-𣼿	peowy
 怿	peq
 𪬙	perb
 𢟖	pese
@@ -68433,7 +68455,6 @@ encoder:
 旾	pua
 𢠎	puap
 胷	pub
-𩩇	pubbb
 𦟒	pubnu
 𡴣	pubsd
 惾	puce
@@ -68552,7 +68573,6 @@ encoder:
 𢘾	pvr
 𢞙	pvrq
 乌	pvsm
-𧰖	pvtwt
 𢣎	pvvi
 𢙉	pvvu
 𢚰	pvvu
@@ -72027,6 +72047,7 @@ encoder:
 撤	qybk
 㩵	qybk
 𢸑	qybk
+𪮌	qybn	[u]
 𢸈	qybo
 攏	qybp
 𢴨	qybr
@@ -72742,7 +72763,6 @@ encoder:
 𫪍	rep
 𠲨	repd
 𫪏	reph
-𠺩	repv
 𭣈	req
 𭈟	reqp
 𪡵	rerb
@@ -72763,6 +72783,7 @@ encoder:
 𠽪	reya
 𧛣	reyhv
 𠴹	reyt
+𠺩	reyu
 𡁺	reyv
 𫬵	reyx
 吙	rf
@@ -73591,6 +73612,7 @@ encoder:
 吰	rki
 𠴷	rkil
 㗐	rkit
+𪠻	rkiv	[u]
 𠾏	rkja
 喯	rkjt
 唏	rkkb
@@ -76812,7 +76834,7 @@ encoder:
 𭊹	ryio
 𪡁	ryiu
 𪠻	ryiu	[u]
-𪠻	ryiv
+𪠻	ryiv	[u]
 呌	ryj
 𪢆	ryja
 嗹	ryjj
@@ -83235,6 +83257,7 @@ encoder:
 𢌰	tjk
 著	tjka
 𩊵	tjka
+𩍒	tjkbk
 𩍟	tjkbu
 𦹘	tjkc
 𩋕	tjkcu
@@ -83485,7 +83508,6 @@ encoder:
 𩊝	tjpa
 䔭	tjpb
 𩌙	tjpbc
-𩍒	tjpbk
 𩌽	tjpde
 𩍔	tjpde
 𩍔	tjpdn
@@ -83698,6 +83720,7 @@ encoder:
 𫈶	tjwv
 𩌹	tjwvf
 𩋣	tjybb
+𩍒	tjybk	[u]
 䪊	tjybp
 䩷	tjybs
 𩋛	tjyce
@@ -84272,6 +84295,7 @@ encoder:
 𢐯	tmhn
 𣫧	tmhne
 𩙣	tmhnu
+𩙣	tmhnv	[u]
 𦴉	tmho
 𦾂	tmhp
 𤯄	tmhvp
@@ -85655,7 +85679,8 @@ encoder:
 蕗	trmr
 𦱕	trmr
 𬞐	trmr
-𬞞	trmu
+𬞞	trmu	[u]
+𬞞	trmv
 𫲩	trnd
 鄯	trnl
 鄀	trnl
@@ -93181,6 +93206,7 @@ encoder:
 𡢤	vybb
 媜	vybc
 𪦖	vybd
+𡡠	vybk	[u]
 𫲒	vybl
 𫱍	vybn
 𰌂	vybo
@@ -94413,7 +94439,6 @@ encoder:
 𣂽	wmhml
 氎	wmhqu
 㲲	wmhqu
-𡆶	wmhu
 𭺙	wmhvo
 𢧷	wmi
 𡇓	wmig
@@ -94426,6 +94451,7 @@ encoder:
 𤴍	wmjmn
 𰢹	wmkj	[u]
 𤲖	wmkp
+𡆶	wmku
 畀	wml
 曱	wmll
 𡈀	wmlm
@@ -95801,6 +95827,7 @@ encoder:
 𥊔	xbuyc
 𢽕	xbuye
 𥈁	xbuyh
+𥆨	xbuyi	[Ou]
 𧠕	xbuyj
 𥄐	xbuyk
 𥈴	xbuyp
@@ -96191,7 +96218,7 @@ encoder:
 𨩔	xcyid
 𨫏	xcyij
 𫒻	xcyiq
-銃	xcyiu
+鋶	xcyiu
 鉼	xcyjj
 𨰠	xcykq
 𫒚	xcylc
@@ -96802,6 +96829,7 @@ encoder:
 𭪧	xdyhl
 𪳤	xdyhr
 𣕛	xdyib
+𭪱	xdyid
 𣑁	xdyiu
 𣛔	xdyji
 栟	xdyjj
@@ -97426,7 +97454,7 @@ encoder:
 𭰼	xetks
 滞	xetlb
 𭲑	xetlc
-𣶿	xetlj
+㴖	xetlj
 𤂣	xetll
 潢	xetmc
 𤂹	xetmj
@@ -97525,7 +97553,7 @@ encoder:
 𤀹	xeyhu
 𣽱	xeyib
 𤀮	xeyid
-𬉫	xeyin
+𬉫	xeyin	[u]
 㳘	xeyiu
 洴	xeyjj
 㳠	xeyk
@@ -98917,7 +98945,6 @@ encoder:
 叐	xhke
 𡮜	xhkf
 鸄	xhkha
-𫂑	xhkiu
 𥲩	xhkjo
 𥮈	xhkjt
 㔟	xhkks
@@ -99632,6 +99659,7 @@ encoder:
 𥯞	xhysd
 𥫣	xhysm
 𬜒	xhysu
+𮆅	xhysv
 𥵣	xhytb
 𥳘	xhytg
 𦪗	xhytm
@@ -100310,6 +100338,7 @@ encoder:
 𫧩	xjjwo
 䡾	xjjyb
 𨎊	xjjyc
+𨌙	xjjyi	[u]
 輧	xjjyj
 𮝤	xjjyp
 𨏸	xjjyr
@@ -100532,7 +100561,7 @@ encoder:
 𨿾	xkbog
 𢢐	xkbp
 𬏳	xkbqr
-𰥎	xkbu
+𠃴	xkbu
 𡚠	xkbue
 𭼮	xkbuf
 𡚝	xkbug
@@ -100695,7 +100724,6 @@ encoder:
 𣏂	xkid
 𰞖	xkif
 𩿅	xkiha
-𠙆	xkihn
 𰋫	xkik
 痝	xkikh
 𰣦	xkiks
@@ -102210,7 +102238,7 @@ encoder:
 𫌺	xmwym
 䩇	xmwyr
 𩈴	xmwyt
-𬪲	xmwyu
+𬪲	xmwyu	[u]
 𩇆	xmwyw
 𬻁	xmyg
 𭂳	xmyhn
@@ -103373,7 +103401,7 @@ encoder:
 𪝂	xoyam
 𠏀	xoybb
 𰁺	xoybk
-𠋃	xoybu
+𠋃	xoybu	[u]
 𰃞	xoyc
 𬿞	xoycb
 𠋈	xoyck
@@ -108719,7 +108747,7 @@ encoder:
 𰗈	xxkbk
 𠕆	xxkbm
 郩	xxkbn
-𥆗	xxkbu
+𰥎	xxkbu
 𤴭	xxkc
 𤋯	xxkca
 𰛖	xxkce
@@ -108745,7 +108773,7 @@ encoder:
 𬌫	xxkhv
 𤼝	xxkhx
 厺	xxki
-𭫅	xxkid
+𣏋	xxkid
 𪈌	xxkih
 𠀆	xxkj
 㚐	xxkk
@@ -109202,6 +109230,7 @@ encoder:
 𪜬	xxojd
 𰆍	xxojs
 㐲	xxok
+𠋃	xxokb
 𪿈	xxokd
 𭰋	xxoke
 𤒥	xxokf
@@ -110409,7 +110438,7 @@ encoder:
 𠆴	xxybo
 𢝃	xxybp
 𬨡	xxybt
-𠃴	xxybu
+𠃴	xxybu	[u]
 𩫜	xxybw
 𢿑	xxyby
 𰥠	xxycb
@@ -110455,7 +110484,7 @@ encoder:
 𤍨	xxyif
 𭏼	xxyig
 𭜘	xxyip
-𫎣	xxyiw
+𬬘	xxyiw	[u]
 𪅂	xxyjh
 𩑯	xxyjm
 𬨖	xxyjn
@@ -110625,7 +110654,7 @@ encoder:
 𭶟	xybff
 鶮	xybha
 𨓮	xybhg
-𭮿	xybhn
+𣪟	xybhn	[u]
 𩫁	xybhq
 𠅙	xybhu
 𧛨	xybhv
@@ -110642,6 +110671,7 @@ encoder:
 𨛖	xybnl
 欳	xybno
 𠧖	xybo
+𨿾	xybog	[u]
 㪣	xybok
 𧫈	xybom
 遥	xybou
@@ -110809,7 +110839,7 @@ encoder:
 𨕳	xyhyu
 𫻴	xyib
 𬩢	xyibt
-𣏋	xyid
+𣏋	xyid	[u]
 𤆴	xyif
 𬩎	xyifb
 𡑠	xyig
@@ -110825,7 +110855,6 @@ encoder:
 𫐟	xyip
 𢧂	xyir
 𨖓	xyitf
-𬬘	xyiwk
 𦣔	xyiwl
 𦣔	xyiwn
 𭤞	xyiyj
@@ -110879,7 +110908,6 @@ encoder:
 鷟	xykha
 𨖢	xykhg
 𠙟	xykhn
-𬨥	xykid
 𠠼	xykks
 𭤔	xyklb
 䘇	xykli
@@ -111347,6 +111375,7 @@ encoder:
 䖜	xyua
 𫜨	xyuau
 龈	xyuav
+𩩇	xyubb
 𪘤	xyubd
 龃	xyubm
 𬩗	xyubu
@@ -111768,6 +111797,7 @@ encoder:
 𤔟	ybhlo
 𬴟	ybhlq
 毃	ybhne
+𣪟	ybhne	[u]
 𭮿	ybhne
 𰚇	ybhne
 𠅢	ybhp
@@ -111872,6 +111902,7 @@ encoder:
 𨛖	ybnl
 𨝏	ybnl
 𨝗	ybnl
+𨛼	ybnl	[u]
 𫘵	ybnn
 歊	ybno
 欳	ybno
@@ -111886,6 +111917,7 @@ encoder:
 𠆴	ybo
 𠧯	yboc
 離	ybog
+𨿾	ybog	[u]
 𬛠	yboiv
 敵	ybok
 㪣	ybok
@@ -111944,7 +111976,7 @@ encoder:
 𩫑	ybtt
 𥃰	ybu
 𨒚	ybu
-𠃴	ybu
+𠃴	ybu	[u]
 𨗽	ybub
 貞	ybuc
 䢙	ybuc
@@ -112268,6 +112300,7 @@ encoder:
 敦	ydok
 敹	ydok
 𢾉	ydok
+𢾣	ydok	[u]
 𭣾	ydok
 𭤆	ydok
 𪆝	ydokf
@@ -112362,6 +112395,7 @@ encoder:
 𩜨	yeoiv
 𫿧	yeok
 𩜨	yeomv
+𣼿	yeowy	[u]
 惄	yep
 𪬆	yep
 𮛣	yeryo
@@ -112841,8 +112875,9 @@ encoder:
 𠨂	yhyph
 遞	yhyu
 𨕳	yhyu
+𠫓	yi
 戠	yia
-𠭩	yiabe
+𠭩	yiabe	[u]
 𤎷	yiaf
 𢨀	yiag
 𤣨	yiapv
@@ -112861,7 +112896,7 @@ encoder:
 𬩋	yicr
 𬨳	yics
 述	yid
-𣏋	yid
+𣏋	yid	[u]
 𬩋	yidr
 𬨳	yids
 𨒻	yiei
@@ -112881,17 +112916,17 @@ encoder:
 𭏼	yig
 䲻	yihaf
 𪁶	yihaf
-𢂙	yihb
 𮞔	yihg
 𨓀	yihj
 㐬	yihlu
 㐬	yihlv
 䢕	yihm
 𠘺	yihn
-𪠜	yihnb
+𪠜	yihnb	[u]
 𨓍	yihq
 充	yihu
 㐬	yihu
+𢂙	yihub
 𭐤	yihue
 㐬	yihv
 𮞩	yihv
@@ -112942,6 +112977,7 @@ encoder:
 𪫼	yip
 𫐟	yip
 𭜘	yip
+𣓪	yiptd	[u]
 𧜫	yipv
 迨	yir
 𢧂	yir
@@ -112966,14 +113002,14 @@ encoder:
 𦁋	yivif
 𡿮	yivvv
 𤰸	yiw
-𫎣	yiwk
-𬬘	yiwk
-夣	yiwln
+𫎣	yiwk	[u]
+𬬘	yiwlk	[u]
+夣	yiwln	[O]
 𦣔	yiwln
+𬬘	yiwln	[u]
 夣	yiwn
 𦣔	yiwn
-𫎣	yiwn
-𬬘	yiwn
+𫎣	yiwn	[u]
 𢨞	yiwtc
 𫑃	yixd
 𨖥	yixi
@@ -113362,7 +113398,6 @@ encoder:
 𦣉	ykhxe
 迏	yki
 斏	ykiav
-𨓫	ykid
 𬨥	ykid
 𨗑	ykig
 𣁠	ykilb
@@ -116194,6 +116229,7 @@ encoder:
 𮘣	yryid
 𮙂	yryid
 𧭧	yryif
+𧨆	yryiu
 𧨆	yryiv
 䚵	yryj
 謰	yryjj
@@ -117070,6 +117106,7 @@ encoder:
 𧇅	yuba
 𧇻	yubac
 䶤	yubbb
+𩩇	yubbb
 𪙃	yubbr
 𫥮	yubcc
 䶡	yubcn
@@ -117514,6 +117551,7 @@ encoder:
 𪘀	yutt
 𪚏	yutt
 𪙡	yutwa
+𧰖	yutwt
 𪞽	yutwv
 𪙊	yutxc
 齓	yuu
@@ -117765,6 +117803,7 @@ encoder:
 𩣐	yvsqf
 𫱏	yvtc
 𮊤	yvtq
+𧰖	yvtwt
 𡵍	yvu
 妄	yvv
 𤣥	yvv
@@ -118076,12 +118115,14 @@ encoder:
 迒	yyhn
 䢍	yyhs
 逳	yyib
+𨓫	yyid
 𨖏	yyie
 䢦	yyij
 𨕕	yyir
 𫧳	yyirm
 𨓋	yyit
 𨓞	yyiu
+𨓞	yyiv	[u]
 䢏	yyj
 逬	yyjj
 𫧲	yyjki
@@ -118463,6 +118504,7 @@ encoder:
 濆	zcejt
 𣻑	zcekc
 淹	zcekh
+流	zceki
 灊	zceku
 沈	zcelb
 𣲼	zcelb
@@ -118731,6 +118773,7 @@ encoder:
 𤜵	zckhm
 犯	zckhr
 獵	zckhv
+充	zckih
 奢	zckjk
 奔	zckjt
 療	zckkc
@@ -118959,6 +119002,7 @@ encoder:
 倂	zcoyj
 𣫺	zcoyk
 敏	zcoyo
+𣫺	zcoyy
 𣊸	zcpav
 惘	zcpbt
 眞	zcpbv
