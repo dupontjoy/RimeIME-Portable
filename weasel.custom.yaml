@@ -1,25 +1,25 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 1.1.2
+  distribution_version: 0.14.3
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Tue Apr 21 22:00:21 2015"
-  rime_version: 1.1.2
+  modified_time: "Thu Sep 15 22:29:45 2022"
+  rime_version: 1.5.3
 patch:
+  "preset_color_schemes/Moonlight":
+    author: thepoy
+    back_color: 0x030303
+    border_color: 0x0A0A0A
+    candidate_text_color: 0xFFFFFF
+    comment_text_color: 0xFCFCFC
+    hilited_back_color: 0x4734D6
+    hilited_candidate_back_color: 0x1D66CD
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_text_color: 0xFFFFFF
+    name: "秋日橙"
+    text_color: 0xFAFAFF
+  "style/color_scheme": nba
   "style/display_tray_icon": false
   "style/font_face": "TH-Sung-TP2"
   "style/font_point": 12
   "style/horizontal": false
   "style/inline_preedit": true
-  "style/color_scheme": Moonlight
-  "preset_color_schemes/Moonlight":
-      name: "秋日橙"
-      author: "thepoy"
-      back_color: 0x030303
-      border_color: 0x0A0A0A
-      text_color: 0xFAFAFF
-      hilited_text_color: 0xFFFFFF
-      hilited_back_color: 0x4734D6
-      hilited_candidate_text_color: 0xFFFFFF
-      hilited_candidate_back_color: 0x1D66CD
-      candidate_text_color: 0xFFFFFF
-      comment_text_color: 0xFCFCFC

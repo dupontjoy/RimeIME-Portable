@@ -24,7 +24,8 @@ patch:
   
 #調整字根展示方式
   translator/preedit_format: 
-#    - xform/^([a-z]*)/$1/ 「字根在前（$1），字母在後（\U$1\E）」「([a-z]*)后面加了$是大写字母」
+#「字根在前（$1），字母在後（\U$1\E）」「([a-z]*)后面加了$是大写字母」
+#    - xform/^([a-z]*)/$1/ 
 #    - xform/^([a-z]*)/\U$1\E | $1/
     - xform/^([a-z]*)/$1/
     - "xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|abcdefghijklmnopqrstuvwxyz|"
