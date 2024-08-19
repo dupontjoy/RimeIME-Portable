@@ -1,15 +1,10 @@
  
-#2021.01.19 默认标点改回中文，快捷键为ctrl+.
-#2020.11.18 取消全半角切换
-#2017.02.06 Shift鍵切換中英文
-#2016.08.01 添加两个符号
-#2016.07.26 取消顶字上屏, 防止"签到"这种词第一个字打错
-#2016.05.06 調整字根展示方式
-#2015.10.16 逗号句号顶字上屏
-#2015.10.14 开启连打像是要好些
-#2015.08.28 加入商標符號
-#2015.06.29 調整“|”和“/jt”
-#2015.04.24 添加參數和說明
+# 常用重码字：
+# 原为二码：已xsu，个xol，义xik，庆xxik，头xyk，达xxyk，午xoj，并xtt，内xob，业xtc，汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，乜xpn，灭xmf，扎xqu，尘xfg，勺xpi，艾xtk，
+# 原为三码：气xomn，点xyrf，板xdhe，淮xeog，梨xhnd，贡xmbo，憩xhup，针xopj，压xmgi，炯xfbr，荣xtbd，恐xmnp，慰xsip，怂xoop，柒xepd，奥xhbk，弥xnof，亟xnem，伛xosk，殳xhne，熬xxqkf，
+# 原为四码：遗xylmo，脱xbcru，悦xpcru，玫xmgok，贱xboij，萝xtwln，毫xyrbu，观xebhu，嘉xgrtr，绒xvmij，换xqnbk，唤xrnbk，晾xayrf，掀xqhlo，贷xopbo，敌xhrok，扁xisbt，郑xtknl，滚xeycv，亏xmmvs，诣xivpa，捨xqomr，啥xromr，晖xabkq，洒xemcw，歉xtcno，遥xybou，萤xtbli，蔣xtvmi，
+# 原为五码：税xhdcr，瑶xmgbo，随xnlyk，顽xmumb，
+#
 #           通过按 Shift + Enter可以上屏转换后的编码
 
 patch:
