@@ -1,12 +1,26 @@
  
 # 常用重码字：
-# 原为一码：曰xa
-# 原为二码：已xsu，个xol，义xik，庆xxik，头xyk，达xxyk，午xoj，并xtt，内xob，业xtc，汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，扎xqu，尘xfg，勺xpi，艾xtk，旨xpa，仑xop，弘xni，乜xpn，芈xtq，芎xtn
-# 原为三码：气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，梨xhnd，贡xmbo，针xopj，压xmgi，荣xtbd，恐xmnp，慰xsip，怂xoop，奥xhbk，弥xnof，秉xhdl，憩xhup，炯xfbr，柒xepd，亟xnem，伛xosk，殳xhne
-# 原为四码：观xebhu，贪xoino，遗xylmo，换xqnbk，唤xrnbk，脱xbcru，悦xpcru，玫xmgok，贱xboij，萝xtwln，毫xyrbu，嘉xgrtr，绒xvmij，晾xayrf，晖xabkq，掀xqhlo，贷xopbo，敌xhrok，扁xisbt，郑xtknl，滚xeycv，亏xmmvs，诣xivpa，啥xromr，洒xemcw，歉xtcno，遥xybou，劫xgiks，邵xsrnl，萤xtbli，涩xesim，钩xoppi，蛊xlibt，蔣xtvmi，捨xqomr
+# 原为一码：1字
+  #  曰xa
+# 原为二码：30字
+  #  已xsu，个xol，义xik，庆xxik，头xyk，达xxyk，午xoj，并xtt，内xob，业xtc，
+  #  汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，
+  #  扎xqu，尘xfg，勺xpi，艾xtk，旨xpa，仑xop，杠xdm，弘xni，乜xpn，芈xtq，
+  #  
+# 原为三码：23字
+  #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，梨xhnd，贡xmbo，针xopj，压xmgi，荣xtbd，
+  #  迸xytt，恐xmnp，慰xsip，怂xoop，奥xhbk，佑xokr，秉xhdl，坠xnog，憩xhup，歼xmnhj，
+  #  炯xfbr，憨xnkp，亟xnem，
+# 原为四码：40字
+  #  观xebhu，贪xoino，遗xylmo，贷xopbo，敌xhrok，玫xmgok，贱xboij，绒xvmij，劫xgiks，萝xtwln，
+  #  毫xyrbu，嘉xgrtr，掀xqhlo，扁xisbt，郑xtknl，亏xmmvs，诣xivpa，歉xtcno，邵xsrnl，砍xmrno，
+  #  换xqnbk，唤xrnbk，脱xbcru，悦xpcru，晾xayrf，晖xabkq，遥xybou，摇xqbou，滚xeycv，啥xromr，
+  #  洒xemcw，萤xtbli，敝xfbok，涩xesim，钩xoppi，忾xpomn，蛊xlibt，攒xqhuo，噜xrnwa，俪xombb，
+  #  
 
 #
-#           通过按 Shift + Enter可以上屏转换后的编码
+# 常用符号：
+# 天气'/tq'，几何'/jh'，数字+圈'/szq'，字母+圈'/zmq'，漢字+圈'/hzq'，
 
 patch:
   
@@ -46,11 +60,11 @@ patch:
     '/wuli': [ °, °C, Ω, Φ, m², cm², km², m³ ]
 #常用符號/數學
     '/uuxt': [ ±, ×, ÷, ≤, ≥, ≠, ≈, ∞, ✓, x]
-#几何
+#常用符號/几何
     '/jihe': [ ◄, ►, ▲, ▼]
-#箭頭
+#常用符號/箭頭
     '/jmtz': [ ←, →, ↑, ↓, ↖, ↗, ↙, ↘]
-#商標
+#常用符號/商標
     '/uhbn': [ ®, ™]
     
 #Shift鍵切換中英文
