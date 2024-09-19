@@ -7,10 +7,10 @@
   #  汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，
   #  扎xqu，尘xfg，勺xpi，艾xtk，旨xpa，仑xop，夷xkn，杠xdm，弘xni，乜xpn，
   #  芈xtq，
-# 原为三码：24字
-  #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，奥xhbk，贡xmbo，针xopj，压xmgi，荣xtbd，
-  #  迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，梨xhnd，佑xokr，秉xhdl，坠xnog，歼xmnhj，
-  #  憩xhup，炯xfbr，憨xnkp，亟xnem，
+# 原为三码：25字
+  #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
+  #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，梨xhnd，佑xokr，秉xhdl，坠xnog，
+  #  歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
 # 原为四码：40字
   #  观xebhu，贪xoino，遗xylmo，贷xopbo，敌xhrok，玫xmgok，贱xboij，绒xvmij，劫xgiks，萝xtwln，
   #  毫xyrbu，嘉xgrtr，掀xqhlo，扁xisbt，郑xtknl，亏xmmvs，诣xivpa，歉xtcno，邵xsrnl，砍xmrno，
@@ -57,18 +57,20 @@ patch:
 #加入常用符號
   punctuator/symbols:
 #常用符號/物理
-    '/wuli': [ °, °C, Ω, Φ, m², cm², km², m³ ]
+    '/wuli': [ °, °C, Ω, Φ, m², cm², km², m³]
 #常用符號/數學
     '/uuxt': [ ±, ×, ÷, ≤, ≥, ≠, ≈, ∞, ✓, x]
-#常用符號/几何
-    '/jihe': [ ◄, ►, ▲, ▼]
+#常用符號/三角形
+    '/sjjn': [ ◄, ►, ▲, ▼]
 #常用符號/箭頭
     '/jmtz': [ ↑, ↓, ←, →, ↕, ↔, ↖, ↗, ↙, ↘]
 #常用符號/商標
     '/uhbn': [ ®, ™]
 #常用符號/逻辑学
-    '/loji': [ ¬, ∧, ∨, →, ↔, ⊥, ｜, ↓, ├, ∴, ∵, ⊃, ⇒, ⇔, ⊕, ⊻, ∀, ∃, ≡]
-    
+    '/loji': [ ¬, ∧, ∨, →, ↔, ⊥, ｜, ↓, ├, ╞, ∴, ∵, ⊃, ⇒, ⇔, ⊕, ⊻, ∀, ∃, ≡]
+#常用符號/集合
+    '/loji': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
+        
 #Shift鍵切換中英文
   ascii_composer/switch_key:
 #    Control_L: inline_ascii
