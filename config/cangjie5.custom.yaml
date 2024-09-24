@@ -11,12 +11,12 @@
   #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
   #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，梨xhnd，佑xokr，秉xhdl，坠xnog，
   #  歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
-# 原为四码：40字
+# 原为四码：41字
   #  观xebhu，贪xoino，遗xylmo，贷xopbo，敌xhrok，玫xmgok，贱xboij，绒xvmij，劫xgiks，萝xtwln，
   #  毫xyrbu，嘉xgrtr，掀xqhlo，扁xisbt，郑xtknl，亏xmmvs，诣xivpa，歉xtcno，邵xsrnl，砍xmrno，
   #  换xqnbk，唤xrnbk，脱xbcru，悦xpcru，晾xayrf，晖xabkq，遥xybou，摇xqbou，滚xeycv，啥xromr，
   #  洒xemcw，萤xtbli，敝xfbok，涩xesim，钩xoppi，忾xpomn，蛊xlibt，攒xqhuo，噜xrnwa，俪xombb，
-  #  
+  #  哐xrsmg，
 
 #
 # 常用符号：
@@ -30,6 +30,8 @@ patch:
   translator/enable_user_dict: false
 #碼表輸入法連打
   translator/enable_sentence: true
+#默認開啓逐鍵提示。若要只出精確匹配輸入碼的候選字，可關閉這一選項。
+  translator/enable_completion: false
 #關閉倉頡與拼音混打
   abc_segmentor/extra_tags: {}
 #顶字上屏
@@ -44,7 +46,10 @@ patch:
     - "xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|abcdefghijklmnopqrstuvwxyz|"
   translator/comment_format:
 #   字母在後，提示顯示爲字根
-    - xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符~|
+    - xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符~|abcdefghijklmnopqrstuvwxyz~|
+
+#配置输入当前日期/时间，需要搭配rime.lua文件    
+  "engine/translators/@next": lua_translator@date_translator
   
 #以下兩行爲去除朙月拼音依赖
   "reverse_lookup/dictionary": {}
@@ -71,12 +76,14 @@ patch:
 #常用符號/集合
     '/loji': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
         
-#Shift鍵切換中英文
+#Caps键切换中文与大写英文，Shift鍵切換中文与小写英文
+  ascii_composer/good_old_caps_lock: true
   ascii_composer/switch_key:
-#    Control_L: inline_ascii
-#   Control_R: inline_ascii
-    Shift_L: inline_ascii
-    Shift_R: inline_ascii
+    Caps_Lock: commit_code
+    Control_L: noop
+    Control_R: noop
+    Shift_L: commit_code
+    Shift_R: commit_code
      
 
 #標點符號顶字上屏
