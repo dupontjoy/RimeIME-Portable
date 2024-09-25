@@ -11,12 +11,6 @@
   #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
   #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，梨xhnd，佑xokr，秉xhdl，坠xnog，
   #  歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
-# 原为四码：41字
-  #  观xebhu，贪xoino，遗xylmo，贷xopbo，敌xhrok，玫xmgok，贱xboij，绒xvmij，劫xgiks，萝xtwln，
-  #  毫xyrbu，嘉xgrtr，掀xqhlo，扁xisbt，郑xtknl，亏xmmvs，诣xivpa，歉xtcno，邵xsrnl，砍xmrno，
-  #  换xqnbk，唤xrnbk，脱xbcru，悦xpcru，晾xayrf，晖xabkq，遥xybou，摇xqbou，滚xeycv，啥xromr，
-  #  洒xemcw，萤xtbli，敝xfbok，涩xesim，钩xoppi，忾xpomn，蛊xlibt，攒xqhuo，噜xrnwa，俪xombb，
-  #  哐xrsmg，
 
 #
 # 常用符号：
@@ -50,13 +44,43 @@ patch:
 
 #配置输入当前日期/时间，需要搭配rime.lua文件    
   "engine/translators/@next": lua_translator@date_translator
-  
-#以下兩行爲去除朙月拼音依赖
-  "reverse_lookup/dictionary": {}
-  "schema/dependencies": {}
 
-#以下兩行爲輸入Symbols修正，修正後按「/」才能調出符號
-  "punctuator/import_preset": symbols
+#反查
+  #引入拆字的方案
+  schema/dependencies:
+    - terra_pinyin
+  #增加拆字tag
+  engine/segmentors/+:
+    - affix_segmentor@cangjie5_reverse_lookup
+    - affix_segmentor@terra_pinyin_reverse_lookup
+  engine/translators/+:
+    - reverse_lookup_translator@cangjie5_reverse_lookup
+    - reverse_lookup_translator@terra_pinyin_reverse_lookup
+  #定义tag
+  cangjie5_reverse_lookup:
+    tag: cangjie5_lookup
+    dictionary: cangjie5
+    enable_user_dict: false
+    prefix: "Cj"
+    tips: 〔倉五〕
+  terra_pinyin_reverse_lookup:
+    tag: terra_pinyin_lookup
+    dictionary: terra_pinyin
+    enable_user_dict: false
+    prefix: "Tr"
+    tips: 〔Terra〕
+  reverse_lookup:
+    tags: [cangjie5_lookup, terra_pinyin_lookup]
+    overwrite_comment: true
+    dictionary: cangjie5
+  #反查映射
+  recognizer:
+    import_preset: default
+    patterns:
+      cangjie5_lookup: "Cj[a-z]*'?$"
+      terra_pinyin_lookup: "Tr[a-z]*'?$"
+  
+#輸入Symbols修正，修正後按「/」才能調出符號
   "recognizer/patterns/punct": "^/([a-z]+|[0-9])$"
 
 #加入常用符號
@@ -74,7 +98,7 @@ patch:
 #常用符號/逻辑学
     '/loji': [ ¬, ∧, ∨, →, ↔, ⊥, ｜, ↓, ├, ╞, ∴, ∵, ⊃, ⇒, ⇔, ⊕, ⊻, ∀, ∃, ≡]
 #常用符號/集合
-    '/loji': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
+    '/jihe': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
         
 #Caps键切换中文与大写英文，Shift鍵切換中文与小写英文
   ascii_composer/good_old_caps_lock: true
