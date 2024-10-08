@@ -7,10 +7,10 @@
   #  汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，
   #  扎xqu，尘xfg，勺xpi，艾xtk，旨xpa，仑xop，夷xkn，杠xdm，弘xni，乜xpn，
   #  芈xtq，
-# 原为三码：25字
+# 原为三码：26字
   #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
-  #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，梨xhnd，佑xokr，秉xhdl，坠xnog，
-  #  歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
+  #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，妒xvis，梨xhnd，佑xokr，秉xhdl，
+  #  坠xnog，歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
 
 #
 # 常用符号：
@@ -24,8 +24,6 @@ patch:
   translator/enable_user_dict: false
 #碼表輸入法連打
   translator/enable_sentence: true
-#默認開啓逐鍵提示。若要只出精確匹配輸入碼的候選字，可關閉這一選項。
-  translator/enable_completion: false
 #關閉倉頡與拼音混打
   abc_segmentor/extra_tags: {}
 #顶字上屏
