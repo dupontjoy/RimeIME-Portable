@@ -96,16 +96,7 @@ patch:
     '/loji': [ ¬, ∧, ∨, →, ↔, ⊥, ｜, ↓, ├, ╞, ∴, ∵, ⊃, ⇒, ⇔, ⊕, ⊻, ∀, ∃, ≡]
 #常用符號/集合
     '/jihe': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
-        
-#Caps键切换中文与大写英文，Shift鍵切換中文与小写英文
-  ascii_composer/good_old_caps_lock: true
-  ascii_composer/switch_key:
-    Caps_Lock: commit_code
-    Control_L: noop
-    Control_R: noop
-    Shift_L: commit_code
-    Shift_R: commit_code
-     
+          
 
 #標點符號顶字上屏
   key_binder/bindings:
