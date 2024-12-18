@@ -12,7 +12,7 @@
 # 一般排序，綜合考慮字頻及繁簡，部分常用簡化字可能排在傳統漢字前面。
 ---
 name: "cangjie5"
-version: "2024.08.24"
+version: "2024.10.20"
 sort: original
 use_preset_vocabulary: false
 columns:
@@ -37032,12 +37032,12 @@ encoder:
 𭚈	ikma
 𩑱	ikmbc
 𩓎	ikmbc
+𨠒	ikmcw
 𤨣	ikmg
 𠫿	ikmlk
 叁	ikmmm
 𰆮	ikmmu
 㢊	ikmr
-𨠒	ikmw
 𫷥	ikn
 𭙚	ikn
 為	iknf
@@ -126594,12 +126594,14 @@ encoder:
 ㇈	zsnv
 ㇊	zsnv
 ㇍	zsnv
+㇤	zsnv
 ㇏	zso
 ㇃	zsov
 ㇙	zsv
 ㇟	zsvl
 ㇜	zsvm
 ㇞	zsvn
+㇥	zsvn
 ㇉	zsvs
 ㇣	zsxxx
 　	zxaa

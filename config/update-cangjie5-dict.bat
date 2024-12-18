@@ -19,7 +19,7 @@ goto :eof
 :: scripts
 echo. downloading cangjie5
 ::%Download% -o "%cd%\cangjie5.dict.yaml" https://github.com/Jackchows/Cangjie5/raw/master/scripts/cangjie5.dict.yaml
-%Download% -o "%cd%\cangjie5.txt" https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
+%Download% -O https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
 
 
 :end
