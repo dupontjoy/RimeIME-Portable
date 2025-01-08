@@ -13,4 +13,6 @@ patch:
    mpv.exe:
     ascii_mode: true
   "style/font_face": "TH-Tshyn-P1"
+  "style/comment_font_face": "TH-Tshyn-P1"
+  "style/label_font_face": "TH-Tshyn-P1"
   "style/color_scheme": solarized_rock
