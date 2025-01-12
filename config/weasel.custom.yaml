@@ -1,6 +1,6 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.16.0
+  distribution_version: 0.16.3
   generator: "Weasel::UIStyleSettings"
   modified_time: "Fri May 24 09:43:22 2024"
   rime_version: 1.11.2
@@ -12,7 +12,8 @@ patch:
     ascii_mode: true
    mpv.exe:
     ascii_mode: true
-  "style/font_face": "TH-Tshyn-P1"
-  "style/comment_font_face": "TH-Tshyn-P1"
-  "style/label_font_face": "TH-Tshyn-P1"
+  "style/ascii_tip_follow_cursor": true
+  "style/font_face": "TH-Tshyn-P1, Jigmo2"
+  "style/comment_font_face": "TH-Tshyn-P1, Jigmo2"
+  "style/label_font_face": "TH-Tshyn-P1, Jigmo2"
   "style/color_scheme": solarized_rock
