@@ -98,7 +98,7 @@ patch:
     '/jihe': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
           
 
-#標點符號顶字上屏
+#標點符號顶字上屏（句号逗号默认为翻页，单独设置覆盖掉）
   key_binder/bindings:
     - { when: has_menu, accept: comma, send: comma } #逗号
     - { when: has_menu, accept: period, send: period } #句号
