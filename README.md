@@ -28,32 +28,6 @@ patch:
   "style/font_face": "TH-Tshyn-P1"
 ````
 
-#### 常用需特别记的字词编码
-```` 
-# 常用重码字：
-# 原为一码：1字
-  #  曰xa
-# 原为二码：31字
-  #  已xsu，个xol，义xik，庆xxik，头xyk，达xxyk，午xoj，并xtt，内xob，业xtc，
-  #  汉xee，欠xno，飞xxno，尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，
-  #  扎xqu，尘xfg，勺xpi，艾xtk，旨xpa，仑xop，夷xkn，杠xdm，弘xni，乜xpn，
-  #  芈xtq，
-# 原为三码：26字
-  #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
-  #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，妒xvis，梨xhnd，佑xokr，秉xhdl，
-  #  坠xnog，歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
-  
-# 常用的需要用分号参与编码的词组：
-  # 美好，世界，组合，比如，必是，总是，并不，这样，森林，已经，
-  # 熟悉，东方，东西，四周，左右，巨大，心灵，中华，空间，天空，
-  # 关系，工作，
-  # “不、人、火、一、二、三、四”开头的词
-
-#
-# 常用符号：
-# 天气'/tq'，几何'/jh'，数字+圈'/szq'，字母+圈'/zmq'，漢字+圈'/hzq'，
-````
-
 #### 倉頡輸入法相關書籍
 
 | | |
