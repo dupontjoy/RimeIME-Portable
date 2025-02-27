@@ -5,19 +5,10 @@
   #  已xsu，个xol，义xik，头xyk，午xoj，并xtt，内xob，业xtc，汉xee，欠xno，
   #  尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，艾xtk，扎xqu，尘xfg，
   #  勺xpi，旨xpa，仑xop，夷xkn，杠xdm，弘xni，乜xpn，芈xtq，
-# 原为三码：26字
+# 原为三码：27字
   #  气xomn，点xyrf，板xdhe，淮xeog，冗xbhn，呗xrbo，奥xhbk，贡xmbo，针xopj，压xmgi，
   #  荣xtbd，迸xytt，恐xmnp，娄xfdv，慰xsip，怂xoop，妒xvis，梨xhnd，佑xokr，秉xhdl，
-  #  坠xnog，歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，
-  
-# 常用的需要用分号参与编码的词组：
-  # 比如，必是，必要，必须，总是，并不，这样，已经，以下，以上，
-  # 熟悉，东方，东西，左右，巨大，中华，工作，才能，有关，方法，
-  # 关系，光明，失去，开心，明白，自然，泪水，出现，年轻，能力，
-  # 美好，好奇，世界，组合，空间，天空，心灵，感情，垃圾，记忆，
-  # 森林，热烈，伙伴，苦恼，来源，皮肤，丰富，凶手，替身，书签，
-  # 的确，认可，表面，
-  # “人、火、日、月、心、大、太、不、上、下、几、一、二、三、四”开头的词
+  #  坠xnog，歼xmnhj，憩xhup，炯xfbr，憨xnkp，亟xnem，戮xshi，
 
 #
 # 常用符号：
@@ -109,7 +100,6 @@ patch:
     - { when: has_menu, accept: comma, send: comma } #逗号
     - { when: has_menu, accept: period, send: period } #句号
     - { accept: "Shift+space", toggle: noop, when: always} #取消全半角切换
-  speller/alphabet: "abcdefghjiklmnopqrstuvwxyz;" #使分号参与字的编码。比如“美好”输入“tgk;vnd”，“组合”输入“vmbm;omr”
   
 #中文, 半角, 中文標點, 繁體漢字, 通用字集
   switches:
