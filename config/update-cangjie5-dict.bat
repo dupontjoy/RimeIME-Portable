@@ -1,14 +1,10 @@
-rem 2025.03.02
+:: 2025.03.02
 
 @echo off
 setlocal enabledelayedexpansion
 title 倉頡五代碼表智能更新器
 color 0a
 pushd %~dp0
-
-:: 配置区 ==============================
-set "target_line=日	a"        &rem 查找的目标行内容
-set "proxy_timeout=5"          &rem 镜像测速超时(秒)
 
 :: 下载工具配置
 set "Curl_Download=curl -LJ --ssl-no-revoke --progress-bar --create-dirs"
