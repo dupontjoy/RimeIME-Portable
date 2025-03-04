@@ -14,7 +14,7 @@ set "Curl_Download=curl -LJ --ssl-no-revoke --progress-bar --create-dirs"
 set "test_url=https://github.com/Jackchows/Cangjie5/raw/master/README.md"
 
 :: 定义镜像站点列表
-set "proxies=gh-proxy.com ghfast.top ghproxy.net"
+set "proxies=gh-proxy.com ghfast.top ghproxy.net github.moeyy.xyz"
 
 :: 初始化变量
 set "fastest_proxy="
@@ -57,7 +57,7 @@ exit /b
 
 :menu
 call :updating
-call :end
+call :deploy
 goto :eof
 
 :updating
@@ -131,3 +131,6 @@ powershell -Command "Get-Content Cangjie5.txt -Encoding UTF8 | Select-Object -Sk
 del header.tmp
 del Cangjie5.txt
 echo 处理完成，文件已保存为cangjie5.dict.yaml
+
+:deploy
+start "" "%cd%\..\weasel\WeaselDeployer.exe" /deploy
