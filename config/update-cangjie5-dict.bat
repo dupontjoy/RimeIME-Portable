@@ -14,7 +14,7 @@ set "Curl_Download=curl -LJ --ssl-no-revoke --progress-bar --create-dirs"
 set "test_url=https://github.com/Jackchows/Cangjie5/raw/master/README.md"
 
 :: 定义镜像站点列表
-set "proxies=gh-proxy.com ghfast.top ghproxy.net github.moeyy.xyz"
+set "proxies=gh-proxy.com ghproxy.net github.moeyy.xyz"
 
 :: 初始化变量
 set "fastest_proxy="
