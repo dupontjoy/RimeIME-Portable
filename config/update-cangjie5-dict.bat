@@ -61,8 +61,7 @@ call :deploy
 goto :eof
 
 :updating
-:: scripts
-echo. downloading Cangjie5.txt
+echo. [下载] %GH_PROXY%/https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
 %Curl_Download% -O %GH_PROXY%/https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
 
 :: 获取最后修改日期 ======================
