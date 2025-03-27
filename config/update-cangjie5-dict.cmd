@@ -1,7 +1,6 @@
 :: 2025.03.02
 
 @echo off
-setlocal enabledelayedexpansion
 title 倉頡五代碼表智能更新器
 color 0a
 pushd %~dp0
@@ -24,6 +23,7 @@ call :deploy
 goto :eof
 
 :updating
+setlocal
 echo. [下载] %GH_PROXY%/https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
 %Curl_Download% -O %GH_PROXY%/https://github.com/Jackchows/Cangjie5/raw/master/Cangjie5.txt
 
@@ -93,6 +93,7 @@ powershell -Command "Get-Content Cangjie5.txt -Encoding UTF8 | Select-Object -Sk
 del header.tmp
 del Cangjie5.txt
 echo 处理完成，文件已保存为cangjie5.dict.yaml
+endlocal
 
 :deploy
 start "" "%cd%\..\weasel\WeaselDeployer.exe" /deploy
