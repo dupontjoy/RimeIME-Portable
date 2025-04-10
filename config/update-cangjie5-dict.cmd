@@ -1,4 +1,4 @@
-:: 2025.03.02
+:: 2025.04.10
 
 @echo off
 title 倉頡五代碼表智能更新器
@@ -25,7 +25,7 @@ goto :eof
 :: 子程序
 ::=======================================
 :test_fastest_ghmirror
-CALL "%cd%\..\CingFox\Profiles\BackupProfiles\Modules\test_fastest_ghmirror.cmd"
+CALL "%cd%\..\..\..\Profiles\BackupProfiles\Modules\test_fastest_ghmirror.cmd"
 goto :eof
 
 :updating
