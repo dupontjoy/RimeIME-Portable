@@ -1,0 +1,15 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.1
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Wed Sep 25 08:34:38 2024"
+  rime_version: 1.11.2
+patch:
+  "key_binder/bindings/+":
+    __include: "key_bindings:/windows_compatible_mode_switch"
+  schema_list:
+    - {schema: cangjie5}
+    - {schema: terra_pinyin}
+# Ctrl+`调出设置菜单
+  switcher:
+    hotkeys: ["Control+grave", "Control+Shift+grave"]
