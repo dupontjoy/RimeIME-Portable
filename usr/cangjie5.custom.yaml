@@ -14,8 +14,11 @@
 # 常用符号：
 # 天气'/tq'，几何'/jh'，数字+圈'/szq'，字母+圈'/zmq'，漢字+圈'/hzq'，
 
+#数字后的", ."号默认为英文字符，按两次可以自動输出为中文字符
+
 patch:
-  
+#中文状态下输入 peizhi 后连续按2次 左shift 键，会上屏 peizhi，而不是 配置。这时仍然是中文状态。
+  ascii_composer/switch_key/Shift_L: commit_code
 #允許在光標位置獲取失敗時於窗口左上角繪製候選框（而不是桌面左上角）  
   style/layout/enhanced_position: true
 #字频调整
