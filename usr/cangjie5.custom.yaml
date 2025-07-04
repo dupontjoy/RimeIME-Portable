@@ -1,0 +1,118 @@
+# 常用重码字：
+# 原为一码：1字
+  #  曰xa
+# 原为二码：28字
+  #  已xsu，个xol，义xik，头xyk，午xoj，并xtt，内xob，业xtc，汉xee，欠xno，
+  #  尹xsk，杀xkd，苗xtw，叉xei，术xid，宋xjd，灭xmf，艾xtk，扎xqu，尘xfg，
+  #  勺xpi，旨xpa，仑xop，夷xkn，杠xdm，弘xni，乜xpn，芈xtq，
+
+#
+# 常用符号：
+# 天气'/tq'，几何'/jh'，数字+圈'/szq'，字母+圈'/zmq'，漢字+圈'/hzq'，
+
+#数字后的", ."号默认为英文字符，按两次可以自動输出为中文字符
+
+patch:
+
+#允許在光標位置獲取失敗時於窗口左上角繪製候選框（而不是桌面左上角）  
+  style/layout/enhanced_position: true
+#字频调整
+  translator/enable_user_dict: false
+#碼表輸入法連打
+  translator/enable_sentence: true
+#關閉倉頡與拼音混打
+  abc_segmentor/extra_tags: {}
+#顶字上屏
+  speller/auto_select: false
+  
+#調整字根展示方式
+  translator/preedit_format: 
+#顶部输出码。字母在前，提示顯示爲字根
+    - xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符~|abcdefghijklmnopqrstuvwxyz~|
+  translator/comment_format:
+#预选字后面的输出码。字母在前，提示顯示爲字根
+    - xlit|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符~|abcdefghijklmnopqrstuvwxyz~|
+
+#配置输入当前日期/时间，需要搭配rime.lua文件    
+  "engine/translators/@next": lua_translator@date_translator
+
+#反查
+  #引入拆字的方案
+  schema/dependencies:
+    - terra_pinyin
+  #增加拆字tag
+  engine/segmentors/+:
+    - affix_segmentor@cangjie5_reverse_lookup
+    - affix_segmentor@terra_pinyin_reverse_lookup
+  engine/translators/+:
+    - reverse_lookup_translator@cangjie5_reverse_lookup
+    - reverse_lookup_translator@terra_pinyin_reverse_lookup
+  #定义tag
+  cangjie5_reverse_lookup:
+    tag: cangjie5_lookup
+    dictionary: cangjie5
+    enable_user_dict: false
+    prefix: "Cj"
+    tips: 〔倉五〕
+  terra_pinyin_reverse_lookup:
+    tag: terra_pinyin_lookup
+    dictionary: terra_pinyin
+    enable_user_dict: false
+    prefix: "Tr"
+    tips: 〔Terra〕
+  reverse_lookup:
+    tags: [cangjie5_lookup, terra_pinyin_lookup]
+    overwrite_comment: true
+    dictionary: cangjie5
+  #反查映射
+  recognizer:
+    import_preset: default
+    patterns:
+      cangjie5_lookup: "Cj[a-z]*'?$"
+      terra_pinyin_lookup: "Tr[a-z]*'?$"
+  
+#輸入Symbols修正，修正後按「/」才能調出符號
+  "recognizer/patterns/punct": "^/([a-z]+|[0-9])$"
+
+#加入常用符號
+  punctuator/symbols:
+#常用符號/物理
+    '/wuli': [ °, °C, Ω, Φ, m², cm², km², m³]
+#常用符號/數學
+    '/uuxt': [ ±, ×, ÷, ≤, ≥, ≠, ≈, ∞, ✓, x]
+#常用符號/三角形
+    '/sjjn': [ ◄, ►, ▲, ▼]
+#常用符號/箭頭
+    '/jmtz': [ ↑, ↓, ←, →, ↕, ↔, ↖, ↗, ↙, ↘]
+#常用符號/商標
+    '/uhbn': [ ®, ™]
+#常用符號/逻辑学
+    '/loji': [ ¬, ∧, ∨, →, ↔, ⊥, ｜, ↓, ├, ╞, ∴, ∵, ⊃, ⇒, ⇔, ⊕, ⊻, ∀, ∃, ≡]
+#常用符號/集合
+    '/jihe': [ ∈, ∉, ⊆, ⊇, ⊂, ⊃, ∪, ∩, П, φ]
+          
+
+#標點符號顶字上屏（句号逗号默认为翻页，单独设置覆盖掉）
+#可以顶字上屏的标点：逗号，句号，冒号，双引号，单引号，感叹号，问号
+  key_binder/bindings:
+    - { when: has_menu, accept: comma, send: comma } #逗号
+    - { when: has_menu, accept: period, send: period } #句号
+    - { accept: "Shift+space", toggle: noop, when: always} #取消全半角切换
+  
+#中文, 半角, 中文標點, 繁體漢字, 通用字集
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      reset: 0
+      states: ["半角", "全角"]
+    - name: ascii_punct
+      reset: 0
+      states: ["，。", "，．"]
+    - name: simplification
+      reset: 0
+      states: ["漢字", "汉字"]
+    - name: extended_charset
+      reset: 1
+      states: ["通用", "增廣"]
