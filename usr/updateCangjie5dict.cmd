@@ -12,14 +12,14 @@ powershell -window minimized -command "Start-Process cmd -ArgumentList '/c %~0' 
 set "Curl_Download=curl -LJ --ssl-no-revoke --progress-bar --create-dirs"
 
 :: 版本文件
-set "version_file=versions_cangjie5_dict.txt"
+set "version_file=versions_Cangjie5dict.txt"
 
 ::=======================================
 :: 主流程
 ::=======================================
 :menu
 
-call :test_fastest_ghmirror
+call :testGHmirror
 call :check_version
 if "%need_update%"=="1" (
     call :update_cangjie5_dict
@@ -35,8 +35,8 @@ goto :eof
 ::=======================================
 :: 子程序
 ::=======================================
-:test_fastest_ghmirror
-CALL "%cd%\..\..\..\Profiles\BackupProfiles\Modules\test_fastest_ghmirror.cmd"
+:testGHmirror
+CALL "%cd%\..\..\..\Profiles\BackupProfiles\Modules\testGHmirror.cmd"
 goto :eof
 
 :check_version
