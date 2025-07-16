@@ -51,3 +51,7 @@ https://github.com/rime/home/wiki
 #### 最新码表
 
 https://github.com/Jackchows/Cangjie5
+
+#### Trime手机同文输入法
+
+aniu.trime.yaml为手机同文输入法主题：https://github.com/goodaniu/rime-aniu/blob/main/aniu.trime.yaml

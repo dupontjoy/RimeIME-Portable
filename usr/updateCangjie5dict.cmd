@@ -20,6 +20,7 @@ set "version_file=versions_Cangjie5dict.txt"
 :menu
 
 call :testGHmirror
+call :aniu.trime.yaml
 call :check_version
 if "%need_update%"=="1" (
     call :update_cangjie5_dict
@@ -143,6 +144,11 @@ goto :eof
 :deploy
 start "" "%cd%\..\weasel\WeaselDeployer.exe" /deploy
 echo 已重新布署
+goto :eof
+
+:aniu.trime.yaml
+echo 下载aniu.trime.yaml
+%Curl_Download% -O "%GH_PROXY%/https://github.com/goodaniu/rime-aniu/raw/refs/heads/main/aniu.trime.yaml"
 goto :eof
 
 :end
