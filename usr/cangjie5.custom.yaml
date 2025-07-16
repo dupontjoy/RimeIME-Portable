@@ -38,38 +38,7 @@ patch:
 
 #反查
   #引入拆字的方案
-  schema/dependencies:
-    - terra_pinyin
-  #增加拆字tag
-  engine/segmentors/+:
-    - affix_segmentor@cangjie5_reverse_lookup
-    - affix_segmentor@terra_pinyin_reverse_lookup
-  engine/translators/+:
-    - reverse_lookup_translator@cangjie5_reverse_lookup
-    - reverse_lookup_translator@terra_pinyin_reverse_lookup
-  #定义tag
-  cangjie5_reverse_lookup:
-    tag: cangjie5_lookup
-    dictionary: cangjie5
-    enable_user_dict: false
-    prefix: "Cj"
-    tips: 〔倉五〕
-  terra_pinyin_reverse_lookup:
-    tag: terra_pinyin_lookup
-    dictionary: terra_pinyin
-    enable_user_dict: false
-    prefix: "Tr"
-    tips: 〔Terra〕
-  reverse_lookup:
-    tags: [cangjie5_lookup, terra_pinyin_lookup]
-    overwrite_comment: true
-    dictionary: cangjie5
-  #反查映射
-  recognizer:
-    import_preset: default
-    patterns:
-      cangjie5_lookup: "Cj[a-z]*'?$"
-      terra_pinyin_lookup: "Tr[a-z]*'?$"
+  schema/dependencies: {}
   
 #輸入Symbols修正，修正後按「/」才能調出符號
   "recognizer/patterns/punct": "^/([a-z]+|[0-9])$"

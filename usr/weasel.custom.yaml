@@ -1,19 +1,16 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.16.3
+  distribution_version: 0.17.4
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Fri May 24 09:43:22 2024"
-  rime_version: 1.11.2
+  modified_time: "Wed Jul 16 09:00:53 2025"
+  rime_version: 1.13.1
 patch:
   app_options:
-   cmd.exe:
-    ascii_mode: true
-   conhost.exe:
-    ascii_mode: true
-   mpv.exe:
-    ascii_mode: true
+    cmd.exe: {ascii_mode: true}
+    conhost.exe: {ascii_mode: true}
+    mpv.exe: {ascii_mode: true}
   "style/ascii_tip_follow_cursor": true
-  "style/font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
-  "style/comment_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
-  "style/label_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
   "style/color_scheme": solarized_rock
+  "style/comment_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
+  "style/font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
+  "style/label_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"

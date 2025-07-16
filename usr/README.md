@@ -25,7 +25,9 @@ patch:
     ascii_mode: true
    mpv.exe:
     ascii_mode: true
-  "style/font_face": "TH-Tshyn-P1"
+  "style/font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
+  "style/comment_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
+  "style/label_font_face": "TH-Tshyn-P1,TH-Tshyn-P2"
 ````
 
 #### 倉頡輸入法相關書籍
