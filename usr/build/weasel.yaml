@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.13.1
   timestamps:
     weasel: 1749011883
-    weasel.custom: 1753145728
+    weasel.custom: 1753182476
 app_options:
   cmd.exe:
     ascii_mode: true
@@ -502,7 +502,7 @@ style:
   fullscreen: false
   horizontal: false
   hover_type: none
-  inline_preedit: false
+  inline_preedit: true
   label_font_face: "TH-Tshyn-P1, TH-Tshyn-P2"
   label_font_point: 14
   label_format: "%s."
