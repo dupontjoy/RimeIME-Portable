@@ -1,89 +1,3876 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-    <title>Page not found &middot; GitHub Pages</title>
-    <style type="text/css" media="screen">
-      body {
-        background-color: #f1f1f1;
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
+# SPDX-FileCopyrightText: 2015 - 2024 Rime community
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
 
-      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
+# Trime custom style settings
+# encoding: utf-8
 
-      a { color: #4183c4; text-decoration: none; }
-      a:hover { text-decoration: underline; }
+config_version: "3.3.3"
+name: 同文风改(aniu)          #方案名称
+author: 风花絮        #作者信息
 
-      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
-      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+##======定制个性化键盘======
+mystyle: 
+  funcs: #功能键盘
+    key_back_color: back_color
+    key_text_color: 0xff999999
+  #  key_text_size: 28
+  num_shu: #数字键盘数字键
+    key_text_size: 28
+    key_back_color: bkg
+    width: 24
+    # symbol_text_size: 12
+  num_fu: #数字键盘两边符号键
+    width: 14
+    key_back_color: back_color
+  edit_many: #编辑键盘
+    key_back_color: bkg
+  key_num: #主键盘数字行
+    key_back_color: bh1
+  key_abc1: #主键盘字母第一行
+    key_back_color: bh1
+    key_text_color: th1
+  key_abc2: #主键盘字母第二行
+    key_back_color: bh2
+    key_text_color: th2
+    width: 11.11
+  key_abc3: #主键盘字母第三行
+    key_back_color: bh3
+    key_text_color: th3
+    width: 11
+  key_abc4: #主键盘字母第四行
+    key_back_color: bh4
+    key_text_color: th4
 
-      ul { list-style: none; margin: 25px 0; padding: 0; }
-      li { display: table-cell; font-weight: bold; width: 1%; }
+##==================
 
-      .logo { display: inline-block; margin-top: 35px; }
-      .logo-img-2x { display: none; }
-      @media
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (   min--moz-device-pixel-ratio: 2),
-      only screen and (     -o-min-device-pixel-ratio: 2/1),
-      only screen and (        min-device-pixel-ratio: 2),
-      only screen and (                min-resolution: 192dpi),
-      only screen and (                min-resolution: 2dppx) {
-        .logo-img-1x { display: none; }
-        .logo-img-2x { display: inline-block; }
-      }
+#键盘高度
+height:
+  1: &jpgd1 30 #表情键盘
+  2: &jpgd2 24 #颜文字键盘1
+  3: &jpgd3 24 #颜文字键盘2
+  4: &jpgd4 48 #主键盘
+  5: &jpgd5 39.5 #符号键盘
+  6: &hgap 1 #键盘横缝大小
+  7: &sgap 1 #键盘竖缝大小
 
-      #suggestions {
-        margin-top: 35px;
-        color: #ccc;
-      }
-      #suggestions a {
-        color: #666666;
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 10px;
-      }
+#键盘高度
+round_corner:
+  1: &round1 12 #按键圆角半径
+  2: &round2 0 #候选窗口圆角
+  3: &round3 12 #回车键圆角
 
-    </style>
-  </head>
-  <body>
+#界面风格、功能开关
+style:
+  auto_caps: false #自動句首大寫:true|false|ascii
+  # show_comment: true #顯示提示區，看不出有什么区别
+  background_dim_amount: 0.5
+  root_background: keyboard_back_color # 整个键盘区+候选栏的背景图/色
+  candidate_font: han.ttf  #候选字体
+  candidate_padding: 10  #候选项内边距
+  candidate_spacing: 0.5  #候选间距
+  candidate_text_size: 17  #候选字号
+  candidate_use_cursor: true #高亮候选项
+  candidate_view_height: 28 #候选区高度
+  color_scheme: default #配色方案
+  comment_font: comment.ttf #编码提示字体
+  comment_height: 14 #编码提示区高度
+  comment_on_top: true #编码提示在上方或右侧
+  comment_text_size: 10 #编码提示字号
+  hanb_font: hanb.ttf #扩充字体
+  horizontal: true #水平模式
+  horizontal_gap: *hgap #键水平间距
+  layout:
+    border: 0 #候选窗口边框宽度
+    max_width: 360 #最大宽度，超过则自动换行
+    max_height: 300 #最大高度
+    min_width: 0 #最小宽度
+    min_height: 50 #最小高度
+    margin_x: 5 #水平邊距 NOTE: margin_{x, y, bottom} 实际为 padding
+    margin_y: 5 #竖直边距
+    line_spacing: 0 #候选词的行间距(px)
+    line_spacing_multiplier: 1.2 #候选词的行间距(倍数)
+    spacing: 1 #屏幕上下边缘或预编辑上下边缘和悬浮窗之间的距离
+    round_corner: *round2 #候选窗口圆角
+    alpha: 0xff #透明度(0-255)
+    background: background.png #颜色或者backgrounds目录下的图片文档名
+  key_font: symbol.ttf #键盘字体
+  key_height: *jpgd4 #键高
+  key_long_text_size: 16 #长标签字号
+  key_text_size: 24 #键字号
+  key_width: 10.0 #键宽，占屏幕宽的百分比
+  keyboards: [.default, letter, default, number, symbols, edit, func, move, bqrw1, bqrw2, bqrw3, bqrw4, bqrw5, bqrw6, bqqt1, bqqt2, bqqt3, bqqt4, bqqz1, bqqz2, bqqz3, bqqz4, bqqz5, bqqz6, bqpt1, bqpt2, bqhd1, bqhd2, bqhc1, bqhc2, bqhc3, bqlx1, bqlx2, bqlx3, bqlx4, bqlx5, bqlx6, bqkj1, bqkj2, bqkj3, bqkj4, bqkj5, bqfh1, bqfh2, bqfh3, bqfh4, kao_fond, kao_sad, kao_mad, kao_astonished, kao_impotent, kao_happy, numberb] #键盘配置
+  label_text_size: 22 #标签字号
+  label_font: label.ttf #编标签字体
+  latin_font: latin.ttf #西文本体
+  latin_locale: en_US #西文语言
+  locale: zh_CN #缺省语言 zh_TW,zh_CN,zh_HK,""
+  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_padding_land: 140 #横屏模式下，屏幕左右两侧与键盘的距离
+  preview_font: latin.ttf #按键提示字体
+  preview_height: 56 #按键提示高度
+  preview_offset: -32 #按键提示纵向偏移
+  preview_text_size: 40 #按键提示字号
+  proximity_correction: true #按键纠错
+  reset_ascii_mode: false #显示键盘时重置为中文状态
+  round_corner: *round1 #按键圆角半径
+  shadow_radius: 0.0 #按键阴影半径
+  speech_opencc_config: none #语音输入简繁转换
+  symbol_font: symbol.ttf #符号字体
+  symbol_text_size: 10 #符号字号
+  text_font: latin.ttf #编码字体
+  #text_height: 32 #编码区高度
+  text_size: 14 #编码区字号
+  vertical_correction: -5
+  vertical_gap: *sgap #键盘行距
+  enter_label_mode: 0  #是否使用App提供的ActionLabel内容作为Enter键的文本（由于多数App没有适配ActionLable，实际影响不大）。0不使用，1只使用actionlabel，2优先使用，3当其他方式没有获得label时才读取actionlabel
+  enter_labels:  # 定义Enter键的文本
+    go: 前往
+    done: 完成
+    next: 下个
+    pre:  上个
+    search: 搜索
+    send: 发送
+    default: ⏎   # 定义默认Enter键的文本
 
-    <div class="container">
+# 最好保留一项，防止其他主题使用 __include 时无法加载
+fallback_colors:
+  candidate_text_color: text_color
+# 以下值是程序内置的，你也可以在这里自定义，这会覆盖默认值
+#
+#  comment_text_color: candidate_text_color
+#  border_color: back_color
+#  candidate_separator_color: border_color
+#  hilited_text_color: text_color
+#  hilited_back_color: back_color
+#  hilited_candidate_text_color: hilited_text_color
+#  hilited_candidate_back_color: hilited_back_color
+#  hilited_candidate_button_color: hilited_candidate_back_color # 候选栏工具按钮高亮背景色
+#  hilited_label_color: hilited_candidate_text_color # 高亮候选序号 颜色
+#  hilited_comment_text_color: comment_text_color
+#  hilited_key_back_color: hilited_candidate_back_color
+#  hilited_key_text_color: hilited_candidate_text_color
+#  hilited_key_symbol_color: hilited_comment_text_color
+#  hilited_off_key_back_color: hilited_key_back_color
+#  hilited_on_key_back_color: hilited_key_back_color
+#  hilited_off_key_text_color: hilited_key_text_color
+#  hilited_on_key_text_color: hilited_key_text_color
+#  key_back_color: back_color
+#  key_border_color: border_color
+#  key_text_color: candidate_text_color
+#  key_symbol_color: comment_text_color
+#  label_color: candidate_text_color
+#  off_key_back_color: key_back_color
+#  off_key_text_color: key_text_color
+#  on_key_back_color: hilited_key_back_color
+#  on_key_text_color: hilited_key_text_color
+#  preview_back_color: key_back_color
+#  preview_text_color: key_text_color
+#  shadow_color: border_color
+#  root_background: back_color # 整个键盘区+候选栏的背景图/色
+#  candidate_background: back_color #候选栏的整体背景图/色
+#  keyboard_back_color: border_color #键盘区的背景图/色
+#  liquid_keyboard_background: keyboard_back_color # liquidKeyboard的背景图/色
+#  text_back_color: back_color #编码区背景，即悬浮窗背景
+#  long_text_back_color: key_back_color #长文本按键的背景(剪贴板）
 
-      <h1>404</h1>
-      <p><strong>File not found</strong></p>
+#颜色
+colors:
+  0: &color0 0xffc03f3c
+  1: &color1 0xff000000 
+  2: &color2 0xffffffff 
+  3: &color3 0xffe1e3e7 
+  4: &color4 0xffacb2c2 
+  5: &color5 0xff131313 
+  6: &color6 0xff3266a0 
+  7: &color7 0x00 
+  8: &color8 0xff838383 
+  9: &color9 0xff37474f 
+  10: &color10 0xffe8e8e8
+  
 
-      <p>
-        The site configured at this address does not
-        contain the requested file.
-      </p>
+#配色方案
+preset_color_schemes:
+  default0:
+    name: "标准配色！"  #方案名称
+    author: 风花絮 #作者信息
+    dark_scheme: steam
+    back_color: *color2 #候选区背景状态栏
+    candidate_separator_color: *color2 #候选分割背景
+    candidate_text_color: *color1 #候选文本
+    comment_text_color: *color3 #提示
+    hilited_back_color: *color2 #高亮编码背景
+    hilited_candidate_back_color: *color2 #高亮候选背景
+    hilited_candidate_text_color: *color6 #高亮候选文本
+    hilited_comment_text_color: *color1 #高亮提示
+    hilited_key_back_color: *color6 #高亮按键背景
+    hilited_key_symbol_color: *color2 #高亮按键符号
+    hilited_key_text_color: *color1 #高亮按键文本
+    hilited_off_key_back_color: *color2 #高亮按键关闭状态背景
+    hilited_off_key_text_color: *color1 #高亮按键关闭状态文本
+    hilited_text_color: *color1 #高亮编码
+    key_back_color: *color2 #按键背景
+    key_symbol_color: *color8 #按键符号
+    key_text_color: *color1 #按键文本
+    keyboard_back_color: *color3 #键盘背景
+    label_color: *color6 #标签
+    off_key_back_color: *color4  #按键关闭状态背景
+    off_key_text_color: *color8 #按键关闭状态文本
+    preview_back_color: *color4 #按键提示背景
+    preview_text_color: *color6 #按键提示文本
+    text_color: *color6 #编码
+    text_back_color: *color2 #编码区背景
+    bkg: *color2 #空格键背景色
+    tkg: *color1 #空格键文字颜色
+    benter: *color6 #回车键背景色
+    tenter: *color2 #回车键文字颜色
+    bgn: *color4 #功能键背景色
+    tgn: *color2 #功能键文字颜色
+    bbs: *color4 #退格键背景色
+    tbs: *color2 #退格键文字颜色
+    baoe: *color2 #aoeiu背景色
+    taoe: *color6 #aoeiu文字颜色
+    bh1: *color2 #第一行背景色
+    th1: *color1 #第一行文字颜色
+    bh2: *color2 #第二行背景色
+    th2: *color1 #第二行文字颜色
+    bh3: *color2 #第三行背景色
+    th3: *color1 #第三行文字颜色
+    bh4: *color2 #第四行背景色
+    th4: *color1 #第四行文字颜色
+    ksc4: *color8 #左下角两键符号颜色
+    c1: *color4 #Shift键背景
+    c2: *color4 #退格键背景
+    c3: *color4 #数字/主键盘背景
+    c4: *color4 #中英文切换键背景
+    c7: *color6 #回车键背景
 
-      <p>
-        If this is your site, make sure that the filename case matches the URL
-        as well as any file permissions.<br>
-        For root URLs (like <code>http://example.com/</code>) you must provide an
-        <code>index.html</code> file.
-      </p>
 
-      <p>
-        <a href="https://help.github.com/pages/">Read the full documentation</a>
-        for more information about using <strong>GitHub Pages</strong>.
-      </p>
+#--------配色开始----------------#
+  default:
+    name: "彩色定制"
+    author: "aniu"
+    back_color: 0xdadee1
+    baoe: 0xffffffff
+    bbs: 0xffacb2c2
+    benter: 0xff2D7895
+    bgn: 0xffacb2c2
+    bh1: *color10
+    bh2: *color10
+    bh3: *color10
+    bh4: *color10
+    bkg: *color10
+    candidate_separator_color: 0xffc9cdcf
+    candidate_text_color: 0xff5a676e
+    comment_text_color: 0xff7b868c
+    dark_scheme: steam
+    hilited_back_color: 0xf2de76
+    hilited_candidate_back_color: 0xf2de76
+    hilited_candidate_text_color: *color0
+    hilited_comment_text_color: *color0
+    hilited_key_back_color: 0xff3266a0
+    hilited_key_symbol_color: 0xffffffff
+    hilited_key_text_color: 0xff000000
+    hilited_off_key_back_color: 0xffb1b4bd
+    hilited_off_key_text_color: 0xff000000
+    hilited_text_color: 0xff000000
+    key_back_color: 0xffffffff
+    key_symbol_color: 0xff838383
+    key_text_color: *color9
+    keyboard_back_color: 0xfff0f0f0
+    # keyboard_background: 0xffC03F3C
+    label_color: 0xff3266a0
+    off_key_back_color: 0xffc8ccd0
+    off_key_text_color: 0xff838383
+    preview_back_color: *color10
+    preview_text_color: *color0
+    taoe: 0xff3266a0
+    tbs: *color9
+    tenter: 0xffffff
+    text_back_color: *color10
+    text_color: *color0
+    tgn: *color9
+    th1: *color9
+    th2: *color9
+    th3: *color9
+    th4: *color9
+    ksc4: *color9
+    tkg: *color9
+    c0: *color0 #胭脂红
+    c1: 0xff8FB191 #Shift键颜色
+    c2: 0xffB06665 #删除键颜色
+    c3: 0xffB69889 #数字/主键盘跳转键颜色
+    c4: 0xffD6BC67 #中英键颜色
+    c5: 0xffA1B763 #逗号键颜色
+    c6: 0xffB095B5 #句号键颜色
+    c7: 0xff006E5F #回车键颜色，翠绿
+    # c8: 0xffdadee1 #数字行背景颜色，未使用
+    # c9: 0xff0041A5 #孔雀蓝，未使用
 
-      <div id="suggestions">
-        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
-        <a href="https://twitter.com/githubstatus">@githubstatus</a>
-      </div>
+#--------配色结束----------------#
 
-      <a href="/" class="logo logo-img-1x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZCRDY3REIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZCRDY3RUIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdCQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjdDQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+SM9MCAAAA+5JREFUeNrEV11Ik1EY3s4+ddOp29Q5b0opCgKFsoKoi5Kg6CIhuwi6zLJLoYLopq4qsKKgi4i6CYIoU/q5iDAKs6syoS76IRWtyJ+p7cdt7sf1PGOD+e0c3dygAx/67ZzzPM95/877GYdHRg3ZjMXFxepQKNS6sLCwJxqNNuFpiMfjVs4ZjUa/pmmjeD6VlJS8NpvNT4QQ7mxwjSsJiEQim/1+/9lgMHgIr5ohuxG1WCw9Vqv1clFR0dCqBODElV6v90ogEDjGdYbVjXhpaendioqK07CIR7ZAqE49PT09BPL2PMgTByQGsYiZlQD4uMXtdr+JxWINhgINYhGT2MsKgMrm2dnZXgRXhaHAg5jEJodUAHxux4LudHJE9RdEdA+i3Juz7bGHe4mhE9FNrgwBCLirMFV9Okh5eflFh8PR5nK5nDabrR2BNJlKO0T35+Li4n4+/J+/JQCxhmu5h3uJoXNHPbmWZAHMshWB8l5/ipqammaAf0zPDDx1ONV3vurdidqwAQL+pEc8sLcAe1CCvQ3YHxIW8Pl85xSWNC1hADDIv0rIE/o4J0k3kww4xSlwIhcq3EFFOm7KN/hUGOQkt0CFa5WpNJlMvxBEz/IVQAxg/ZRZl9wiHA63yDYieM7DnLP5CiAGsC7I5sgtYKJGWe2A8seFqgFJrJjEPY1Cn3pJ8/9W1e5VWsFDTEmFrBcoDhZJEQkXuhICMyKpjhahqN21hRYATKfUOlDmkygrR4o4C0VOLGJKrOITKB4jijzdXygBKixyC5TDQdnk/Pz8qRw6oOWGlsTKGOQW6OH6FBWsyePxdOXLTgxiyebILZCjz+GLgMIKnXNzc49YMlcRdHXcSwxFVgTInQhC9G33UhNoJLuqq6t345p9y3eUy8OTk5PjAHuI9uo4b07FBaOhsu0A4Unc+T1TU1Nj3KsSSE5yJ65jqF2DDd8QqWYmAZrIM2VlZTdnZmb6AbpdV9V6ec9znf5Q7HjYumdRE0JOp3MjitO4SFa+cZz8Umqe3TCbSLvdfkR/kWDdNQl5InuTcysOcpFT35ZrbBxx4p3JAHlZVVW1D/634VRt+FvLBgK/v5LV9WS+10xMTEwtRw7XvqOL+e2Q8V3AYIOIAXQ26/heWVnZCVfcyKHg2CBgTpmPmjYM8l24GyaUHyaIh7XwfR9ErE8qHoDfn2LTNAVC0HX6MFcBIP8Bi+6F6cdW/DICkANRfx99fEYFQ7Nph5i/uQiA214gno7K+guhaiKg9gC62+M8eR7XsBsYJ4ilam60Fb7r7uAj8wFyuwM1oIOWgfmDy6RXEEQzJMPe23DXrVS7rtyD3Df8z/FPgAEAzWU5Ku59ZAUAAAAASUVORK5CYII=">
-      </a>
+liquid_keyboard:
+  # 目前只能直接写参数，不支持变量或者fallback机制。
+  # 缺少参数时，自动从style中加载参数。除非需要指定liquid_keyboard使用与主键盘不同的背景色、背景图，否则不应设置被注释掉的参数。
+  author: "tumuyan"
+  row: 6              #每屏最多显示多少行按键
+  row_land: 5         #横屏每屏最多显示多少行按键
+  key_height: 40      #按键高度
+  key_height_land: 40 #横屏模式按键高度
+  single_width: 60    #single类型的按键宽度
+  vertical_gap: 8     #纵向按键间隙
+  margin_x: 2       #左右按键间隙的1/2
+  ascii_mode: 1
+  fixed_key_bar: # 固定按键条
+    position: right  # 摆放位置（在滚动区域的……） top|bottom|left|right
+    keys: # 按键（显示名称为对应的label，不能放太多）
+      - liquid_keyboard_exit
+      - space1
+      - BackSpace1
+      - Return2
+      - Hide
+      - liquid_keyboard_tabs
+  keyboards: [emoji, math, ascii, cn, clipboard, symbol, collection, draft, symbollist, list, jiaobiao, history, markdown, zhibiao, ids, tabs, pinyin, script_symbols, jp, grease, rusa, korea, lation, yinbiao, unit, yanwenzi, combing, emoji_full, candidate]  #tab列表
+  tabs:
+    name: 更多
+    type: TABS
+  candidate:
+    name: 候选
+    type: CANDIDATE
+  history:
+    name: 常用
+    type: HISTORY
+  markdown:
+    name: "mark"
+    type: SYMBOL
+    keys: #骰子
+      - {click: '{表格}', label: 表格}
+      - {click: '{代码块}{Up}{Up}', label: 代码块}
+      - {click: '{链接}{Left}{Left}{Left}',label: 链接}
+      - {click: '{标注}',label: 标注}
+      - {click: '****{Left}{Left}',label: 加粗}
+      - {click: '{待办}',label: 待办}
+      
+      
+  emoji:
+    type: SINGLE
+    keys: "🙂😂🤣😆🙃😅🥺😎👀🙈🙉🙊☹😑😄🤐😨😱🌚🌝🤔❤💔🌹💣👌👍😣😥😮🙄😏😕😯😪😫😴😌🤑😉😋😎😍😘😚😛😜😝😒😓😔😲😷🤒😇🤓🤗🤕🙁😖😞😟😤😢😭😦😧😨😩😬😰😳😵😡😠☝✌🖕👎🙏🤘👏💪💋☘🍀🌸☕🍵🍺🍻🍦🍬🍚🍜🍲🍖🎂💤"
+  emoji_full:
+    type: SINGLE
+    name: 全emoji
+    keys: "😀😃😄😁😆😅🤣😂🙂🙃🫠😉😊😇🥰😍🤩😘😗☺😚😙🥲😋😛😜🤪😝🤑🤗🤭🫢🫣🤫🤔🫡🤐🤨😐😑😶🫥😏😒🙄😬🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵🤯🤠🥳🥸😎🤓🧐😕🫤😟🙁☹😮😯😲😳🥺🥹😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾🙈🙉🙊💌💘💝💖💗💓💞💕💟❣💔❤🧡💛💚💙💜🤎🖤🤍💋💯💢💥💫💦💨🕳💬🗨🗯💭💤👋🤚🖐✋🖖🫱🫲🫳🫴👌🤌🤏✌🤞🫰🤟🤘🤙👈👉👆🖕👇☝🫵👍👎✊👊🤛🤜👏🙌🫶👐🤲🤝🙏✍💅🤳💪🦾🦿🦵🦶👂🦻👃🧠🫀🫁🦷🦴👀👁👅👄🫦👶🧒👦👧🧑👱👨🧔👩🧓👴👵🙍🙎🙅🙆💁🙋🧏🙇🤦🤷👮🕵💂🥷👷🫅🤴👸👳👲🧕🤵👰🤰🫃🫄🤱👼🎅🤶🦸🦹🧙🧚🧛🧜🧝🧞🧟🧌💆💇🚶🧍🧎🏃💃🕺🕴👯🧖🧗🤺🏇⛷🏂🏌🏄🚣🏊⛹🏋🚴🚵🤸🤼🤽🤾🤹🧘🛀🛌👭👫👬💏💑👪🗣👤👥🫂👣🏻🏼🏽🏾🏿🦰🦱🦳🦲🐵🐒🦍🦧🐶🐕🦮🐩🐺🦊🦝🐱🐈🦁🐯🐅🐆🐴🐎🦄🦓🦌🦬🐮🐂🐃🐄🐷🐖🐗🐽🐏🐑🐐🐪🐫🦙🦒🐘🦣🦏🦛🐭🐁🐀🐹🐰🐇🐿🦫🦔🦇🐻🐨🐼🦥🦦🦨🦘🦡🐾🦃🐔🐓🐣🐤🐥🐦🐧🕊🦅🦆🦢🦉🦤🪶🦩🦚🦜🐸🐊🐢🦎🐍🐲🐉🦕🦖🐳🐋🐬🦭🐟🐠🐡🦈🐙🐚🪸🐌🦋🐛🐜🐝🪲🐞🦗🪳🕷🕸🦂🦟🪰🪱🦠💐🌸💮🪷🏵🌹🥀🌺🌻🌼🌷🌱🪴🌲🌳🌴🌵🌾🌿☘🍀🍁🍂🍃🪹🪺🍄🍇🍈🍉🍊🍋🍌🍍🥭🍎🍏🍐🍑🍒🍓🫐🥝🍅🫒🥥🥑🍆🥔🥕🌽🌶🫑🥒🥬🥦🧄🧅🥜🫘🌰🍞🥐🥖🫓🥨🥯🥞🧇🧀🍖🍗🥩🥓🍔🍟🍕🌭🥪🌮🌯🫔🥙🧆🥚🍳🥘🍲🫕🥣🥗🍿🧈🧂🥫🍱🍘🍙🍚🍛🍜🍝🍠🍢🍣🍤🍥🥮🍡🥟🥠🥡🦀🦞🦐🦑🦪🍦🍧🍨🍩🍪🎂🍰🧁🥧🍫🍬🍭🍮🍯🍼🥛☕🫖🍵🍶🍾🍷🍸🍹🍺🍻🥂🥃🫗🥤🧋🧃🧉🧊🥢🍽🍴🥄🔪🫙🏺🌍🌎🌏🌐🗺🗾🧭🏔⛰🌋🗻🏕🏖🏜🏝🏞🏟🏛🏗🧱🪨🪵🛖🏘🏚🏠🏡🏢🏣🏤🏥🏦🏨🏩🏪🏫🏬🏭🏯🏰💒🗼🗽⛪🕌🛕🕍⛩🕋⛲⛺🌁🌃🏙🌄🌅🌆🌇🌉♨🎠🛝🎡🎢💈🎪🚂🚃🚄🚅🚆🚇🚈🚉🚊🚝🚞🚋🚌🚍🚎🚐🚑🚒🚓🚔🚕🚖🚗🚘🚙🛻🚚🚛🚜🏎🏍🛵🦽🦼🛺🚲🛴🛹🛼🚏🛣🛤🛢⛽🛞🚨🚥🚦🛑🚧⚓🛟⛵🛶🚤🛳⛴🛥🚢✈🛩🛫🛬🪂💺🚁🚟🚠🚡🛰🚀🛸🛎🧳⌛⏳⌚⏰⏱⏲🕰🕛🕧🕐🕜🕑🕝🕒🕞🕓🕟🕔🕠🕕🕡🕖🕢🕗🕣🕘🕤🕙🕥🕚🕦🌑🌒🌓🌔🌕🌖🌗🌘🌙🌚🌛🌜🌡☀🌝🌞🪐⭐🌟🌠🌌☁⛅⛈🌤🌥🌦🌧🌨🌩🌪🌫🌬🌀🌈🌂☂☔⛱⚡❄☃⛄☄🔥💧🌊🎃🎄🎆🎇🧨✨🎈🎉🎊🎋🎍🎎🎏🎐🎑🧧🎀🎁🎗🎟🎫🎖🏆🏅🥇🥈🥉⚽⚾🥎🏀🏐🏈🏉🎾🥏🎳🏏🏑🏒🥍🏓🏸🥊🥋🥅⛳⛸🎣🤿🎽🎿🛷🥌🎯🪀🪁🎱🔮🪄🎮🕹🎰🎲🧩🧸🪅🪩🪆♠♥♦♣♟🃏🀄🎴🔫🎭🖼🎨🧵🪡🧶🪢👓🕶🥽🥼🦺👔👕👖🧣🧤🧥🧦👗👘🥻🩱🩲🩳👙👚👛👜👝🛍🎒🩴👞👟🥾🥿👠👡🩰👢👑👒🎩🎓🧢🪖⛑📿💄💍💎🔇🔈🔉🔊📢📣📯🔔🔕🎼🎵🎶🎙🎚🎛🎤🎧📻🎷🪗🎸🎹🎺🎻🪕🥁🪘📱📲☎📞📟📠🔋🪫🔌💻🖥🖨⌨🖱🖲💽💾💿📀🧮🎥🎞📽🎬📺📷📸📹📼🔍🔎🕯💡🔦🏮🪔📔📕📖📗📘📙📚📓📒📃📜📄📰🗞📑🔖🏷💰🪙💴💵💶💷💸💳🧾💹✉📧📨📩📤📥📦📫📪📬📭📮🗳✏✒🖋🖊🖌🖍📝💼📁📂🗂📅📆🗒🗓📇📈📉📊📋📌📍📎🖇📏📐✂🗃🗄🗑🔒🔓🔏🔐🔑🗝💣🔨🪓⛏⚒🛠🗡⚔🪃🏹🛡🪚🔧🪛🔩⚙🗜⚖🦯🔗⛓🪝🧰🧲🪜⚗🧪🧫🧬🔬🔭📡💉🩸💊🩹🩼🩺🩻🚪🛗🪞🪟🛏🛋🪑🚽🪠🚿🛁🪤🪒🧴🧷🧹🧺🧻🪣🧼🫧🪥🧽🧯🛒🧿🪬🚬⚰🪦⚱🗿🪧🪪🏧🚮🚰♿🚹🚺🚻🚼🚾🛂🛃🛄🛅⚠🚸⛔🚫🚳🚭🚯🚱🚷📵🔞☢☣⬆↗➡↘⬇↙⬅↖↕↔↩↪⤴⤵🔃🔄🔙🔚🔛🔜🔝🛐⚛🕉✡☸☯✝☦☪☮🕎🔯♈♉♊♋♌♍♎♏♐♑♒♓⛎🔀🔁🔂▶⏩⏭⏯◀⏪⏮🔼⏫🔽⏬⏸⏹⏺⏏🎦🔅🔆📶📳📴♀♂⚧✖➕➖➗🟰♾‼⁉❓❔❕❗〰💱💲⚕♻⚜🔱📛🔰⭕✅☑✔❌❎➰➿〽✳✴❇©®™🔟🔠🔡🔢🔣🔤🅰🆎🅱🆑🆒🆓ℹ🆔Ⓜ🆕🆖🅾🆗🅿🆘🆙🆚🈁🈂🈷🈶🈯🉐🈹🈚🈲🉑🈸🈴🈳㊗㊙🈺🈵🔴🟠🟡🟢🔵🟣🟤⚫⚪🟥🟧🟨🟩🟦🟪🟫⬛⬜◼◻◾◽▪▫🔶🔷🔸🔹🔺🔻💠🔘🔳🔲🏁🚩🎌🏴🏳"
+  clipboard:
+    type: CLIPBOARD
+    name: 剪贴
+  collection:
+    type: COLLECTION
+    name: 收藏
+  draft:
+    type: DRAFT
+    name: 草稿
+  math:   #tab名称
+    type: SINGLE
+    name: 数学
+    keys: "≈＝≠≌<>≤≥≡()[]{}-+±×*/÷√²³i&∥%‰‱°′″∫∮∯∬∭∰∞∑∧∏∈∵∴⊥∝∨∪•〒∝∽∈∩∧⊙⌒∥∟∣∂∆∞≌∉∪∨⊕⊿⊥∠∫∬∭"  #tab中的按键列表
+  cn:
+    type: SINGLE
+    name: 中文
+    keys:  #keys列表可以使用多种格式混合书写。
+      - ，
+      - 。
+      - ？
+      - ！
+      - ：
+      - 、
+      - “
+      - ”
+      - ‘
+      - ···
+      - ……
+      - { click: "-" }
+      - { click: "——"}
+      - { click: "" } # 内容为空可以强制令键盘从此处新起一行
+      - （
+      - ）
+      - 【
+      - 】
+      - 《
+      - 》
+      - ［
+      - ］
+      - ｛
+      - ｝
+      - 「
+      - 」
+      - 『
+      - 』
+      - ～
+  symbol:
+    name: 特殊
+    type: SINGLE
+    keys: "△▽○◇□☆▲▼●◆■★▷◁▶◀♻♲†⚝✡⚹✦✸✹￼�×⌫☑☒✅❎✔✘✓✗☀☼☽☾◑◐㏂㏘☭♀♂☹☻☠☜☝☞☚☟☛▪•‥…∷※♩♪♫♬§°♭♯♮‖¶№◎¤۞℗®©卍卐℡™㏇Φ⇦⇧⇨⇩⇪↖↑↗←↔→↙↓↘⇄⇅⇆⇤↩⇥▸◂▴▾◤◥◣◢㊤㊧㊥㊨㊦❏❐◲〼▢▣↶✁↷✍⏍ϟ📝✎✆☱☰☴⚿⛮⚙☲☯☵⛶☩☐☳☷☶💬🗨⟲ღ✈☂🎤🌐🔍❀✣⌘⚯☑✂❐📋"
+  unit:
+    name: 单位
+    type: SINGLE
+    keys: "℃¥$€฿￡㎡m³℉￥£￠₠¹²³⁴⁵ⁿ⁶⁷⁸⁹⁰ˣ⁺⁻⁼⁽⁾½⅓¼⅔¾₁₂₃₄₅ₙ₆₇₈₉₀ₓ₊₋₌₍₎℅"
+  list:
+    name: 列表
+    type: SINGLE
+    keys: "①②③④⑤⑥⑦⑧⑨⑩⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩➊➋➌➍➎➏➐➑➒➓㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ"
+  pinyin:
+    name: 拼音
+    type: SINGLE
+    keys: "āáǎàōóēéěèǒòīíǐìūúǖǘǚǜǔùêüńňㄚㄛㄜㄧㄨㄩㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ"
+  script_symbols:
+    name: 𝒶𝒜
+    type: SINGLE
+    keys: "𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵"
+  grease:
+    type: SINGLE
+    name: 希腊
+    keys: "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω"
+  rusa:
+    name: 俄语
+    type: SINGLE
+    keys: "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+  lation:
+    name: 拉丁
+    type: SINGLE
+    keys: "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞŠŸŒàáâãäåæçèéêëìíîïðñòóõôöøùúûüýþšÿœ"
+  korea:
+    type: SINGLE
+    name: "韩文"
+    keys: "dㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅘㅙㅚㅝㅞㅟㅢㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅚㅆㅉ㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐㈑㈒㈓㈔㈕㈖㈗㈘㈙㈚㈛"
+  yinbiao:
+    type: SINGLE
+    name: "音标"
+    keys: ["a:", "ɔ:", "ɜː", "i:", "u:", "ʌ", "ɒ", "ə", "ɪ", "ʊ", "e", "æ", "eɪ", "aɪ", "ɔɪ", "ɪə", "eə", "ʊə", "əʊ", "aʊ", "p", "t", "k", "f", "θ", "s", "b", "d", "g", "v", "ð", "z", "ʃ", "h", "ts", "tʃ", "j", "tr", "ʒ", "r", "dz", "dʒ", "dr", "w", "m", "n", "ŋ", "l"]
+  yanwenzi:
+    type: VAR_LENGTH
+    name: "颜文字"
+    keys: ["⎛⎝≥⏝⏝≤⎠⎞", "^_^", "^ω^", "^o^", "~\\(≧▽≦)/~", "*^_^*", "↖(^ω^)↗", "(^o^)／", "(=^▽^=)", "=^_^=", "(*^ω^*)", "٩(๑^o^๑)۶", "o(￣▽￣)o", "Y(^_^)Y", "٩( 'ω' )و", "╰(*´︶`*)╯", "*罒▽罒*", "ヾ ^_^♪", "=￣ω￣=", "︿(￣︶￣)︿", "(´▽｀)ノ♪", "乁( ˙ ω˙乁)", "✧*｡٩(ˊωˋ*)و✧*｡", "～(￣▽￣～)(～￣▽￣)～", "QwQ", "(●—●)", "(๑• . •๑)", "ヾ(≧O≦)〃嗷~", "罒ω罒", "(｡ì _ í｡)", "(๑•ี_เ•ี๑)", "ㄟ(≧◇≦)ㄏ", "(*/ω＼*)", "●▽●", "٩(๑òωó๑)۶", "✺◟(∗❛ัᴗ❛ั∗)◞✺", "( σ'ω')σ", "♡＾▽＾♡", "(๑•̀ㅂ•́)و✧", "(ง •̀_•́)ง", "(｡･ω･｡)ﾉ♡", "(☆_☆)", "(๑°3°๑)", "_(•̀ω•́ 」∠)_", "♪～(´ε｀　)", "～(^з^)-☆", "(´∀｀)♡", "ლ(´ڡ`ლ)", "(＞﹏＜)", "T_T", "⊙︿⊙", "〒▽〒", "⊙﹏⊙", "π_π", "(｡•́︿•̀｡)", "(ToT)/~~~", "╯﹏╰", "ಥ_ಥ", "(╥╯^╰╥)", "(〃′o`)", "●﹏●", "( •̥́ ˍ •̀ू )", "(つд⊂)", "心塞(´-ωก`)", "(╥﹏╥)", "┭┮﹏┭┮", "（；´д｀）ゞ", "(´;︵;`)", "(。﹏。)", "┗( T﹏T )┛", "QAQ", "ヘ(_ _ヘ)", "╰（‵□′）╯", "(*￣︿￣)", ">o<", "(-`ェ´-怒)", "ヽ(‘⌒´メ)ノ", "(*｀Ω´*)v", "(｡•ˇ‸ˇ•｡)", "(怒｀Д´怒)", "٩(๑`^´๑)۶", "(;｀O´)o", "╰_╯", "(#｀皿´)<怒怒怒!!!", "<(｀^´)>", "（｀Δ´）！", "ψ(｀∇´)ψ", "(；′⌒`)", "s(・｀ヘ´・;)ゞ", "(▼皿▼#)", "￣へ￣", "←_←", "（╯‵□′）╯︵┴─┴", "（▼へ▼メ）", "☄ฺ(◣д◢)☄ฺ", "→_→", "⊙_⊙", "d(ŐдŐ๑)", "Σ( ° △ °|||)︴", "(((φ(◎ロ◎;)φ)))", "⊙▽⊙", "(๑ŐдŐ)b", "╭(°A°`)╮", "(๑òᆺó๑)", "⊙ω⊙", "Σ(っ °Д °;)っ", " (ﾟДﾟ≡ﾟдﾟ)!?", "( *・ω・)✄╰ひ╯", "(⊙x⊙;)", "┌(。Д。)┐", "(°ー°〃)", "︽⊙_⊙︽", "!!!∑(°Д°ノ)ノ", "(๑ŐдŐ)b☆d(ŐдŐ๑)", "Σ⊙▃⊙川", "ヽ(*。>Д<)o゜", "━((*′д｀)爻(′д｀*))━!!!!", "=_=", "╮(╯_╰)╭", "（︶︿︶）", "_(:з」∠)_", "@_@", "╮(╯▽╰)╭", "(＠￣ー￣＠)", "_(:3」∠❀)_", "눈_눈", "╭(╯ε╰)╮", "(ー_ー)!!", "_(:D)∠)_", "o_O", "╭(╯^╰)╮", "(；一_一)", "´_>`", "-_-#", "┑(￣Д ￣)┍", "≡￣﹏￣≡", "○|￣|_", "-_-||", "ㄟ( ▔, ▔ )ㄏ", "( ＿ ＿)ノ｜壁", "▄█▀█●"]
+  combing:
+    type: SINGLE
+    name: "组合" #combing character
+    keys: ["⃢", "꯭", "̣", "̲"  ]
+  ascii:
+    type: SINGLE
+    name: 英文
+    keys: ",.?!:;/\\|*-+=`'\"^~@#()[]{}<>_%$&·nt"
+  ids:
+    type: SINGLE
+    name: IDS
+    keys: "⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↔"
+  jp:
+    type: SINGLE
+    name: 假名
+    keys: "あいうえおかがきぎくぐけげこごさざしじすずせぜそぞただちぢつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろわをんアィイウェエオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロワヲン"
+  symbollist:
+    type: SYMBOL
+    name: 符号表
+    keys: [ 符号: '/fh', 电脑: '/dn', 象棋: '/xq', 麻将: '/mj', 骰子: '/sz', 扑克: '/pk', 天气: '/tq', 音乐: '/yy', 八卦: '/bg', 易经: '/lssg', 天体: '/tt',  星座: '/xz',  星号: '/xh',  方块: '/fk',  几何: '/jh',  箭头: '/jt',  数学: '/sx',  上标: '/sb',  下标: '/xb',  单位: '/dw',  货币: '/hb',  拼音: '/py',  注音: '/zy',  假名: '/jm',  片假: '/pjm',  韩文: '/hw',  希腊: '/xl',  希大: '/xld', 罗马:   '/lm',  罗大:   '/lmd', 俄语:   '/ey',  俄大:   '/eyd', 表情:  '/bq',  一: '/1',  二: '/2',  三: '/3',  四: '/4',  五: '/5',  六: '/6',  七: '/7',  八: '/8',  九: '/9',  零: '/0',  十: '/10',  分数: '/fs',  标点: '/bd',  偏旁: '/pp',  竖标:  '/bdz'  ]
+  jiaobiao:
+    type: SINGLE
+    name: 角标
+    keys: "⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻᴬᴮᴰᴱᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᴿᵀᵁᵂⱽ⁺⁻⁼⁽⁾₊₋₌₍₎ₐₔₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵥₓ᙮ᵩᵦ˪៳៷ᵨ៴ᵤᵪᵧᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
+  zhibiao:
+    keys: "─━│┃╌╍╎╏┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╪╫╬═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╳╔╗╝╚╬═╓╩┠┨┯┷┏┓┗┛┳⊥﹃﹄┌╮╭╯╰"
+    name: "制表"
+    type: SINGLE
 
-      <a href="/" class="logo logo-img-2x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQUM1QkUxRUI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQUM1QkUxRkI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdGQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjgwQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+hfPRaQAAB6lJREFUeNrsW2mME2UYbodtt+2222u35QheoCCYGBQligIJgkZJNPzgigoaTEj8AdFEMfADfyABkgWiiWcieK4S+QOiHAYUj2hMNKgYlEujpNttu9vttbvdw+chU1K6M535pt3ubHCSyezR+b73eb73+t7vrfXsufOW4bz6+vom9/b23ovnNNw34b5xYGAgODg46Mbt4mesVmsWd1qSpHhdXd2fuP/Afcput5/A88xwymcdBgLqenp6FuRyuWV4zu/v759QyWBjxoz5t76+/gun09mK5xFyakoCAPSaTCazNpvNPoYVbh6O1YKGRF0u13sNDQ27QMzfpiAAKj0lnU6/gBVfAZW2WWpwwVzy0IgP3G73FpjI6REhAGA9qVRqA1b9mVoBVyIC2tDi8Xg24+dUzQiAbS/s7Ox8G2o/3mKCC+Zw0efzPQEfcVjYrARX3dbV1bUtHo8fMgt42f+Mp0yUTVQbdWsAHVsikdiHkHaPxcQXQufXgUBgMRxme9U0AAxfH4vFvjM7eF6UkbJS5qoQwEQGA57Ac5JllFyUVZZ5ckUEgMVxsK2jlSYzI+QXJsiyjzNEAJyJAzb/KQa41jJKL8pODMQiTEAymXw5n8/P0IjD3bh7Rgog59aanxiIRTVvV/oj0tnHca/WMrVwODwB3raTGxzkBg/gnZVapFV62Wy2n5AO70HM/5wbJ0QnXyQSaVPDIuNZzY0V3ntHMwxiwHA0Gj2Np7ecIBDgaDAYXKCQJM1DhrgJ3nhulcPbl8j4NmHe46X/g60fwbz3aewjkqFQaAqebWU1AOqyQwt8Id6qEHMc97zu7u7FGGsn7HAiVuosVw7P35C1nccdgSCxop1dHeZswmfHMnxBo6ZTk+jN8dl/vF7vWofDsa+MLN9oEUBMxOb3+1eoEsBVw6Zmua49r8YmhAKDiEPcMwBsxMiqQ+ixzPFxZyqRpXARG/YOr1ObFJ0gUskXBbamcR1OKmMUvDxHRAu8/LmY3jFLMUpFqz9HxG65smYJdyKyECOxDiEAe/p1gjF2oonivZAsxVgl2daa4EQWCW6J55qFAFFZiJWYLxNQy2qOSUzGRsyXCUDIeliwAHEO4WSlWQBRFoZakXcKmCXmyXAKs0Ve9vl8q42WoIYpJU4hV3hKcNs8m9gl7p/xQ73eF5kB4j5mNrWmTJRNwAzqiV1CxjVTZCIkEq+Z1bZFZSN2CenmVAFVy4Plz8xKAGWjjAKFk6lCBMDR/MJjLLMSQNm43xAiQKTaA+9/wewhDjL+JVI1kkTSSOTcKbMTwPqESAot6dn6Fr1gHwVJju6IRuyiByPuUUBAg5DGkAgBmxlvdgIEK9gDkohdY/BJo4CAG0R8miRSsGABkgVQs4KXu098IgUXSSRsFAoKZiVAVDY2WUiiPTjYRi41KwGisrGsLtlsth8Fiwnz2fBkQvWfRtlE3iF2yW63/yCacXZ1dW02GwGyTFaRd4idJnCKHRaCxYRHoG5LTKT6SyiToP1fJHbmAYPYRR0UnZQtMnA6s0zg+GZBlt0Gdo7EPHgpE3Q6nZ8YyLhc8Xj8MJh/aKTAY+5FPAKHLE7RdwuYJZmNwzyCMkBCYyKROJBMJl9B/PXXCjjmCmDOVzH3fiPpObEWGqoKe4EBl8v1hlqsdLvd23mkxHM9pc9kMpmno9HoeTii7ewbHEZPPx1ztLS1tV3AnGuMjiNjvbQFuHw6zDo5By7dTPAQNBgMLrRarTkSls1mnwT7uwp9virx9QzbW/HuV/j5d/b+6jniKlllP8lkeONJDk+dq9GsQTnC4fB1heO0K47Hwe7WdDr9nAKgXwOBwHI+C45Htj1d6sd429TUNEcmUdc+PRaLHcvn87dXW4ugzdsaGxufL94NFv9zi1J7GVbhlvb2dnaJ3SVrxfc+n2+NTsZ7/H7/Mr3g5XdSIHyJSH1PZ+7fToyl2+ErqilgZ4NaLYB9goVGaHjR93Hv1ZrU4XDsFT20kH3PObzbWk0CgG1jacVIUnAQb9F+VexyLMzkpcLv0IJV7AHQIOCAUYHx7v5qgScmYHtTqSAyZLEJTK22Bie4iq3xsqpm4SAf9Hq9a2DnJ4uLK3SEULcdRvp3i3zHySqpficxEdsQc1NrlYXXvR+O7qASSezXB+h1SuUomgg9LL8BUoV4749EIolKh+EiqWmqVEZlDgHks2pxHw7xTqUQw9J5NcAXOK10AGIoZ6Zli6JY6Z1Q461KoZ4NiKLHarW+KDsxlDUPHZ5zPQZqUVDPJsTqb5n9malbpAh8C2XXDLl62+WZIDFRUlNVOiwencnNU3aQEkL+cDMSoLvZo2fQB7AJssNAuFuvorlDVVkkg2I87+jo2K2QAVphDrfyViK5VqtO34OkaxXCp+7drdDBCAdubm6eidX+2WwqT5komwh4YQLk+H4aE93h8Xg2gvHekQZOGSgLZTLyDTLJ4Lx9/KZWKBSainT4Iy3FqQBfnUZR42PKQFksBr9QKVXCPusD3OiA/RkQ5kP8qV/Jl1WywAp/6+dcmPM2zL1UrUahe4JqfnWWKXIul3uUbfP8njAFLW1OFr3gdFtZ72cNH+PtQT7/brW+NXqJAHh0y9V8/U/A1U7AfwIMAD7mS3pCbuWJAAAAAElFTkSuQmCC">
-      </a>
-    </div>
-  </body>
-</html>
+#键盘布局
+preset_keyboards:
+  default:
+    author: "aniu"
+    name: 26键默认布局
+    width: 10
+  #  height: 48
+    ascii_mode: 0
+    label_transform: uppercase
+    keys: [
+    # 数字行
+      {click: 1, long_click: 1, swipe_up: '~', label_symbol: '~',__include: mystyle/key_num},
+      {click: 2, long_click: 2, swipe_up: "@", label_symbol: '@', __include: mystyle/key_num},
+      {click: 3, long_click: 3, swipe_up: "#",  label_symbol: '#',__include: mystyle/key_num},
+      {click: 4, long_click: 4, swipe_up: "$", label_symbol: '$',__include: mystyle/key_num},
+      {click: 5, long_click: 5, swipe_up: "%", label_symbol: '%',__include: mystyle/key_num},
+      {click: 6, long_click: 6, swipe_up: "^", label_symbol: '^',__include: mystyle/key_num},
+      {click: 7, long_click: 7, swipe_up: "&", label_symbol: '&',__include: mystyle/key_num},
+      {click: 8, long_click: 8, swipe_up: "*", label_symbol: '*',__include: mystyle/key_num},
+      {click: 9, long_click: 9, swipe_up: '\', label_symbol: '\',__include: mystyle/key_num},
+      {click: 0, long_click: 0, swipe_up: fanxiegang, swipe_down: /, label_symbol: '/',__include: mystyle/key_num},
+    # 第一行
+      {click: q, long_click: Q, label_symbol: '·',swipe_up: '·',__include: mystyle/key_abc1},
+      {click: w, long_click: W, label_symbol: '+', swipe_up: '+',__include: mystyle/key_abc1},
+      {click: e, long_click: E, label_symbol: '=', swipe_up: '=',__include: mystyle/key_abc1},
+      { click: r,
+          long_click: R, label_symbol: '|',
+          swipe_up: '|',
+          __include: mystyle/key_abc1
+        },
+      {click: t, long_click: T, label_symbol: '↶', swipe_up: undo,__include: mystyle/key_abc1},
+      {click: y, long_click: Y, label_symbol: '…', swipe_up: '……',__include: mystyle/key_abc1},
+      { click: u, long_click: U,
+          label_symbol: '`',
+          swipe_up: '`',
+          __include: mystyle/key_abc1
+        },
+      {click: i, long_click: I, label_symbol: '、', swipe_up: '、', symbol_text_size: 12,__include: mystyle/key_abc1},
+      {click: o, long_click: O, label_symbol: ',', swipe_up: 'douhao', symbol_text_size: 12,__include: mystyle/key_abc1},
+      {click: p, long_click: P, label_symbol: '.', swipe_up: 'juhao', symbol_text_size: 12,__include: mystyle/key_abc1},
+      # 第二行
+            {click: 'a', long_click: A, label_symbol: '—', swipe_up: '——',__include: mystyle/key_abc2},
+      {click: 's', long_click: S,
+          label_symbol: '-',
+          swipe_up: '-',
+          __include: mystyle/key_abc2},
+      {click: 'd', long_click: D,
+          label_symbol: '<>',
+          swipe_up: '<>{Left}',
+          swipe_down: '{khj}{Left}',
+          __include: mystyle/key_abc2},
+      {click: 'f', long_click: F,
+          label_symbol: '[]',
+          swipe_up: '[]{Left}',
+          swipe_down: '{khz}{Left}',
+          __include: mystyle/key_abc2},
+      {click: 'g', long_click: G,
+          label_symbol: '{}',
+          swipe_up: '{}{Left}',
+#          swipe_down: '{khd}{Left}',
+          __include: mystyle/key_abc2},
+      {click: 'h', long_click: H,
+          label_symbol: '()',
+          swipe_up: '(){Left}',
+          swipe_down: '{khx}{Left}',
+          __include: mystyle/key_abc2},
+      {click: 'j', long_click: J,
+          label_symbol: '“”',
+          swipe_up: '“”{Left}',
+          swipe_down: '{shuangyin}{shuangyin}{Left}',
+          __include: mystyle/key_abc2},
+      {click: 'k', long_click: K, label_symbol: "'",swipe_up: "danyinhao", swipe_down: '‘’{Left}', __include: mystyle/key_abc2},
+      {click: 'l', long_click: L, label_symbol: '"', swipe_up: 'shuangyin', swipe_down: '"', __include: mystyle/key_abc2},
+      # 第三行
+      {click: Shift_L, hilited_key_back_color: benter, key_back_color: c1, key_text_color: tbs, width: 11}, 
+      {click: z, long_click: Z,
+          label_symbol: '☑', 
+          swipe_up: select_all,
+          __include: mystyle/key_abc3}, 
+      {click: x, long_click: X,
+          label_symbol: '✂', 
+          swipe_up: cut,
+          __include: mystyle/key_abc3}, 
+      {click: c, long_click: C,
+          label_symbol: '❐', 
+          swipe_up: copy,
+          __include: mystyle/key_abc3}, 
+      {click: v, long_click: V,
+          label_symbol: '📋', 
+          swipe_down: paste_clip, 
+          swipe_up: paste,
+          __include: mystyle/key_abc3}, 
+      {click: b, long_click: B, label_symbol: ':', swipe_up: ":", __include: mystyle/key_abc3}, 
+      {click: n, long_click: N, label_symbol: ';', swipe_up: ";", __include: mystyle/key_abc3}, 
+      {click: m, long_click: M, swipe_up: "_", label_symbol: '_', __include: mystyle/key_abc3}, 
+      {click: BackSpace, swipe_up: Clears, swipe_left: Esc1, key_back_color: c2, key_text_color: tbs, width: 12}, 
+      # 第四行
+      {click: Keyboard_number, swipe_up: Keyboard_numberb, key_back_color: c3, key_text_color: tgn, key_symbol_color: ksc4, long_click: Theme_settings, width: 16}, 
+      {click: Mode_switch, key_back_color: c4, key_text_color: tgn, key_text_size: 18, key_symbol_color: ksc4, long_click: Keyboard_func, swipe_up: Keyboard_bqrw, width: 14}, 
+      {click: space, ascii: space3, __include: mystyle/key_abc4, long_click: Menu,swipe_up: '	', swipe_left: Left, swipe_right: Right, width: 26, has_menu: select1}, 
+      {click: ",", key_back_color: c5, key_text_color: th4, key_symbol_color: th4, label: "，", long_click: liquid_keyboard_ascii, swipe_up: "!", label_symbol: "!", width: 14, has_menu: select2}, 
+      {click: ., key_back_color: c6, key_text_color: th4, key_symbol_color: th4, label: "。", long_click: liquid_keyboard_markdown, swipe_up: "?",label_symbol: "?", width: 14, has_menu: select3}, 
+      {click: Return, composing: Return1, key_back_color: c7, key_text_color: tenter, swipe_up: Escape, width: 16}]
+    
+##=======default键盘结束========
+##=======edit和func键盘=========
+  edit:
+    name: 编辑
+    author: 'aniu'
+    ascii_mode: 0
+    width: 20
+    keys: [
+    # 第一行
+      { click: undo, __include: mystyle/edit_many},
+      { click: Up, __include: mystyle/edit_many},
+      { click: redo, __include: mystyle/edit_many},
+      { click: select_all, __include: mystyle/edit_many},
+      { click: Keyboard_last_lock,key_back_color: c3},
+      # 第二行
+      { click: Left, __include: mystyle/edit_many},
+      { click: Shift_L,label: "选择",key_back_color: c1},
+      { click: Right, __include: mystyle/edit_many},
+      { click: copy, __include: mystyle/edit_many},
+      { click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_up: Clears, key_back_color: c2},
+      # 第三行
+      { click: Left1, __include: mystyle/edit_many},
+      { click: Down, __include: mystyle/edit_many},
+      { click: Right1, __include: mystyle/edit_many},
+      { click: cut, __include: mystyle/edit_many},
+      { click: Keyboard_number, key_back_color: c5},
+      
+      # 第四行
+      { click: Home, __include: mystyle/edit_many},
+      { click: Tab, __include: mystyle/edit_many},
+      { click: End, __include: mystyle/edit_many},
+      { click: paste, __include: mystyle/edit_many},
+      { click: Return,key_back_color: c7,key_text_color: tenter}]
+
+  func:
+    name: 功能
+    author: 'aniu'
+    ascii_mode: 0
+    width: 25
+    keys: 
+#     - { click: CALCULATOR,__include},
+      - { click: Keyboard_edit, __include: mystyle/funcs}
+      - { click: VOICE_ASSIST}
+      - { click: Schema_switchcn, label: "直接切换", __include: mystyle/funcs}
+      - { click: Color_switch, __include: mystyle/funcs}
+      - { click: IME_switch, __include: mystyle/funcs}
+      - { click: Share, __include: mystyle/funcs}
+      - { click: Deploy}
+      - { click: Sync}
+      - { click: Keyboard_last_lock, key_back_color: c3}
+      - { click: Bing, __include: mystyle/funcs}
+      - { click: liquid_keyboard_clipboard, __include: mystyle/funcs}
+      - { click: Settings, __include: mystyle/funcs}
+      
+      
+  markdown1:
+    author: "aniu"
+    name: Markdown键盘布局
+    ascii_mode: 1
+    width: 20
+    keys:
+      - {click: 表格}
+      - {click: 代码块}
+      - {click: 链接}
+      - { click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_up: Clears, key_back_color: c2}
+      - { click: Keyboard_last_lock,key_back_color: c3}
+
+
+
+
+  letter:
+    author: "暖暖"
+    name: 26键默认布局2
+    width: 10
+  #  height: 48
+    ascii_mode: 1
+    keys:
+
+      - {click: q, long_click: 1, key_back_color: bh1, key_text_color: th1}
+      - {click: w, long_click: 2, key_back_color: bh1, key_text_color: th1}
+      - {click: e, long_click: 3, key_back_color: bh1, key_text_color: th1}
+      - {click: r, long_click: 4, key_back_color: bh1, key_text_color: th1}
+      - {click: t, long_click: 5, key_back_color: bh1, key_text_color: th1}
+      - {click: y, long_click: 6, key_back_color: bh1, key_text_color: th1}
+      - {click: u, long_click: 7, key_back_color: bh1, key_text_color: th1}
+      - {click: i, long_click: 8, key_back_color: bh1, key_text_color: th1}
+      - {click: o, long_click: 9, key_back_color: bh1, key_text_color: th1}
+      - {click: p, long_click: 0, key_back_color: bh1, key_text_color: th1}
+
+      - {width: 5, key_back_color: bh2, key_text_color: th2}
+      - {click: a, long_click: select_all, key_back_color: bh2, key_text_color: th2}
+      - {click: s, long_click: '@', key_back_color: bh2, key_text_color: th2}
+      - {click: d, long_click: '#', key_back_color: bh2, key_text_color: th2}
+      - {click: f, long_click: '$', key_back_color: bh2, key_text_color: th2}
+      - {click: g, long_click: '%', swipe_down: "date_time", key_back_color: bh2, key_text_color: th2}
+      - {click: h, long_click: '!', swipe_down: "+", key_back_color: bh2, key_text_color: th2}
+      - {click: j, long_click: '&', swipe_down: "-", key_back_color: bh2, key_text_color: th2}
+      - {click: k, long_click: '*', swipe_down: "_", key_back_color: bh2, key_text_color: th2}
+      - {click: l, long_click: '(){Left}', swipe_down: "=", key_back_color: bh2, key_text_color: th2}
+      - {width: 5, key_back_color: bh2, key_text_color: th2}
+
+      - {click: Shift_L, composing: delimiter, width: 15, hilited_key_back_color: benter, key_back_color: bbs, key_text_color: tbs}
+      - {click: z, long_click: '`', swipe_down: '[]{Left}', key_back_color: bh3, key_text_color: th3}
+      - {click: x, long_click: cut, swipe_down: '{}{Left}', key_back_color: bh3, key_text_color: th3}
+      - {click: c, long_click: copy, swipe_down: ' ', key_back_color: bh3, key_text_color: th3}
+      - {click: v, long_click: paste_clip, swipe_down: paste, key_back_color: bh3, key_text_color: th3}
+      - {click: b, long_click: ";", swipe_down: "\\", key_back_color: bh3, key_text_color: th3}
+      - {click: n, long_click: ":", key_back_color: bh3, key_text_color: th3}
+      - {click: m, long_click: '?', swipe_down: "|", key_back_color: bh3, key_text_color: th3}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+
+      - {click: Keyboard_number, long_click: Menu, width: 12.5, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_bqrw, long_click: Theme_settings, width: 12.5, key_text_size: "18", key_back_color: bgn, key_text_color: tgn}
+      - {click: ',', label: '，', long_click: '<>{Left}', key_back_color: bh4, key_text_color: th4}
+      - {label: '______', click: space, long_click: space_R2, swipe_left: "Left", swipe_right: "Right", swipe_up: Keyboard_fbj, width: 30, key_back_color: bkg, key_text_color: tkg}
+      - {click: '.', label: '。', long_click: Keyboard_kao, key_back_color: bh4, key_text_color: th4}
+      - {click: space_R2, long_click: liquid_keyboard_switch, key_text_size: "18", key_back_color: bh4, key_text_color: th4}
+      - {click: Return, composing: Return1, swipe_up: Escape, width: 15, key_back_color: benter, key_text_color: tenter}
+
+  number:
+    author: "aniu"
+    name: 数字+
+    width: 16.6
+   # height: 48
+    ascii_mode: 1
+    keys: [
+      {click: "+", long_click: "#", __include: mystyle/num_fu}, 
+      {click: 1, long_click: "(){Left}",__include: mystyle/num_shu}, 
+      {click: 2, long_click: "[]{Left}", __include: mystyle/num_shu}, 
+      {click: 3, long_click: "{}{Left}", __include: mystyle/num_shu}, 
+      {click: BackSpace, swipe_up: Clears, swipe_left: BackToPreviousSyllable, key_back_color: c2, key_text_color: tbs, __include: mystyle/num_fu}, 
+      {click: "-", long_click: "%", __include: mystyle/num_fu}, 
+      {click: 4, long_click: "<", __include: mystyle/num_shu}, 
+      {click: 5, long_click: "≈", __include: mystyle/num_shu}, 
+      {click: 6, long_click: ">", __include: mystyle/num_shu}, 
+      {click: "=", key_back_color: c1, key_text_color: tgn, long_click: "≠", __include: mystyle/num_fu}, 
+      {click: "*", long_click: "^", swipe_up: "×", label_symbol: "^ ×", __include: mystyle/num_fu}, 
+      {click: 7, long_click: select_all, __include: mystyle/num_shu}, 
+      {click: 8, long_click: copy, __include: mystyle/num_shu}, 
+      {click: 9, long_click: cut, __include: mystyle/num_shu}, 
+      {click: liquid_keyboard_math, key_back_color: c4, key_text_color: tgn, __include: mystyle/num_fu}, 
+      {click: Keyboard_default, key_back_color: c3, key_symbol_color: tkg, long_click: ":", __include: mystyle/num_fu},
+      {click: "/", long_click: "\\", swipe_up: "÷", label_symbol: "\\ ÷", width: 12, __include: mystyle/num_fu}, 
+      {click: space2, long_click: "_", key_back_color: c6,width: 12, __include: mystyle/num_fu}, 
+
+      {click: 0, long_click: 000, swipe_up: 000, __include: mystyle/num_shu}, 
+      {click: ., long_click: paste_clip, swipe_down: paste, key_back_color: back_color, __include: mystyle/num_shu}, 
+      {click: Return, key_back_color: benter, key_text_color: tenter, __include: mystyle/num_fu}]
+
+  numberb:
+    ascii_mode: 1
+    author: flypy.com
+    name: "编辑键盘"
+    width: 20.25
+    height: *jpgd5
+    keys:
+      - {click: select_all}
+      - {click: Left1}
+      - {click: Up}
+      - {click: Right1}
+      - {click: space1, key_back_color: gnb, key_text_color: gnt, width: 19}
+      - {click: cut}
+      - {click: Left}
+      - {click: Shift_L2}
+      - {click: Right}
+      - {click: Keyboard_number, key_back_color: gnb, key_text_color: gnt, width: 19}
+      - {click: copy}
+      - {click: Home}
+      - {click: Down}
+      - {click: End}
+      - {click: BackSpace, key_back_color: gnb, key_text_color: gnt, width: 19}
+      - {click: paste}
+      - {click: undo}
+      - {click: Tab1}
+      - {click: redo}
+      - {click: Return, key_back_color: gnb, key_text_color: gnt, width: 19}
+      - {click: Keyboard_default, height: 26.5, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+      - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+      - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+      - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+      - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_last, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+#符号键盘之二
+  symbols:
+    author: "暖暖"
+    name: 各种符号
+    width: 12
+    height: *jpgd5
+    ascii_mode: 0
+    keys:
+      - {label: '🙂', click: Keyboard_bqrw1, height: 26, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🌼', click: Keyboard_bqhc1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🎂', click: Keyboard_bqpt1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🚖', click: Keyboard_bqlx1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🎉', click: Keyboard_bqhd1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🔌', click: Keyboard_bqkj1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🔶', click: Keyboard_bqqt1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '🇨🇳', click: Keyboard_bqqz1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '#!?', click: Keyboard_bqfh1, width: 10, key_back_color: bgn, key_text_color: tgn}
+      - {label: '更多', click: Keyboard_symbols, width: 10, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+      - {click: 符号, long_click: 一, key_text_size: "16"}
+      - {click: 电脑, long_click: 二, key_text_size: "16"}
+      - {click: 天气, long_click: 三, key_text_size: "16"}
+      - {click: 音乐, long_click: 四, key_text_size: "16"}
+      - {click: 单位, long_click: 五, key_text_size: "16"}
+      - {click: 数学, long_click: 分数, key_text_size: "18", symbol_text_size: '8'}
+      - {click: 八卦, long_click: 易经, key_text_size: "18", symbol_text_size: '8'}
+      - {click: space1, width: 16, key_back_color: bgn, key_text_color: tgn}
+
+      - {click: 星号, long_click: 六, key_text_size: "16"}
+      - {click: 方块, long_click: 七, key_text_size: "16"}
+      - {click: 几何, long_click: 八, key_text_size: "16"}
+      - {click: 箭头, long_click: 九, key_text_size: "16"}
+      - {click: 货币, long_click: 十, key_text_size: "16"}
+      - {click: 下标, long_click: 上标, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 天体, long_click: 星座, key_text_size: "16", symbol_text_size: '8'}
+      - {label: '123', click: Keyboard_number, long_click: Schema_switchen, composing: Page_Up, width: 16, key_back_color: bgn, key_text_color: tgn}
+
+      - {click: 标点, long_click: 零, key_text_size: "16"}
+      - {click: 拼音, long_click: 竖标点, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 注音, long_click: 偏旁, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 韩文, long_click: 表情, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 假名, long_click: 片假名, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 麻将, long_click: 骰子, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 象棋, long_click: 扑克, key_text_size: "16", symbol_text_size: '8'}
+      - {click: BackSpace, composing: Escape, width: 16, key_back_color: bbs, key_text_color: tbs}
+
+      - {click: Keyboard_default, composing: Page_Down, width: 16, key_back_color: bgn, key_text_color: tgn}
+      - {click: '备用', composing: Left, width: 16, key_back_color: bgn, key_text_color: tgn}
+      - {click: 希腊, long_click: 希腊大写, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 罗马, long_click: 罗马大写, key_text_size: "16", symbol_text_size: '8'}
+      - {click: 俄语, long_click: 俄语大写, key_text_size: "16", symbol_text_size: '8'}
+      - {click: '备用', composing: Right, width: 16, key_back_color: bgn, key_text_color: tgn}
+      - {click: Return, long_click: Menu, width: 16, key_back_color: benter, key_text_color: tenter}
+
+  bqrw1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqrw2, key_text_size: "14"}
+    - {click: '😀'}
+    - {click: '😁'}
+    - {click: '😂'}
+    - {click: '😃'}
+    - {click: '😄'}
+    - {click: '😅'}
+    - {click: '😆'}
+    - {click: '😉'}
+    - {click: '😊'}
+    - {click: '😋'}
+    - {click: '😎'}
+    - {click: '😍'}
+    - {click: '😘'}
+    - {click: '😗'}
+    - {click: '😙'}
+    - {click: '😚'}
+    - {click: '☺'}
+    - {click: '🙂'}
+    - {click: '🤗'}
+    - {click: '😇'}
+    - {click: '🤓'}
+    - {click: '🤔'}
+    - {click: '😐'}
+    - {click: '😑'}
+    - {click: '😶'}
+    - {click: '🙄'}
+    - {click: '😏'}
+    - {click: '😣'}
+    - {click: '😥'}
+    - {click: '😮'}
+    - {click: '🤐'}
+    - {click: '😯'}
+    - {click: '😪'}
+    - {click: '😫'}
+    - {click: '😴'}
+    - {click: '😌'}
+    - {click: '😛'}
+    - {click: '😜'}
+    - {click: '😝'}
+    - {click: '😒'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqrw2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqrw1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqrw3, key_text_size: "14"}
+    - {click: '😓'}
+    - {click: '😔'}
+    - {click: '😕'}
+    - {click: '🙃'}
+    - {click: '🤑'}
+    - {click: '😲'}
+    - {click: '😷'}
+    - {click: '🤒'}
+    - {click: '🤕'}
+    - {click: '🙁'}
+    - {click: '😖'}
+    - {click: '😞'}
+    - {click: '😟'}
+    - {click: '😤'}
+    - {click: '😢'}
+    - {click: '😭'}
+    - {click: '😦'}
+    - {click: '😧'}
+    - {click: '😨'}
+    - {click: '😩'}
+    - {click: '😬'}
+    - {click: '😰'}
+    - {click: '😱'}
+    - {click: '😳'}
+    - {click: '😵'}
+    - {click: '😡'}
+    - {click: '😠'}
+    - {click: '😈'}
+    - {click: '👿'}
+    - {click: '👹'}
+    - {click: '👺'}
+    - {click: '💀'}
+    - {click: '☠'}
+    - {click: '👻'}
+    - {click: '👽'}
+    - {click: '👾'}
+    - {click: '🤖'}
+    - {click: '💩'}
+    - {click: '😺'}
+    - {click: '😸'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqrw3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqrw2, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqrw4, key_text_size: "14"}
+    - {click: '😹'}
+    - {click: '😻'}
+    - {click: '😼'}
+    - {click: '😽'}
+    - {click: '🙀'}
+    - {click: '😿'}
+    - {click: '😾'}
+    - {click: '🙈'}
+    - {click: '🙉'}
+    - {click: '🙊'}
+    - {click: '👦'}
+    - {click: '👧'}
+    - {click: '👨'}
+    - {click: '👩'}
+    - {click: '👴'}
+    - {click: '👵'}
+    - {click: '👶'}
+    - {click: '👱'}
+    - {click: '👮'}
+    - {click: '👲'}
+    - {click: '👳'}
+    - {click: '👷'}
+    - {click: '⛑'}
+    - {click: '👸'}
+    - {click: '💂'}
+    - {click: '🕵'}
+    - {click: '🎅'}
+    - {click: '👰'}
+    - {click: '👼'}
+    - {click: '💆'}
+    - {click: '💇'}
+    - {click: '🙍'}
+    - {click: '🙎'}
+    - {click: '🙅'}
+    - {click: '🙆'}
+    - {click: '💁'}
+    - {click: '🙋'}
+    - {click: '🙇'}
+    - {click: '🙌'}
+    - {click: '🙏'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqrw4:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqrw3, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqrw5, key_text_size: "14"}
+    - {click: '🗣'}
+    - {click: '👤'}
+    - {click: '👥'}
+    - {click: '🚶'}
+    - {click: '🏃'}
+    - {click: '👯'}
+    - {click: '💃'}
+    - {click: '🕴'}
+    - {click: '👫'}
+    - {click: '👬'}
+    - {click: '👭'}
+    - {click: '💏'}
+    - {click: '👩‍❤‍💋‍👨'}
+    - {click: '👨‍❤‍💋‍👨'}
+    - {click: '👩‍❤‍💋‍👩'}
+    - {click: '💑'}
+    - {click: '👩‍❤‍👨'}
+    - {click: '👨‍❤‍👨'}
+    - {click: '👩‍❤‍👩'}
+    - {click: '👪'}
+    - {click: '👨‍👩‍👦'}
+    - {click: '👨‍👩‍👧'}
+    - {click: '👨‍👩‍👧‍👦'}
+    - {click: 👨‍👩‍👦‍👦}
+    - {click: '👨‍👩‍👧‍👧'}
+    - {click: '👨‍👨‍👦'}
+    - {click: '👨‍👨‍👧'}
+    - {click: '👨‍👨‍👧‍👦'}
+    - {click: '👨‍👨‍👦‍👦'}
+    - {click: '👨‍👨‍👧‍👧'}
+    - {click: '👩‍👩‍👦'}
+    - {click: '👩‍👩‍👧'}
+    - {click: '👩‍👩‍👧‍👦'}
+    - {click: '👩‍👩‍👦‍👦'}
+    - {click: '👩‍👩‍👧‍👧'}
+    - {click: '💪'}
+    - {click: '👈'}
+    - {click: '👉'}
+    - {click: '☝'}
+    - {click: '👆'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqrw5:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqrw4, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqrw6, key_text_size: "14"}
+    - {click: '🖕'}
+    - {click: '👇'}
+    - {click: '✌'}
+    - {click: '🖖'}
+    - {click: '🤘'}
+    - {click: '🖐'}
+    - {click: '✋'}
+    - {click: '👌'}
+    - {click: '👍'}
+    - {click: '👎'}
+    - {click: '✊'}
+    - {click: '👊'}
+    - {click: '👋'}
+    - {click: '👏'}
+    - {click: '👐'}
+    - {click: '✍'}
+    - {click: '💅'}
+    - {click: '👂'}
+    - {click: '👃'}
+    - {click: '👣'}
+    - {click: '👀'}
+    - {click: '👁'}
+    - {click: '👁‍🗨'}
+    - {click: '👅'}
+    - {click: '👄'}
+    - {click: '💋'}
+    - {click: '💘'}
+    - {click: '❤'}
+    - {click: '💓'}
+    - {click: '💔'}
+    - {click: '💕'}
+    - {click: '💖'}
+    - {click: '💗'}
+    - {click: '💙'}
+    - {click: '💚'}
+    - {click: '💛'}
+    - {click: '💜'}
+    - {click: '💝'}
+    - {click: '💞'}
+    - {click: '💟'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqrw6:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: benter, key_text_color: tenter}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqrw5, key_text_size: "14"}
+    - {click: '❣'}
+    - {click: '💌'}
+    - {click: '💤'}
+    - {click: '💢'}
+    - {click: '💣'}
+    - {click: '💥'}
+    - {click: '💦'}
+    - {click: '💨'}
+    - {click: '💫'}
+    - {click: '💬'}
+    - {click: '🗨'}
+    - {click: '🗯'}
+    - {click: '💭'}
+    - {click: '🕳'}
+    - {click: '👓'}
+    - {click: '🕶'}
+    - {click: '👔'}
+    - {click: '👕'}
+    - {click: '👖'}
+    - {click: '👗'}
+    - {click: '👘'}
+    - {click: '👙'}
+    - {click: '👚'}
+    - {click: '👛'}
+    - {click: '👜'}
+    - {click: '👝'}
+    - {click: '🛍'}
+    - {click: '🎒'}
+    - {click: '👞'}
+    - {click: '👟'}
+    - {click: '👠'}
+    - {click: '👡'}
+    - {click: '👢'}
+    - {click: '👑'}
+    - {click: '👒'}
+    - {click: '🎩'}
+    - {click: '🎓'}
+    - {click: '📿'}
+    - {click: '💄'}
+    - {click: '💍'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqt1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqqt2, key_text_size: "14"}
+    - {click: '🏧'}
+    - {click: '🚮'}
+    - {click: '🚰'}
+    - {click: '♿'}
+    - {click: '🚹'}
+    - {click: '🚺'}
+    - {click: '🚻'}
+    - {click: '🚼'}
+    - {click: '🚾'}
+    - {click: '🛂'}
+    - {click: '🛃'}
+    - {click: '🛄'}
+    - {click: '🛅'}
+    - {click: '⚠'}
+    - {click: '🚸'}
+    - {click: '⛔'}
+    - {click: '🚫'}
+    - {click: '🚳'}
+    - {click: '🚭'}
+    - {click: '🚯'}
+    - {click: '🚱'}
+    - {click: '🚷'}
+    - {click: '☢'}
+    - {click: '☣'}
+    - {click: '⬆'}
+    - {click: '↗'}
+    - {click: '➡'}
+    - {click: '↘'}
+    - {click: '⬇'}
+    - {click: '↙'}
+    - {click: '⬅'}
+    - {click: '↖'}
+    - {click: '↕'}
+    - {click: '↔'}
+    - {click: '↩'}
+    - {click: '↪'}
+    - {click: '⤴'}
+    - {click: '⤵'}
+    - {click: '🔃'}
+    - {click: '🔄'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqt2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqqt1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqt3, key_text_size: "14"}
+    - {click: '🔙'}
+    - {click: '🔚'}
+    - {click: '🔛'}
+    - {click: '🔜'}
+    - {click: '🔝'}
+    - {click: '🛐'}
+    - {click: '⚛'}
+    - {click: '🕉'}
+    - {click: '✡'}
+    - {click: '☸'}
+    - {click: '☯'}
+    - {click: '✝'}
+    - {click: '☦'}
+    - {click: '☪'}
+    - {click: '☮'}
+    - {click: '🕎'}
+    - {click: '🔯'}
+    - {click: '♻'}
+    - {click: '📛'}
+    - {click: '⚜'}
+    - {click: '🔰'}
+    - {click: '🔱'}
+    - {click: '⭕'}
+    - {click: '✅'}
+    - {click: '☑'}
+    - {click: '✔'}
+    - {click: '✖'}
+    - {click: '❌'}
+    - {click: '❎'}
+    - {click: '➕'}
+    - {click: '➖'}
+    - {click: '➗'}
+    - {click: '➰'}
+    - {click: '➿'}
+    - {click: '〽'}
+    - {click: '✳'}
+    - {click: '✴'}
+    - {click: '❇'}
+    - {click: '‼'}
+    - {click: '⁉'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqt3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqqt2, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqt4, key_text_size: "14"}
+    - {click: '❓'}
+    - {click: '❔'}
+    - {click: '❕'}
+    - {click: '❗'}
+    - {click: '〰'}
+    - {click: '©'}
+    - {click: '®'}
+    - {click: '™'}
+    - {click: '♈'}
+    - {click: '♉'}
+    - {click: '♊'}
+    - {click: '♋'}
+    - {click: '♌'}
+    - {click: '♍'}
+    - {click: '♎'}
+    - {click: '♏'}
+    - {click: '♐'}
+    - {click: '♑'}
+    - {click: '♒'}
+    - {click: '♓'}
+    - {click: '⛎'}
+    - {click: '🔀'}
+    - {click: '🔁'}
+    - {click: '🔂'}
+    - {click: '▶'}
+    - {click: '⏩'}
+    - {click: '⏭'}
+    - {click: '⏯'}
+    - {click: '◀'}
+    - {click: '⏪'}
+    - {click: '⏮'}
+    - {click: '🔼'}
+    - {click: '⏫'}
+    - {click: '🔽'}
+    - {click: '⏬'}
+    - {click: '⏸'}
+    - {click: '⏹'}
+    - {click: '⏺'}
+    - {click: '⏏'}
+    - {click: '🎦'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqt4:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqqt3, key_text_size: "14"}
+    - {click: '🔅'}
+    - {click: '🔆'}
+    - {click: '📶'}
+    - {click: '📵'}
+    - {click: '📳'}
+    - {click: '📴'}
+    - {click: '#⃣'}
+    - {click: '*⃣'}
+    - {click: '0⃣'}
+    - {click: '1⃣'}
+    - {click: '2⃣'}
+    - {click: '3⃣'}
+    - {click: '4⃣'}
+    - {click: '5⃣'}
+    - {click: '6⃣'}
+    - {click: '7⃣'}
+    - {click: '8⃣'}
+    - {click: '9⃣'}
+    - {click: '🔟'}
+    - {click: '💯'}
+    - {click: '🔞'}
+    - {click: '🔠'}
+    - {click: '🔡'}
+    - {click: '🔢'}
+    - {click: '🔺'}
+    - {click: '🔻'}
+    - {click: '💠'}
+    - {click: '🔘'}
+    - {click: '🔲'}
+    - {click: '🔳'}
+    - {click: '⚪'}
+    - {click: '⚫'}
+    - {click: '🔴'}
+    - {click: '🔵'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqqz2, key_text_size: "14"}
+    - {click: '🇦🇩'}
+    - {click: '🇦🇪'}
+    - {click: '🇦🇫'}
+    - {click: '🇦🇬'}
+    - {click: '🇦🇮'}
+    - {click: '🇦🇱'}
+    - {click: '🇦🇲'}
+    - {click: '🇦🇴'}
+    - {click: '🇦🇷'}
+    - {click: '🇦🇸'}
+    - {click: '🇦🇹'}
+    - {click: '🇦🇺'}
+    - {click: '🇦🇼'}
+    - {click: '🇦🇽'}
+    - {click: '🇦🇿'}
+    - {click: '🇧🇦'}
+    - {click: '🇧🇧'}
+    - {click: '🇧🇩'}
+    - {click: '🇧🇪'}
+    - {click: '🇧🇫'}
+    - {click: '🇧🇬'}
+    - {click: '🇧🇭'}
+    - {click: '🇧🇮'}
+    - {click: '🇧🇯'}
+    - {click: '🇧🇲'}
+    - {click: '🇧🇳'}
+    - {click: '🇧🇴'}
+    - {click: '🇧🇷'}
+    - {click: '🇧🇸'}
+    - {click: '🇧🇹'}
+    - {click: '🇧🇼'}
+    - {click: '🇧🇾'}
+    - {click: '🇧🇿'}
+    - {click: '🇨🇦'}
+    - {click: '🇨🇨'}
+    - {click: '🇨🇩'}
+    - {click: '🇨🇫'}
+    - {click: '🇨🇬'}
+    - {click: '🇨🇭'}
+    - {click: '🇨🇮'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '上页', click: Keyboard_bqqz1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqz3, key_text_size: "14"}
+    - {click: '🇨🇰'}
+    - {click: '🇨🇱'}
+    - {click: '🇨🇲'}
+    - {click: '🇨🇳'}
+    - {click: '🇨🇴'}
+    - {click: '🇨🇷'}
+    - {click: '🇨🇺'}
+    - {click: '🇨🇻'}
+    - {click: '🇨🇼'}
+    - {click: '🇨🇽'}
+    - {click: '🇨🇾'}
+    - {click: '🇨🇿'}
+    - {click: '🇩🇪'}
+    - {click: '🇩🇯'}
+    - {click: '🇩🇰'}
+    - {click: '🇩🇲'}
+    - {click: '🇩🇴'}
+    - {click: '🇩🇿'}
+    - {click: '🇪🇨'}
+    - {click: '🇪🇪'}
+    - {click: '🇪🇬'}
+    - {click: '🇪🇷'}
+    - {click: '🇪🇸'}
+    - {click: '🇪🇹'}
+    - {click: '🇪🇺'}
+    - {click: '🇫🇮'}
+    - {click: '🇫🇯'}
+    - {click: '🇫🇲'}
+    - {click: '🇫🇴'}
+    - {click: '🇫🇷'}
+    - {click: '🇬🇦'}
+    - {click: '🇬🇧'}
+    - {click: '🇬🇩'}
+    - {click: '🇬🇪'}
+    - {click: '🇬🇬'}
+    - {click: '🇬🇭'}
+    - {click: '🇬🇮'}
+    - {click: '🇬🇱'}
+    - {click: '🇬🇲'}
+    - {click: '🇬🇳'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '上页', click: Keyboard_bqqz2, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqz4, key_text_size: "14"}
+    - {click: '🇬🇶'}
+    - {click: '🇬🇷'}
+    - {click: '🇬🇹'}
+    - {click: '🇬🇺'}
+    - {click: '🇬🇼'}
+    - {click: '🇬🇾'}
+    - {click: '🇭🇰'}
+    - {click: '🇭🇳'}
+    - {click: '🇭🇷'}
+    - {click: '🇭🇹'}
+    - {click: '🇭🇺'}
+    - {click: '🇮🇩'}
+    - {click: '🇮🇪'}
+    - {click: '🇮🇱'}
+    - {click: '🇮🇲'}
+    - {click: '🇮🇳'}
+    - {click: '🇮🇴'}
+    - {click: '🇮🇶'}
+    - {click: '🇮🇷'}
+    - {click: '🇮🇸'}
+    - {click: '🇮🇹'}
+    - {click: '🇯🇪'}
+    - {click: '🇯🇲'}
+    - {click: '🇯🇴'}
+    - {click: '🇯🇵'}
+    - {click: '🇰🇪'}
+    - {click: '🇰🇬'}
+    - {click: '🇰🇭'}
+    - {click: '🇰🇮'}
+    - {click: '🇰🇲'}
+    - {click: '🇰🇳'}
+    - {click: '🇰🇵'}
+    - {click: '🇰🇷'}
+    - {click: '🇰🇼'}
+    - {click: '🇰🇾'}
+    - {click: '🇰🇿'}
+    - {click: '🇱🇦'}
+    - {click: '🇱🇧'}
+    - {click: '🇱🇨'}
+    - {click: '🇱🇮'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz4:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '上页', click: Keyboard_bqqz3, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqz5, key_text_size: "14"}
+    - {click: '🇱🇰'}
+    - {click: '🇱🇷'}
+    - {click: '🇱🇸'}
+    - {click: '🇱🇹'}
+    - {click: '🇱🇺'}
+    - {click: '🇱🇻'}
+    - {click: '🇱🇾'}
+    - {click: '🇲🇦'}
+    - {click: '🇲🇨'}
+    - {click: '🇲🇩'}
+    - {click: '🇲🇪'}
+    - {click: '🇲🇬'}
+    - {click: '🇲🇭'}
+    - {click: '🇲🇰'}
+    - {click: '🇲🇱'}
+    - {click: '🇲🇲'}
+    - {click: '🇲🇳'}
+    - {click: '🇲🇴'}
+    - {click: '🇲🇵'}
+    - {click: '🇲🇷'}
+    - {click: '🇲🇸'}
+    - {click: '🇲🇹'}
+    - {click: '🇲🇺'}
+    - {click: '🇲🇻'}
+    - {click: '🇲🇼'}
+    - {click: '🇲🇽'}
+    - {click: '🇲🇾'}
+    - {click: '🇲🇿'}
+    - {click: '🇳🇦'}
+    - {click: '🇳🇪'}
+    - {click: '🇳🇫'}
+    - {click: '🇳🇬'}
+    - {click: '🇳🇮'}
+    - {click: '🇳🇱'}
+    - {click: '🇳🇴'}
+    - {click: '🇳🇵'}
+    - {click: '🇳🇷'}
+    - {click: '🇳🇺'}
+    - {click: '🇳🇿'}
+    - {click: '🇴🇲'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz5:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '上页', click: Keyboard_bqqz4, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqqz6, key_text_size: "14"}
+    - {click: '🇵🇦'}
+    - {click: '🇵🇪'}
+    - {click: '🇵🇫'}
+    - {click: '🇵🇬'}
+    - {click: '🇵🇭'}
+    - {click: '🇵🇰'}
+    - {click: '🇵🇱'}
+    - {click: '🇵🇳'}
+    - {click: '🇵🇷'}
+    - {click: '🇵🇸'}
+    - {click: '🇵🇹'}
+    - {click: '🇵🇼'}
+    - {click: '🇵🇾'}
+    - {click: '🇶🇦'}
+    - {click: '🇷🇴'}
+    - {click: '🇷🇸'}
+    - {click: '🇷🇺'}
+    - {click: '🇷🇼'}
+    - {click: '🇸🇦'}
+    - {click: '🇸🇧'}
+    - {click: '🇸🇨'}
+    - {click: '🇸🇩'}
+    - {click: '🇸🇪'}
+    - {click: '🇸🇬'}
+    - {click: '🇸🇮'}
+    - {click: '🇸🇰'}
+    - {click: '🇸🇱'}
+    - {click: '🇸🇲'}
+    - {click: '🇸🇳'}
+    - {click: '🇸🇴'}
+    - {click: '🇸🇷'}
+    - {click: '🇸🇸'}
+    - {click: '🇸🇹'}
+    - {click: '🇸🇻'}
+    - {click: '🇸🇽'}
+    - {click: '🇸🇾'}
+    - {click: '🇸🇿'}
+    - {click: '🇹🇨'}
+    - {click: '🇹🇩'}
+    - {click: '🇹🇬'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqqz6:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: benter, key_text_color: tenter}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqqz5, key_text_size: "14"}
+    - {click: '🇹🇭'}
+    - {click: '🇹🇯'}
+    - {click: '🇹🇰'}
+    - {click: '🇹🇱'}
+    - {click: '🇹🇲'}
+    - {click: '🇹🇳'}
+    - {click: '🇹🇴'}
+    - {click: '🇹🇷'}
+    - {click: '🇹🇹'}
+    - {click: '🇹🇻'}
+    - {click: '🇹🇼'}
+    - {click: '🇹🇿'}
+    - {click: '🇺🇦'}
+    - {click: '🇺🇬'}
+    - {click: '🇺🇸'}
+    - {click: '🇺🇾'}
+    - {click: '🇺🇿'}
+    - {click: '🇻🇦'}
+    - {click: '🇻🇨'}
+    - {click: '🇻🇪'}
+    - {click: '🇻🇬'}
+    - {click: '🇻🇮'}
+    - {click: '🇻🇳'}
+    - {click: '🇻🇺'}
+    - {click: '🇼🇸'}
+    - {click: '🇾🇪'}
+    - {click: '🇿🇦'}
+    - {click: '🇿🇲'}
+    - {click: '🇿🇼'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqpt1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqpt2, key_text_size: "14"}
+    - {click: '🍇'}
+    - {click: '🍈'}
+    - {click: '🍉'}
+    - {click: '🍊'}
+    - {click: '🍋'}
+    - {click: '🍌'}
+    - {click: '🍍'}
+    - {click: '🍎'}
+    - {click: '🍏'}
+    - {click: '🍐'}
+    - {click: '🍑'}
+    - {click: '🍒'}
+    - {click: '🍓'}
+    - {click: '🍅'}
+    - {click: '🍆'}
+    - {click: '🌽'}
+    - {click: '🌶'}
+    - {click: '🍄'}
+    - {click: '🌰'}
+    - {click: '🍞'}
+    - {click: '🧀'}
+    - {click: '🍖'}
+    - {click: '🍗'}
+    - {click: '🍔'}
+    - {click: '🍟'}
+    - {click: '🍕'}
+    - {click: '🌭'}
+    - {click: '🌮'}
+    - {click: '🌯'}
+    - {click: '🍳'}
+    - {click: '🍲'}
+    - {click: '🍿'}
+    - {click: '🍱'}
+    - {click: '🍘'}
+    - {click: '🍙'}
+    - {click: '🍚'}
+    - {click: '🍛'}
+    - {click: '🍜'}
+    - {click: '🍝'}
+    - {click: '🍠'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqpt2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqpt1, key_text_size: "14"}
+    - {click: '🍢'}
+    - {click: '🍣'}
+    - {click: '🍤'}
+    - {click: '🍥'}
+    - {click: '🍡'}
+    - {click: '🍦'}
+    - {click: '🍧'}
+    - {click: '🍨'}
+    - {click: '🍩'}
+    - {click: '🍪'}
+    - {click: '🎂'}
+    - {click: '🍰'}
+    - {click: '🍫'}
+    - {click: '🍬'}
+    - {click: '🍭'}
+    - {click: '🍮'}
+    - {click: '🍯'}
+    - {click: '🍼'}
+    - {click: '☕'}
+    - {click: '🍵'}
+    - {click: '🍶'}
+    - {click: '🍾'}
+    - {click: '🍷'}
+    - {click: '🍸'}
+    - {click: '🍹'}
+    - {click: '🍺'}
+    - {click: '🍻'}
+    - {click: '🍽'}
+    - {click: '🍴'}
+    - {click: '🔪'}
+    - {click: '🏺'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqhd1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqhd2, key_text_size: "14"}
+    - {click: '🎃'}
+    - {click: '🎄'}
+    - {click: '🎆'}
+    - {click: '🎇'}
+    - {click: '✨'}
+    - {click: '🎈'}
+    - {click: '🎉'}
+    - {click: '🎊'}
+    - {click: '🎋'}
+    - {click: '🎍'}
+    - {click: '🎎'}
+    - {click: '🎏'}
+    - {click: '🎐'}
+    - {click: '🎑'}
+    - {click: '🎀'}
+    - {click: '🎁'}
+    - {click: '🎗'}
+    - {click: '🎟'}
+    - {click: '🎫'}
+    - {click: '🎖'}
+    - {click: '🏆'}
+    - {click: '🏅'}
+    - {click: '⚽'}
+    - {click: '⚾'}
+    - {click: '🏀'}
+    - {click: '🏐'}
+    - {click: '🏈'}
+    - {click: '🏉'}
+    - {click: '🎾'}
+    - {click: '🎱'}
+    - {click: '🎳'}
+    - {click: '🏏'}
+    - {click: '🏑'}
+    - {click: '🏒'}
+    - {click: '🏓'}
+    - {click: '🏸'}
+    - {click: '⛳'}
+    - {click: '🏌'}
+    - {click: '⛸'}
+    - {click: '🎣'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqhd2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqhd1, key_text_size: "14"}
+    - {click: '🎽'}
+    - {click: '🎿'}
+    - {click: '⛷'}
+    - {click: '🏂'}
+    - {click: '🏄'}
+    - {click: '🏇'}
+    - {click: '🏊'}
+    - {click: '⛹'}
+    - {click: '🏋'}
+    - {click: '🚴'}
+    - {click: '🚵'}
+    - {click: '🏎'}
+    - {click: '🏍'}
+    - {click: '🎯'}
+    - {click: '🎮'}
+    - {click: '🕹'}
+    - {click: '🎲'}
+    - {click: '♠'}
+    - {click: '♥'}
+    - {click: '♦'}
+    - {click: '♣'}
+    - {click: '🃏'}
+    - {click: '🀄'}
+    - {click: '🎴'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqhc1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqhc2, key_text_size: "14"}
+    - {click: '🐵'}
+    - {click: '🐒'}
+    - {click: '🐶'}
+    - {click: '🐕'}
+    - {click: '🐩'}
+    - {click: '🐺'}
+    - {click: '🐱'}
+    - {click: '🐈'}
+    - {click: '🦁'}
+    - {click: '🐯'}
+    - {click: '🐅'}
+    - {click: '🐆'}
+    - {click: '🐴'}
+    - {click: '🐎'}
+    - {click: '🦄'}
+    - {click: '🐮'}
+    - {click: '🐂'}
+    - {click: '🐃'}
+    - {click: '🐄'}
+    - {click: '🐷'}
+    - {click: '🐖'}
+    - {click: '🐗'}
+    - {click: '🐽'}
+    - {click: '🐏'}
+    - {click: '🐑'}
+    - {click: '🐐'}
+    - {click: '🐪'}
+    - {click: '🐫'}
+    - {click: '🐘'}
+    - {click: '🐭'}
+    - {click: '🐁'}
+    - {click: '🐀'}
+    - {click: '🐹'}
+    - {click: '🐰'}
+    - {click: '🐇'}
+    - {click: '🐿'}
+    - {click: '🐻'}
+    - {click: '🐨'}
+    - {click: '🐼'}
+    - {click: '🐾'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqhc2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqhc1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqhc3, key_text_size: "14"}
+    - {click: '🦃'}
+    - {click: '🐔'}
+    - {click: '🐓'}
+    - {click: '🐣'}
+    - {click: '🐤'}
+    - {click: '🐥'}
+    - {click: '🐦'}
+    - {click: '🐧'}
+    - {click: '🕊'}
+    - {click: '🐸'}
+    - {click: '🐊'}
+    - {click: '🐢'}
+    - {click: '🐍'}
+    - {click: '🐲'}
+    - {click: '🐉'}
+    - {click: '🐳'}
+    - {click: '🐋'}
+    - {click: '🐬'}
+    - {click: '🐟'}
+    - {click: '🐠'}
+    - {click: '🐡'}
+    - {click: '🐙'}
+    - {click: '🐚'}
+    - {click: '🦀'}
+    - {click: '🐌'}
+    - {click: '🐛'}
+    - {click: '🐜'}
+    - {click: '🐝'}
+    - {click: '🐞'}
+    - {click: '🕷'}
+    - {click: '🕸'}
+    - {click: '🦂'}
+    - {click: '💐'}
+    - {click: '🌸'}
+    - {click: '💮'}
+    - {click: '🏵'}
+    - {click: '🌹'}
+    - {click: '🌺'}
+    - {click: '🌻'}
+    - {click: '🌼'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqhc3:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqhc2, key_text_size: "14"}
+    - {click: '🌷'}
+    - {click: '🌱'}
+    - {click: '🌲'}
+    - {click: '🌳'}
+    - {click: '🌴'}
+    - {click: '🌵'}
+    - {click: '🌾'}
+    - {click: '🌿'}
+    - {click: '☘'}
+    - {click: '🍀'}
+    - {click: '🍁'}
+    - {click: '🍂'}
+    - {click: '🍃'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqlx2, key_text_size: "14"}
+    - {click: '🌍'}
+    - {click: '🌎'}
+    - {click: '🌏'}
+    - {click: '🌐'}
+    - {click: '🗺'}
+    - {click: '🗾'}
+    - {click: '🏔'}
+    - {click: '⛰'}
+    - {click: '🌋'}
+    - {click: '🗻'}
+    - {click: '🏕'}
+    - {click: '🏖'}
+    - {click: '🏜'}
+    - {click: '🏝'}
+    - {click: '🏞'}
+    - {click: '🏟'}
+    - {click: '🏛'}
+    - {click: '🏗'}
+    - {click: '🏘'}
+    - {click: '🏙'}
+    - {click: '🏚'}
+    - {click: '🏠'}
+    - {click: '🏡'}
+    - {click: '🏢'}
+    - {click: '🏣'}
+    - {click: '🏤'}
+    - {click: '🏥'}
+    - {click: '🏦'}
+    - {click: '🏨'}
+    - {click: '🏩'}
+    - {click: '🏪'}
+    - {click: '🏫'}
+    - {click: '🏬'}
+    - {click: '🏭'}
+    - {click: '🏯'}
+    - {click: '🏰'}
+    - {click: '💒'}
+    - {click: '🗼'}
+    - {click: '🗽'}
+    - {click: '⛪'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqlx1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqlx3, key_text_size: "14"}
+    - {click: '🕌'}
+    - {click: '🕍'}
+    - {click: '⛩'}
+    - {click: '🕋'}
+    - {click: '⛲'}
+    - {click: '⛺'}
+    - {click: '🌁'}
+    - {click: '🌃'}
+    - {click: '🌄'}
+    - {click: '🌅'}
+    - {click: '🌆'}
+    - {click: '🌇'}
+    - {click: '🌉'}
+    - {click: '♨'}
+    - {click: '🌌'}
+    - {click: '🎠'}
+    - {click: '🎡'}
+    - {click: '🎢'}
+    - {click: '💈'}
+    - {click: '🎪'}
+    - {click: '🎭'}
+    - {click: '🖼'}
+    - {click: '🎨'}
+    - {click: '🎰'}
+    - {click: '🚂'}
+    - {click: '🚃'}
+    - {click: '🚄'}
+    - {click: '🚅'}
+    - {click: '🚆'}
+    - {click: '🚇'}
+    - {click: '🚈'}
+    - {click: '🚉'}
+    - {click: '🚊'}
+    - {click: '🚝'}
+    - {click: '🚞'}
+    - {click: '🚋'}
+    - {click: '🚌'}
+    - {click: '🚍'}
+    - {click: '🚎'}
+    - {click: '🚏'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqlx2, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqlx4, key_text_size: "14"}
+    - {click: '🚐'}
+    - {click: '🚑'}
+    - {click: '🚒'}
+    - {click: '🚓'}
+    - {click: '🚔'}
+    - {click: '🚕'}
+    - {click: '🚖'}
+    - {click: '🚗'}
+    - {click: '🚘'}
+    - {click: '🚙'}
+    - {click: '🚚'}
+    - {click: '🚛'}
+    - {click: '🚜'}
+    - {click: '🚲'}
+    - {click: '⛽'}
+    - {click: '🛣'}
+    - {click: '🛤'}
+    - {click: '🚨'}
+    - {click: '🚥'}
+    - {click: '🚦'}
+    - {click: '🚧'}
+    - {click: '⚓'}
+    - {click: '⛵'}
+    - {click: '🚣'}
+    - {click: '🚤'}
+    - {click: '🛳'}
+    - {click: '⛴'}
+    - {click: '🛥'}
+    - {click: '🚢'}
+    - {click: '✈'}
+    - {click: '🛩'}
+    - {click: '🛫'}
+    - {click: '🛬'}
+    - {click: '💺'}
+    - {click: '🚁'}
+    - {click: '🚟'}
+    - {click: '🚠'}
+    - {click: '🚡'}
+    - {click: '🚀'}
+    - {click: '🛰'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx4:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqlx3, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqlx5, key_text_size: "14"}
+    - {click: '🛎'}
+    - {click: '🚪'}
+    - {click: '🛌'}
+    - {click: '🛏'}
+    - {click: '🛋'}
+    - {click: '🚽'}
+    - {click: '🚿'}
+    - {click: '🛀'}
+    - {click: '🛁'}
+    - {click: '⌛'}
+    - {click: '⏳'}
+    - {click: '⌚'}
+    - {click: '⏰'}
+    - {click: '⏲'}
+    - {click: '🕰'}
+    - {click: '🕛'}
+    - {click: '🕧'}
+    - {click: '🕐'}
+    - {click: '🕜'}
+    - {click: '🕑'}
+    - {click: '🕝'}
+    - {click: '🕒'}
+    - {click: '🕞'}
+    - {click: '🕓'}
+    - {click: '🕟'}
+    - {click: '🕔'}
+    - {click: '🕠'}
+    - {click: '🕕'}
+    - {click: '🕡'}
+    - {click: '🕖'}
+    - {click: '🕢'}
+    - {click: '🕗'}
+    - {click: '🕣'}
+    - {click: '🕘'}
+    - {click: '🕤'}
+    - {click: '🕙'}
+    - {click: '🕥'}
+    - {click: '🕚'}
+    - {click: '🕦'}
+    - {click: '🌑'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx5:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqlx4, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqlx6, key_text_size: "14"}
+    - {click: '🌒'}
+    - {click: '🌓'}
+    - {click: '🌔'}
+    - {click: '🌕'}
+    - {click: '🌖'}
+    - {click: '🌗'}
+    - {click: '🌘'}
+    - {click: '🌙'}
+    - {click: '🌚'}
+    - {click: '🌛'}
+    - {click: '🌜'}
+    - {click: '🌡'}
+    - {click: '☀'}
+    - {click: '🌝'}
+    - {click: '🌞'}
+    - {click: '⭐'}
+    - {click: '🌟'}
+    - {click: '🌠'}
+    - {click: '☁'}
+    - {click: '⛅'}
+    - {click: '⛈'}
+    - {click: '🌤'}
+    - {click: '🌥'}
+    - {click: '🌦'}
+    - {click: '🌧'}
+    - {click: '🌨'}
+    - {click: '🌩'}
+    - {click: '🌪'}
+    - {click: '🌫'}
+    - {click: '🌬'}
+    - {click: '🌀'}
+    - {click: '🌈'}
+    - {click: '🌂'}
+    - {click: '☂'}
+    - {click: '☔'}
+    - {click: '⛱'}
+    - {click: '⚡'}
+    - {click: '❄'}
+    - {click: '☃'}
+    - {click: '⛄'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqlx6:
+    author: "风花絮"
+    name: 表情键5
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqlx5, key_text_size: "14"}
+    - {click: '☄'}
+    - {click: '🔥'}
+    - {click: '💧'}
+    - {click: '🌊'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqkj1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '#!?', click: Keyboard_bqfh1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqkj2, key_text_size: "14"}
+    - {click: '🔇'}
+    - {click: '🔈'}
+    - {click: '🔉'}
+    - {click: '🔊'}
+    - {click: '📢'}
+    - {click: '📣'}
+    - {click: '📯'}
+    - {click: '🔔'}
+    - {click: '🔕'}
+    - {click: '🎼'}
+    - {click: '🎵'}
+    - {click: '🎶'}
+    - {click: '🎙'}
+    - {click: '🎚'}
+    - {click: '🎛'}
+    - {click: '🎤'}
+    - {click: '🎧'}
+    - {click: '📻'}
+    - {click: '🎷'}
+    - {click: '🎸'}
+    - {click: '🎹'}
+    - {click: '🎺'}
+    - {click: '🎻'}
+    - {click: '📱'}
+    - {click: '📲'}
+    - {click: '☎'}
+    - {click: '📞'}
+    - {click: '📟'}
+    - {click: '📠'}
+    - {click: '🔋'}
+    - {click: '🔌'}
+    - {click: '💻'}
+    - {click: '🖥'}
+    - {click: '🖨'}
+    - {click: '⌨'}
+    - {click: '🖱'}
+    - {click: '🖲'}
+    - {click: '💽'}
+    - {click: '💾'}
+    - {click: '💿'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqkj2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 34, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqkj1, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqkj3, key_text_size: "14"}
+    - {click: '📀'}
+    - {click: '🎥'}
+    - {click: '🎞'}
+    - {click: '📽'}
+    - {click: '🎬'}
+    - {click: '📺'}
+    - {click: '📷'}
+    - {click: '📸'}
+    - {click: '📹'}
+    - {click: '📼'}
+    - {click: '🔍'}
+    - {click: '🔎'}
+    - {click: '🔬'}
+    - {click: '🔭'}
+    - {click: '📡'}
+    - {click: '🕯'}
+    - {click: '💡'}
+    - {click: '🔦'}
+    - {click: '🏮'}
+    - {click: '📔'}
+    - {click: '📕'}
+    - {click: '📖'}
+    - {click: '📗'}
+    - {click: '📘'}
+    - {click: '📙'}
+    - {click: '📚'}
+    - {click: '📓'}
+    - {click: '📒'}
+    - {click: '📃'}
+    - {click: '📜'}
+    - {click: '📄'}
+    - {click: '📰'}
+    - {click: '🗞'}
+    - {click: '📑'}
+    - {click: '🔖'}
+    - {click: '🏷'}
+    - {click: '💰'}
+    - {click: '💴'}
+    - {click: '💵'}
+    - {click: '💶'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqkj3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqkj2, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqkj4, key_text_size: "14"}
+    - {click: '💷'}
+    - {click: '💸'}
+    - {click: '💳'}
+    - {click: '💹'}
+    - {click: '💱'}
+    - {click: '💲'}
+    - {click: '✉'}
+    - {click: '📧'}
+    - {click: '📨'}
+    - {click: '📩'}
+    - {click: '📤'}
+    - {click: '📥'}
+    - {click: '📦'}
+    - {click: '📫'}
+    - {click: '📪'}
+    - {click: '📬'}
+    - {click: '📭'}
+    - {click: '📮'}
+    - {click: '🗳'}
+    - {click: '✏'}
+    - {click: '✒'}
+    - {click: '🖋'}
+    - {click: '🖊'}
+    - {click: '🖌'}
+    - {click: '🖍'}
+    - {click: '📝'}
+    - {click: '💼'}
+    - {click: '📁'}
+    - {click: '📂'}
+    - {click: '🗂'}
+    - {click: '📅'}
+    - {click: '📆'}
+    - {click: '🗒'}
+    - {click: '🗓'}
+    - {click: '📇'}
+    - {click: '📈'}
+    - {click: '📉'}
+    - {click: '📊'}
+    - {click: '📋'}
+    - {click: '📌'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqkj4:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqkj3, key_text_size: "14"}
+    - {label: '下页', click: Keyboard_bqkj5, key_text_size: "14"}
+    - {click: '📍'}
+    - {click: '📎'}
+    - {click: '🖇'}
+    - {click: '📏'}
+    - {click: '📐'}
+    - {click: '✂'}
+    - {click: '🗃'}
+    - {click: '🗄'}
+    - {click: '🗑'}
+    - {click: '🔒'}
+    - {click: '🔓'}
+    - {click: '🔏'}
+    - {click: '🔐'}
+    - {click: '🔑'}
+    - {click: '🗝'}
+    - {click: '🔨'}
+    - {click: '⛏'}
+    - {click: '⚒'}
+    - {click: '🛠'}
+    - {click: '🗡'}
+    - {click: '⚔'}
+    - {click: '🔫'}
+    - {click: '🏹'}
+    - {click: '🛡'}
+    - {click: '🔧'}
+    - {click: '🔩'}
+    - {click: '⚙'}
+    - {click: '🗜'}
+    - {click: '⚗'}
+    - {click: '⚖'}
+    - {click: '🔗'}
+    - {click: '⛓'}
+    - {click: '💉'}
+    - {click: '💊'}
+    - {click: '🏁'}
+    - {click: '🏳'}
+    - {click: '🏴'}
+    - {click: '🚩'}
+    - {click: '🎌'}
+    - {click: '🚬'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqkj5:
+    author: "风花絮"
+    name: 表情键4
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {label: '🙂', click: Keyboard_bqrw1, height: 26, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🌼', click: Keyboard_bqhc1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎂', click: Keyboard_bqpt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🚖', click: Keyboard_bqlx1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🎉', click: Keyboard_bqhd1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🔌', click: Keyboard_bqkj1, key_back_color: benter, key_text_color: tenter}
+    - {label: '🔶', click: Keyboard_bqqt1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '🇨🇳', click: Keyboard_bqqz1, key_back_color: bgn, key_text_color: tgn}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqkj4, key_text_size: "14"}
+    - {click: '⚰'}
+    - {click: '⚱'}
+    - {click: '🗿'}
+    - {click: '🛢'}
+    - {click: '🔮'}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {width: 10}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqfh1:
+    author: "风花絮"
+    name: 表情键1
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {click: '，', height: 26}
+    - {click: '。'}
+    - {click: '？'}
+    - {click: '！'}
+    - {click: '：'}
+    - {click: '、'}
+    - {click: '……'}
+    - {click: '；'}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '下页', click: Keyboard_bqfh2, key_text_size: "14"}
+    - {click: '+'}
+    - {click: '-'}
+    - {click: '='}
+    - {click: '·'}
+    - {click: '｀'}
+    - {click: '#'}
+    - {click: '￥'}
+    - {click: '%'}
+    - {click: 'ˉ'}
+    - {click: '——'}
+
+    - {click: '“”{Left}'}
+    - {click: "‘’{Left}"}
+    - {click: 'ˆˇ{Left}'}
+    - {click: '（）{Left}'}
+    - {click: '〈〉{Left}'}
+    - {click: '‹›{Left}'}
+    - {click: '｛｝{Left}'}
+    - {click: '『』{Left}'}
+    - {click: '〖〗{Left}'}
+    - {click: '［］{Left}'}
+    - {click: '《》{Left}'}
+    - {click: '〔〕{Left}'}
+    - {click: '{}{Left}'}
+    - {click: '「」{Left}'}
+    - {click: '【】{Left}'}
+    - {click: '～'}
+    - {click: '@{Return}'}
+    - {click: '*{Return}'}
+    - {click: '&{Return}'}
+    - {click: '﹏'}
+    - {click: '﹋'}
+    - {click: '﹌'}
+    - {click: '︴'}
+    - {click: '々'}
+    - {click: '﹤'}
+    - {click: '｜'}
+    - {click: '‖'}
+    - {click: '‐'}
+    - {click: '￣'}
+    - {click: '¯'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+  bqfh2:
+    author: "风花絮"
+    name: 表情键2
+    ascii_mode: 0
+    width: 10
+    height: *jpgd1
+    keys:
+    - {click: '‰', height: 26}
+    - {click: '‱'}
+    - {click: '℉'}
+    - {click: '€'}
+    - {click: '£'}
+    - {click: '¢'}
+    - {click: '¤'}
+    - {click: '₩'}
+    - {label: '更多', click: Keyboard_symbols, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '上页', click: Keyboard_bqfh1, key_text_size: "14"}
+    - {click: '―'}
+    - {click: '﹨'}
+    - {click: '˜'}
+    - {click: '﹍'}
+    - {click: '﹎'}
+    - {click: '〜'}
+    - {click: '〰'}
+    - {click: '°'}
+    - {click: '℃'}
+    - {click: '〝〞'}
+    - {click: '﹙﹚{Left}', key_text_size: "14"}
+    - {click: '﹛﹜{Left}', key_text_size: "14"}
+    - {click: '﹤﹥{Left}', key_text_size: "14"}
+    - {click: '〘〙{Left}', key_text_size: "14"}
+    - {click: '︵︶{Left}', key_text_size: "14"}
+    - {click: '︷︸{Left}', key_text_size: "14"}
+    - {click: '︿﹀{Left}', key_text_size: "14"}
+    - {click: '︽︾{Left}', key_text_size: "14"}
+    - {click: '︹︺{Left}', key_text_size: "14"}
+    - {click: '︻︼{Left}', key_text_size: "14"}
+    - {click: '﹃﹄{Left}', key_text_size: "14"}
+    - {click: '〟'}
+    - {click: '〃'}
+    - {click: '﹐'}
+    - {click: '﹒'}
+    - {click: '﹑'}
+    - {click: '﹖'}
+    - {click: '﹗'}
+    - {click: '﹘'}
+    - {click: '﹔'}
+    - {click: '﹕'}
+    - {click: '﹪'}
+    - {click: '﹢'}
+    - {click: '﹣'}
+    - {click: '﹦'}
+    - {click: '﹫'}
+    - {click: '﹠'}
+    - {click: '﹩'}
+    - {click: '﹡'}
+    - {click: '﹟'}
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  bqfh3:
+    author: "风花絮"
+    name: 表情键3
+    ascii_mode: 1
+    width: 20
+    height: *jpgd1
+    keys:
+    - {click: ',', height: 26}
+    - {click: '.'}
+    - {click: '?'}
+    - {click: '!'}
+    - {label: '更多', click: Keyboard_symbols, width: 20, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: ':'}
+    - {click: '/'}
+    - {click: '@'}
+    - {click: ';'}
+    - {click: '…'}
+
+    - {click: '"'}
+    - {click: "'"}
+    - {click: '~'}
+    - {click: '*'}
+    - {click: '&'}
+
+    - {click: '^'}
+    - {click: '$'}
+    - {click: '\'}
+    - {click: '|'}
+    - {click: '#'}
+
+    - {click: '(){Left}', width: 10}
+    - {click: '<>{Left}', width: 10}
+    - {click: '{}{Left}', width: 10}
+    - {click: '[]{Left}', width: 10}
+    - {click: '`', width: 10}
+    - {click: '%', width: 10}
+    - {click: '+', width: 10}
+    - {click: '-', width: 10}
+    - {click: '=', width: 20}
+
+    - {click: Keyboard_default, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '中文', click: Keyboard_bqsy1, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '英文', click: Keyboard_bqsy2, width: 16.5, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+    - {label: '表情', click: Keyboard_bqsy3, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {label: '颜文', click: Keyboard_bqsy4, width: 16.5, key_text_size: "14", key_back_color: bgn, key_text_color: tgn}
+    - {click: BackSpace, width: 17, key_text_size: "14", key_back_color: benter, key_text_color: tenter}
+
+  kao_happy:
+    name: 颜文字键盘-开心
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "^_^", key_text_size: "14"}
+      - {click: "^ω^", key_text_size: "14"}
+      - {click: "^o^", key_text_size: "14"}
+      - {click: "~\\(≧▽≦)/~", key_text_size: "14"}
+      - {click: "*^_^*", key_text_size: "14"}
+      - {click: "↖(^ω^)↗", key_text_size: "14"}
+      - {click: "(^o^)／", key_text_size: "14"}
+      - {click: "(=^▽^=)", key_text_size: "14"}
+      - {click: "=^_^=", key_text_size: "14"}
+      - {click: "(*^ω^*)", key_text_size: "14"}
+      - {click: "٩(๑^o^๑)۶", key_text_size: "14"}
+      - {click: "o(￣▽￣)o", key_text_size: "14"}
+      - {click: "Y(^_^)Y", key_text_size: "14"}
+      - {click: "٩( 'ω' )و", key_text_size: "14"}
+      - {click: "╰(*´︶`*)╯", key_text_size: "14"}
+      - {click: "*罒▽罒*", key_text_size: "14"}
+      - {click: "ヾ ^_^♪", key_text_size: "14"}
+      - {click: "=￣ω￣=", key_text_size: "14"}
+      - {click: "︿(￣︶￣)︿", key_text_size: "14"}
+      - {click: "(´▽｀)ノ♪", key_text_size: "14"}
+      - {click: "乁( ˙ ω˙乁)", key_text_size: "14"}
+      - {click: "✧*｡٩(ˊωˋ*)و✧*｡", key_text_size: "10"}
+      - {click: "～(￣▽￣～)(～￣▽￣)～", width: 50, key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+  kao_fond:
+    name: 颜文字键盘-喜欢
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "QwQ", key_text_size: "14"}
+      - {click: "(●—●)", key_text_size: "14"}
+      - {click: "(๑• . •๑)", key_text_size: "14"}
+      - {click: "ヾ(≧O≦)〃嗷~", key_text_size: "12"}
+      - {click: "罒ω罒", key_text_size: "14"}
+      - {click: "(｡ì _ í｡)", key_text_size: "14"}
+      - {click: "(๑•ี_เ•ี๑)", key_text_size: "14"}
+      - {click: "ㄟ(≧◇≦)ㄏ", key_text_size: "14"}
+      - {click: "(*/ω＼*)", key_text_size: "14"}
+      - {click: "●▽●", key_text_size: "14"}
+      - {click: "٩(๑òωó๑)۶", key_text_size: "14"}
+      - {click: "✺◟(∗❛ัᴗ❛ั∗)◞✺", key_text_size: "12"}
+      - {click: "( σ'ω')σ", key_text_size: "14"}
+      - {click: "♡＾▽＾♡", key_text_size: "14"}
+      - {click: "(๑•̀ㅂ•́)و✧", key_text_size: "14"}
+      - {click: "(ง •̀_•́)ง", key_text_size: "14"}
+      - {click: "(｡･ω･｡)ﾉ♡", key_text_size: "14"}
+      - {click: "(☆_☆)", key_text_size: "14"}
+      - {click: "(๑°3°๑)", key_text_size: "14"}
+      - {click: "_(•̀ω•́ 」∠)_", key_text_size: "14"}
+      - {click: "♪～(´ε｀　)", key_text_size: "14"}
+      - {click: "～(^з^)-☆", key_text_size: "14"}
+      - {click: "(´∀｀)♡", key_text_size: "14"}
+      - {click: "ლ(´ڡ`ლ)", key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+  kao_sad:
+    name: 颜文字键盘-伤心
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "(＞﹏＜)", key_text_size: "14"}
+      - {click: "T_T", key_text_size: "14"}
+      - {click: "⊙︿⊙", key_text_size: "14"}
+      - {click: "〒▽〒", key_text_size: "14"}
+      - {click: "⊙﹏⊙", key_text_size: "14"}
+      - {click: "π_π", key_text_size: "14"}
+      - {click: "(｡•́︿•̀｡)", key_text_size: "14"}
+      - {click: "(ToT)/~~~", key_text_size: "14"}
+      - {click: "╯﹏╰", key_text_size: "14"}
+      - {click: "ಥ_ಥ", key_text_size: "14"}
+      - {click: "(╥╯^╰╥)", key_text_size: "14"}
+      - {click: "(〃′o`)", key_text_size: "14"}
+      - {click: "●﹏●", key_text_size: "14"}
+      - {click: "( •̥́ ˍ •̀ू )", key_text_size: "14"}
+      - {click: "(つд⊂)", key_text_size: "14"}
+      - {click: "心塞(´-ωก`)", key_text_size: "14"}
+      - {click: "(╥﹏╥)", key_text_size: "14"}
+      - {click: "┭┮﹏┭┮", key_text_size: "14"}
+      - {click: "（；´д｀）ゞ", key_text_size: "14"}
+      - {click: "(´;︵;`)", key_text_size: "14"}
+      - {click: "(。﹏。)", key_text_size: "14"}
+      - {click: "┗( T﹏T )┛", key_text_size: "14"}
+      - {click: "QAQ", key_text_size: "14"}
+      - {click: "ヘ(_ _ヘ)", key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+  kao_mad:
+    name: 颜文字键盘-生气
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "╰（‵□′）╯", key_text_size: "14"}
+      - {click: "(*￣︿￣)", key_text_size: "14"}
+      - {click: ">o<", key_text_size: "14"}
+      - {click: "(-`ェ´-怒)", key_text_size: "14"}
+      - {click: "ヽ(‘⌒´メ)ノ", key_text_size: "14"}
+      - {click: "(*｀Ω´*)v", key_text_size: "14"}
+      - {click: "(｡•ˇ‸ˇ•｡)", key_text_size: "14"}
+      - {click: "(怒｀Д´怒)", key_text_size: "14"}
+      - {click: "٩(๑`^´๑)۶", key_text_size: "14"}
+      - {click: "(;｀O´)o", key_text_size: "14"}
+      - {click: "╰_╯", key_text_size: "14"}
+      - {click: "(#｀皿´)<怒怒怒!!!", key_text_size: "10"}
+      - {click: "<(｀^´)>", key_text_size: "14"}
+      - {click: "（｀Δ´）！", key_text_size: "14"}
+      - {click: "ψ(｀∇´)ψ", key_text_size: "14"}
+      - {click: "(；′⌒`)", key_text_size: "14"}
+      - {click: "s(・｀ヘ´・;)ゞ", key_text_size: "12"}
+      - {click: "(▼皿▼#)", key_text_size: "14"}
+      - {click: "￣へ￣", key_text_size: "14"}
+      - {click: "←_←", key_text_size: "14"}
+      - {click: "（╯‵□′）╯︵┴─┴", key_text_size: "9"}
+      - {click: "（▼へ▼メ）", key_text_size: "14"}
+      - {click: "☄ฺ(◣д◢)☄ฺ", key_text_size: "14"}
+      - {click: "→_→", key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+  kao_astonished:
+    name: 颜文字键盘-惊讶
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "⊙_⊙", key_text_size: "14"}
+      - {click: "d(ŐдŐ๑)", key_text_size: "14"}
+      - {click: "Σ( ° △ °|||)︴", key_text_size: "14"}
+      - {click: "(((φ(◎ロ◎;)φ)))", key_text_size: "10"}
+      - {click: "⊙▽⊙", key_text_size: "14"}
+      - {click: "(๑ŐдŐ)b", key_text_size: "14"}
+      - {click: "╭(°A°`)╮", key_text_size: "14"}
+      - {click: "(๑òᆺó๑)", key_text_size: "14"}
+      - {click: "⊙ω⊙", key_text_size: "14"}
+      - {click: "Σ(っ °Д °;)っ", key_text_size: "14"}
+      - {click: " (ﾟДﾟ≡ﾟдﾟ)!?", key_text_size: "14"}
+      - {click: "( *・ω・)✄╰ひ╯", key_text_size: "10"}
+      - {click: "(⊙x⊙;)", key_text_size: "14"}
+      - {click: "┌(。Д。)┐", key_text_size: "14"}
+      - {click: "(°ー°〃)", key_text_size: "14"}
+      - {click: "备用", key_text_size: "14"}
+      - {click: "︽⊙_⊙︽", key_text_size: "14"}
+      - {click: "!!!∑(°Д°ノ)ノ", key_text_size: "14"}
+      - {click: "(๑ŐдŐ)b☆d(ŐдŐ๑)", width: 50, key_text_size: "14"}
+      - {click: "Σ⊙▃⊙川", key_text_size: "14"}
+      - {click: "ヽ(*。>Д<)o゜", key_text_size: "14"}
+      - {click: "━((*′д｀)爻(′д｀*))━!!!!", width: 50, key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+  kao_impotent:
+    name: 颜文字键盘-无奈
+    author: "llx"
+    ascii_mode: 1
+    width: 25
+    height: *jpgd2
+    keys:
+      - {click: "=_=", key_text_size: "14"}
+      - {click: "╮(╯_╰)╭", key_text_size: "14"}
+      - {click: "（︶︿︶）", key_text_size: "14"}
+      - {click: "_(:з」∠)_", key_text_size: "14"}
+      - {click: "@_@", key_text_size: "14"}
+      - {click: "╮(╯▽╰)╭", key_text_size: "14"}
+      - {click: "(＠￣ー￣＠)", key_text_size: "14"}
+      - {click: "_(:3」∠❀)_", key_text_size: "14"}
+      - {click: "눈_눈", key_text_size: "14"}
+      - {click: "╭(╯ε╰)╮", key_text_size: "14"}
+      - {click: "(ー_ー)!!", key_text_size: "14"}
+      - {click: "_(:D)∠)_", key_text_size: "14"}
+      - {click: "o_O", key_text_size: "14"}
+      - {click: "╭(╯^╰)╮", key_text_size: "14"}
+      - {click: "(；一_一)", key_text_size: "14"}
+      - {click: "´_>`", key_text_size: "14"}
+      - {click: "-_-#", key_text_size: "14"}
+      - {click: "┑(￣Д ￣)┍", key_text_size: "14"}
+      - {click: "≡￣﹏￣≡", key_text_size: "14"}
+      - {click: "○|￣|_", key_text_size: "14"}
+      - {click: "-_-||", key_text_size: "14"}
+      - {click: "ㄟ( ▔, ▔ )ㄏ", key_text_size: "14"}
+      - {click: "( ＿ ＿)ノ｜壁", key_text_size: "14"}
+      - {click: "▄█▀█●", key_text_size: "14"}
+      - {click: Keyboard_default, height: *jpgd3, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaoh, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaof, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoa, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaoi, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+      - {click: Keyboard_kaos, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_kaom, width: 12.5, key_text_size: "16", key_back_color: bgn, key_text_color: tgn}
+      - {click: BackSpace, width: 12.5, key_text_size: "16", key_back_color: benter, key_text_color: tenter}
+
+  fbj:
+    name: 风22并击
+    ascii_mode: 0
+    width: 15
+   # height: 48
+    keys:
+  #  第一行
+    - {label: 'Zh', long_click: 1, click: 'z',  width: 15.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'Sh', long_click: 2, click: 's', width: 12.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'Ch', long_click: 3, click: 'c', width: 12, key_back_color: bh1, key_text_color: th1}
+    - {click: Keyboard_a, long_click: Keyboard_a2, composing: 'a', ascii: 'a', swipe_up: IME_last, swipe_right: IME_last, width: 20, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'ZF', click: 'f', long_click: select_all, swipe_up: h, width: 12, key_back_color: bh1, key_text_color: th1}
+    - {label: 'SW', long_click: Menu, click: 'w', swipe_up: '*', width: 12.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'CM', long_click: DeleteCandidate, click: 'm', swipe_up: 偏旁, swipe_right: 偏旁, swipe_down: Hide, width: 15.5, key_back_color: bh1, key_text_color: th1}
+  #  第二行
+    - {label: 'L', long_click: 4, click: 'l', width: 15.5, key_back_color: bh2, key_text_color: th2}
+    - {repeatable: true, label: 'D', long_click: 5, click: 'd', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'Y', long_click: 6, click: 'y', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {click: Keyboard_u, long_click: Keyboard_u2, composing: 'u', ascii: 'u', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {click: Keyboard_i, long_click: Keyboard_i2, composing: 'i', ascii: 'i', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'NH', long_click: copy, click: 'n', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {repeatable: true, label: 'J', long_click: paste, click: 'j', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'TR', click: 't', long_click: Color_switch, swipe_up: CommitComment, width: 15.5, key_back_color: bh2, key_text_color: th2}
+  #  第三行
+    - {label: 'PK', long_click: 7, click: 'p', width: 15.5, key_back_color: bh3, key_text_color: th3}
+    - {label: 'Q~', long_click: 8, click: 'q', width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {click: Keyboard_o, long_click: Keyboard_o2, composing: 'o', ascii: 'o', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'G', click: 'g', long_click: "[]{Left}", width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {label: 'B', click: 'b', long_click: "(){Left}", width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {click: Keyboard_e, long_click: Keyboard_e2, composing: 'e', ascii: 'e', swipe_up: Schema_switchen, width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'X', click: 'x', long_click: cut, width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {label: "⌫", click: BackSpace, width: 15.5, key_text_size: "25", key_back_color: bbs, key_text_color: tbs}
+  #  第四行
+    - {label: "'分词", click: Keyboard_number, long_click: Keyboard_fbjzj, composing: Keyboard_fc, ascii: '.',  swipe_down: Shift_L, width: 15.5, key_back_color: bgn, key_text_color: tgn}
+    - {label: '一', click: Keyboard_bqrw, long_click: Theme_settings, composing: Keyboard_k, ascii: 'k', combo: k, width: 11.5, key_text_size: "18", key_back_color: bgn, key_text_color: tgn}
+    - {label: '✾', click: Keyboard_v2, long_click: VOICE_ASSIST, composing: Keyboard_v, ascii: 'v', width: 11.5, key_back_color: bh4, key_text_color: th4}
+    - {label: '______', click: space1, long_click: space_R, swipe_up: Keyboard_defaulten, width: 23, round_corner: *round1, key_back_color: bkg, key_text_color: tkg}
+    - {label: '丿', click: Keyboard_r2, long_click: Tab, composing: Keyboard_h, ascii: 'h', combo: h, width: 11.5, key_text_size: "19", key_back_color: bh4, key_text_color: th4}
+    - {label: '丶', click: space_R1, long_click: Zcj, composing: Keyboard_r, ascii: 'r', combo: r, width: 11.5, key_text_size: "18", key_back_color: bgn, key_text_color: tgn}
+    - {label: 'Enter', long_click: Return, click: Return, swipe_up: Escape, composing: Keyboard_e0, width: 15.5, round_corner: *round3, key_back_color: benter, key_text_color: tenter}
+
+  fbjzj:
+    name: 风22并击助记
+    ascii_mode: 0
+    width: 15
+  #  height: 48
+    keys:
+  #  第一行
+    - {label: 'Zh', long_click: 1, click: 'z', hint: 'iang uai',  width: 15.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'Sh', long_click: 2, click: 's', hint: 'en', width: 12.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'Ch', long_click: 3, click: 'c', hint: 'eng ie', width: 12, key_back_color: bh1, key_text_color: th1}
+    - {click: Keyboard_a, long_click: Keyboard_a2, composing: 'a', ascii: 'a', hint: 'a ia', swipe_up: IME_last, swipe_right: space_R, width: 20, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'ZF', click: 'f', long_click: select_all, hint: 'er ang', swipe_up: h, width: 12, key_back_color: bh1, key_text_color: th1}
+    - {label: 'SW', long_click: Menu, click: 'w', hint: 'an', swipe_up: '*', width: 12.5, key_back_color: bh1, key_text_color: th1}
+    - {label: 'CM', long_click: DeleteCandidate, click: 'm', hint: 'v uan', swipe_up: 偏旁, swipe_right: 偏旁, swipe_down: Hide, width: 15.5, key_back_color: bh1, key_text_color: th1}
+  #  第二行
+    - {label: 'L', long_click: 4, click: 'l', hint: 'ai ue', width: 15.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'D', long_click: 5, click: 'd', hint: 'uo', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'Y', long_click: 6, click: 'y', hint: 'in ing', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {click: Keyboard_u, long_click: Keyboard_u2, composing: 'u', ascii: 'u', hint: 'u', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {click: Keyboard_i, long_click: Keyboard_i2, composing: 'i', ascii: 'i', hint: 'i', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'NH', long_click: copy, click: 'n', hint: 'ao', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'J', long_click: paste, click: 'j', hint: 'ou', width: 11.5, key_back_color: bh2, key_text_color: th2}
+    - {label: 'TR', click: 't', long_click: Color_switch, hint: 'ong iong', swipe_up: CommitComment, width: 15.5, key_back_color: bh2, key_text_color: th2}
+  #  第三行
+    - {label: 'PK', long_click: 7, click: 'p', hint: 'ei un', width: 15.5, key_back_color: bh3, key_text_color: th3}
+    - {label: 'Q~', long_click: 8, click: 'q', hint: 'ian', width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {click: Keyboard_o, long_click: Keyboard_o2, composing: 'o', ascii: 'o', hint: 'uang', width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'G', click: 'g', long_click: "[]{Left}", hint: 'ui', width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {label: 'B', click: 'b', long_click: "(){Left}", hint: 'iu ua', width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {click: Keyboard_e, long_click: Keyboard_e2, composing: 'e', ascii: 'e', hint: 'e', swipe_up: Schema_switchen, width: 11.5, key_back_color: baoe, key_text_color: taoe}
+    - {label: 'X', click: 'x', long_click: cut, hint: 'iao', width: 11.5, key_back_color: bh3, key_text_color: th3}
+    - {label: "⌫", click: BackSpace, width: 15.5, key_text_size: "25", key_back_color: bbs, key_text_color: tbs}
+  #  第四行
+    - {label: "'分词", click: Keyboard_number, long_click: Keyboard_fbj, composing: Keyboard_fc, ascii: '.', width: 15.5, key_back_color: bgn, key_text_color: tgn}
+    - {label: '一', click: Keyboard_bqrw, long_click: Theme_settings, composing: Keyboard_k, ascii: 'k', combo: k, width: 11.5, key_text_size: "18", key_back_color: bgn, key_text_color: tgn}
+    - {label: '✾', click: Keyboard_v2, long_click: VOICE_ASSIST, composing: Keyboard_v, ascii: 'v', width: 11.5, key_back_color: bh4, key_text_color: th4}
+    - {label: '______', click: space1, long_click: space_R, swipe_up: Keyboard_defaulten, round_corner: *round1, width: 23, key_back_color: bkg, key_text_color: tkg}
+    - {label: '丿', click: Keyboard_r2, long_click: Tab, composing: Keyboard_h, ascii: 'h', combo: h, width: 11.5, key_back_color: bh4, key_text_color: th4}
+    - {label: '丶', click: space_R1, long_click: Zcj, composing: Keyboard_r, ascii: 'r', combo: r, width: 11.5, key_text_size: "18", key_back_color: bgn, key_text_color: tgn}
+    - {label: 'Enter', long_click: Return, click: Return, swipe_up: Escape, composing: Keyboard_e0, width: 15.5, round_corner: *round3, key_back_color: benter, key_text_color: tenter}
+
+
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: {label: 亮度-, send: BRIGHTNESS_DOWN}
+  BRIGHTNESS_UP: {label: 亮度+, send: BRIGHTNESS_UP}
+  CALCULATOR: {label: 计算机, send: CALCULATOR}
+  CALENDAR: {label: 日历, send: CALENDAR}
+  CONTACTS: {label: 电话簿, send: CONTACTS}
+  ENVELOPE: {label: 信箱, send: ENVELOPE}
+  EXPLORER: {label: 浏览器, send: EXPLORER}
+  MUSIC: {label: 音乐, send: MUSIC}
+  POWER: {label: 电源, send: POWER}
+  SEARCH: {label: 搜寻, send: Find}
+  SLEEP: {label: 休眠, send: SLEEP}
+  VOICE_ASSIST: {label: 语音, functional: true, send: VOICE_ASSIST}
+  VOLUME_DOWN: {label: 音量-, send: VOLUME_DOWN}
+  VOLUME_UP: {label: 音量+, send: VOLUME_UP}
+  VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
+  # 编辑
+  Shift_L: {label: ↑, preview: '⇪', functional: false, send: Shift_L}
+  Return: { label: enter_labels, preview: '↩', functional: false, send: Return }
+  Return1: {label: Enter, preview: '↩', functional: false, send: Return}
+  Return2: {label: 回车, send: Return }
+  Hide: {label: 隐藏, send: BACK}
+  BackSpace: {label: "⌫", preview: '⇦', repeatable: true, functional: false, send: BackSpace}
+  space: {repeatable: false, preview: '空', functional: false, label: '', send: space}
+  space1: {repeatable: false, label: '空格', functional: false, send: space}
+  Clear: {label: 全清, send: Clear}
+  Escape: {label: 取消, functional: false, send: Escape}
+  Home: {label: 行首, send: Home, functional: false}
+  Insert: {label: 插入, send: Insert}
+  Delete: {label: 删除, send: Delete, functional: false}
+  End: {label: 行尾, send: End, functional: false}
+  Page_Up: {label: 上页, send: Page_Up, functional: false}
+  Page_Down: {label: 下页, send: Page_Down, functional: false}
+  Left: {label: '←', send: Left, repeatable: true, functional: false}
+  Down: {label: '↓', send: Down, functional: false}
+  Up: {label: '↑', send: Up, functional: false}
+  Right: {label: '→', send: Right, repeatable: true, functional: false}
+  select_all: {label: 全选, functional: false, send: Control+a}
+  cut: {label: 剪切, functional: false, send: Control+x}
+  copy: {label: 复制, functional: false, send: Control+c}
+  paste: {label: 粘贴, functional: false, send: Control+v}
+  paste_clip: {label: 粘贴, send: function, command: clipboard}
+  paste_text: {label: 貼上文本, send: Control+Shift+Alt+v} #>=Android 6.0
+  share_text: {label: 分享文本, send: Control+Alt+s} #>=Android 6.0
+  redo: {label: 重做, functional: false, send: Control+Shift+z} #>=Android 6.0
+  undo: {label: 撤销, functional: false, send: Control+z} #>=Android 6.0
+  delimiter: {label: 分词, text: ''''}
+  x1: {text: '{Home}{Right}{Right}', label: 单字, functional: false}
+  x2: {text: '{Home}{Right}{Right}{Right}{Right}', label: 二字, functional: false}
+  x3: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}', label: 三字, functional: false}
+  x4: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}{Right}{Right}', label: 四字, functional: false}
+ # x1: {text: '{Home}{Right}{Right}', label: 单字, functional: false}
+  # rime组合键
+  F4: {label: 方案菜单, send: F4}
+  BackToPreviousSyllable: {label: 删音节, send: Control+BackSpace}
+  CommitRawInput: {label: 编码, send: Control+Return}
+  CommitScriptText: {label: 编码, send: Shift+Return}
+  CommitComment: {label: 编码, send: Control+Shift+Return}
+  DeleteCandidate: {label: 删词, send: Control+Delete, functional: false}
+  #切换键盘
+  Keyboard_letter: { label: 字母, functional: true, send: Eisu_toggle, select: default }
+  Keyboard_default: { label: 返回, functional: false, send: Eisu_toggle, select: .default }
+  Keyboard_switch: { label: 键盘, functional: true, send: Eisu_toggle, select: .next }
+  Keyboard_number: { label: 123, functional: false, send: Eisu_toggle, select: number }
+  Keyboard_numberb: { label: 123, functional: false, send: Eisu_toggle, select: numberb }
+  Keyboard_symbols: { label: 更多, functional: false, send: Eisu_toggle, select: symbols }
+  Keyboard_move: { label: ❖, functional: true, send: Eisu_toggle, select: move }
+  Keyboard_next: { label: 后退, functional: false, send: Eisu_toggle, select: .next }
+  Keyboard_last: { label: 后退, functional: false, send: Eisu_toggle, select: .last }
+  Keyboard_last_lock: { label: 返回, send: Eisu_toggle, select: .last_lock } #直接切換到下一键盘
+  liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"}  #退出liquidkeyboard
+  liquid_keyboard_switch: { label: 更多, send: function, command: liquid_keyboard, option: "特殊" }
+  liquid_keyboard_switch2: { toggle: _liquid_keyboard, send: Mode_switch, states: [ 更多, 更多 ] }
+  liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "更多" }
+  liquid_keyboard_emoji: { label: 🙂, send: function, command: liquid_keyboard, option: "emoji" }
+  liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
+  # rime状态
+  Mode_switch: {toggle: ascii_mode, functional: false, send: Mode_switch, states: [ 中, 英 ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+  Henkan: {toggle: simplification, send: Mode_switch, states: [ 汉字, 汉字 ]}
+  Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增广 ]}
+  Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
+  # trime设置
+  IME_switch: {label: 🌐, send: LANGUAGE_SWITCH} #彈出對話框選擇輸入法
+  IME_last: {label: 上一输入法, send: LANGUAGE_SWITCH, select: .last} #直接切換到上一輸入法
+  IME_next: {label: 下一输入法, send: LANGUAGE_SWITCH, select: .next} #直接切換到下一輸入法
+  Schema_switch: {label: 方案菜单, functional: false, send: Control+Shift+0}
+  Schema_Eng: {label: En, functional: true, send: Control+Shift+0}
+  Theme_settings: {label: ❀, send: SETTINGS, option: "theme"}
+  Color_switch: {label: 配色, functional: false, send: PROG_RED}
+  Help: {label: 说明, send: Help}
+  Info: {label: 关于, send: INFO}
+  Menu: {label: ⌨, functional: false, send: Menu}
+  Settings: {label: 设置, functional: false, send: SETTINGS}
+  # trime命令
+  Date: {label: 日期, send: function, command: date, option: " yyyy-MM-dd "}
+  Time: {label: 時間, send: function, command: date, option: "HH:mm:ss"} #時間： date 格式
+  TrimeApp: {label: 同文, send: function, command: run, option: "com.osfans.trime"} #運行程序: run 包名
+  TrimeCmp: {label: 同文組件, send: function, command: run, option: "com.osfans.trime/.Pref"} #運行程序指定組件: run 包名/組件名
+  Homepage: {label: 同文主頁, send: function, command: run, option: "https://github.com/osfans/trime"} #查看網頁: run 網址
+  Wiki: {label: 維基, send: function, command: run, option: "https://zh.wikipedia.org/wiki/%s"} #搜索網頁: %s或者%1$s爲當前字符
+  Google: {label: 谷歌, send: function, command: run, option: "https://www.google.com/search?q=%s"} #搜索網頁: %s或者%1$s爲當前字符
+  MoeDict: {label: 萌典, send: function, command: run, option: "https://www.moedict.tw/%3$s"} #搜索網頁: %3$s爲光標前字符
+  Baidu: {label: 百度搜索, send: function, command: run, option: "https://www.baidu.com/s?wd=%4$s"} #搜索網頁: %4s爲光標前所有字符
+  Zdic: {label: 漢典, send: function, command: run, option: "http://www.zdic.net/sousuo/?q=%1$s"} #搜索網頁: %s或者%1$s爲當前字符
+  Zdic2: {label: 漢典, send: function, command: run, option: "http://www.zdic.net/sousuo/?q=%2$s"} #搜索網頁: %2$s爲當前輸入的編碼
+  WebSearch: {label: 搜索網頁, send: function, command: web_search, option: "%4$s"} #搜索，其他view、dial、edit、search等intent，參考安卓的intent文檔：https://developer.android.com/reference/android/content/Intent.html
+
+  Left1: {label: '⇦', send: Control+Left, repeatable: true, functional: false}
+  Right1: {label: '⇨', send: Control+Right, repeatable: true, functional: false}
+  Shift_L2: {label: 选择, preview: '⇪', functional: false, send: Shift_L}
+
+  # 22自定义功能键
+  Keyboard_fbjzj: {label: 助记, functional: false, send: Eisu_toggle, select: fbjzj}
+  Keyboard_fbj: {label: 風, functional: false, send: Eisu_toggle, select: fbj}
+  Keyboard_defaulten: {label: EN, functional: false, send: Eisu_toggle, select: letter}
+  Schema_switchen1: {label: EN, send: Control+Shift+5, functional: true}
+  Schema_switchen: {label: EN, send: Control+Shift+5, functional: false}
+  Schema_switchcn: {label: 中文, send: Control+Shift+6, functional: false}
+  Keyboard_v2: {label: "✾", functional: false, send: v}
+  Keyboard_r2: {label: "❀", functional: false, send: r}
+  Keyboard_fc: {label: "'分词", send: apostrophe, functional: false}
+  Control_L: {label: "退格", send: Control_L, functional: false}
+
+  # aoeiu功能键
+  Keyboard_a: {label: "A", functional: false, send: asciicircum, key_text_color: bct0}
+  Keyboard_u: {label: "U", functional: false, send: exclam, key_text_color: bct0}
+  Keyboard_i: {label: "I", functional: false, send: question, key_text_color: bct0}
+  Keyboard_o: {label: "O", functional: false, send: comma, key_text_color: bct0}
+  Keyboard_e: {label: "E", functional: false, send: period, key_text_color: bct0}
+
+  Keyboard_u2: {label: "丨", text: '""{Left}'}
+  Keyboard_a2: {label: "一", send: 0}
+  Keyboard_i2: {label: "丿", text: "''{Left}"}
+  Keyboard_o2: {label: "丶", send: 9}
+  Keyboard_e2: {label: "ㄥ", text: "{}{Left}"}
+  Keyboard_k: {label: "一", send: A}
+  Keyboard_v: {label: "丨", send: U}
+  Keyboard_h: {label: "丿", send: I}
+  Keyboard_r: {label: "丶", send: O}
+  Keyboard_e0: {label: "ㄥ", send: E}
+
+  Keyboard_a3: {label: "……", functional: false, send: asciicircum}
+
+   # 表情键自定义
+  Keyboard_bqfh: {label: ⌘, functional: true, send: Eisu_toggle, select: bqfh1}
+  Keyboard_bqrw: {label: ⌘, functional: false, send: Eisu_toggle, select: bqfh1}
+  Keyboard_bqrw1: {label: '🙂', functional: false, send: Eisu_toggle, select: bqrw1}
+  Keyboard_bqrw2: {label: 人物2,functional: false, send: Eisu_toggle, select: bqrw2}
+  Keyboard_bqrw3: {label: 人物3, functional: false, send: Eisu_toggle, select: bqrw3}
+  Keyboard_bqrw4: {label: 人物4, functional: false, send: Eisu_toggle, select: bqrw4}
+  Keyboard_bqrw5: {label: 人物5, functional: false, send: Eisu_toggle, select: bqrw5}
+  Keyboard_bqrw6: {label: 人物6, functional: false, send: Eisu_toggle, select: bqrw6}
+  Keyboard_bqrw7: {label: 人物7, functional: false, send: Eisu_toggle, select: bqrw7}
+  Keyboard_bqrw8: {label: 人物8, functional: false, send: Eisu_toggle, select: bqrw8}
+
+  Keyboard_bqqt1: {label: '🔶', functional: false, send: Eisu_toggle, select: bqqt1}
+  Keyboard_bqqt2: {label: 其它1, functional: false, send: Eisu_toggle, select: bqqt2}
+  Keyboard_bqqt3: {label: 其它1, functional: false, send: Eisu_toggle, select: bqqt3}
+  Keyboard_bqqt4: {label: 其它1, functional: false, send: Eisu_toggle, select: bqqt4}
+
+  Keyboard_bqqz1: {label: '🇨🇳', functional: false, send: Eisu_toggle, select: bqqz1}
+  Keyboard_bqqz2: {label: 旗帜1, functional: false, send: Eisu_toggle, select: bqqz2}
+  Keyboard_bqqz3: {label: 旗帜1, functional: false, send: Eisu_toggle, select: bqqz3}
+  Keyboard_bqqz4: {label: 旗帜1, functional: false, send: Eisu_toggle, select: bqqz4}
+  Keyboard_bqqz5: {label: 旗帜1, functional: false, send: Eisu_toggle, select: bqqz5}
+  Keyboard_bqqz6: {label: 旗帜1, functional: false, send: Eisu_toggle, select: bqqz6}
+
+  Keyboard_bqpt1: {label: '🎂', functional: false, send: Eisu_toggle, select: bqpt1}
+  Keyboard_bqpt2: {label: 聚会2, functional: false, send: Eisu_toggle, select: bqpt2}
+
+  Keyboard_bqhd1: {label: '🎉', functional: false, send: Eisu_toggle, select: bqhd1}
+  Keyboard_bqhd2: {label: 活动2, functional: false, send: Eisu_toggle, select: bqhd2}
+
+  Keyboard_bqhc1: {label: '🌼', functional: false, send: Eisu_toggle, select: bqhc1}
+  Keyboard_bqhc2: {label: 花草2, functional: false, send: Eisu_toggle, select: bqhc2}
+  Keyboard_bqhc3: {label: 花草2, functional: false, send: Eisu_toggle, select: bqhc3}
+
+  Keyboard_bqlx1: {label: '🚖', functional: false, send: Eisu_toggle, select: bqlx1}
+  Keyboard_bqlx2: {label: 旅行2, functional: false, send: Eisu_toggle, select: bqlx2}
+  Keyboard_bqlx3: {label: 旅行3, functional: false, send: Eisu_toggle, select: bqlx3}
+  Keyboard_bqlx4: {label: 旅行4, functional: false, send: Eisu_toggle, select: bqlx4}
+  Keyboard_bqlx5: {label: 旅行5, functional: false, send: Eisu_toggle, select: bqlx5}
+  Keyboard_bqlx6: {label: 旅行6, functional: false, send: Eisu_toggle, select: bqlx6}
+
+  Keyboard_bqkj1: {label: '🔌', functional: false, send: Eisu_toggle, select: bqkj1}
+  Keyboard_bqkj2: {label: 科技2, functional: false, send: Eisu_toggle, select: bqkj2}
+  Keyboard_bqkj3: {label: 科技3, functional: false, send: Eisu_toggle, select: bqkj3}
+  Keyboard_bqkj4: {label: 科技4, functional: false, send: Eisu_toggle, select: bqkj4}
+  Keyboard_bqkj5: {label: 科技5, functional: false, send: Eisu_toggle, select: bqkj5}
+
+  Keyboard_bqfh1: {label: "#!?", functional: false, send: Eisu_toggle, select: bqfh1}
+  Keyboard_bqfh2: {label: "上页", functional: false, send: Eisu_toggle, select: bqfh2, key_text_size: "14"}
+  Keyboard_bqfh3: {label: "上页", functional: false, send: Eisu_toggle, select: bqfh3, key_text_size: "14"}
+  Keyboard_bqfh4: {label: "下页", functional: false, send: Eisu_toggle, select: bqfh4, key_text_size: "14"}
+
+  Keyboard_bqsy1: {label: "中文", functional: false, send: Eisu_toggle, select: bqfh1, key_text_size: "14"}
+  Keyboard_bqsy2: {label: "英文", functional: false, send: Eisu_toggle, select: bqfh3, key_text_size: "14"}
+  Keyboard_bqsy3: {label: "表情", functional: false, send: Eisu_toggle, select: bqrw1, key_text_size: "14"}
+  Keyboard_bqsy4: {label: "颜文", functional: false, send: Eisu_toggle, select: kao_happy, key_text_size: "14"}
+
+#颜文字键盘
+  Keyboard_kao: {label: ^_^, functional: false, send: Eisu_toggle, select: kao_happy}
+  Keyboard_kaoh: {label: 开心, functional: false, send: Eisu_toggle, select: kao_happy}
+  Keyboard_kaof: {label: 喜欢, functional: false, send: Eisu_toggle, select: kao_fond}
+  Keyboard_kaos: {label: 伤心, functional: false, send: Eisu_toggle, select: kao_sad}
+  Keyboard_kaom: {label: 生气, functional: false, send: Eisu_toggle, select: kao_mad}
+  Keyboard_kaoa: {label: 惊讶, functional: false, send: Eisu_toggle, select: kao_astonished}
+  Keyboard_kaoi: {label: 无奈, functional: false, send: Eisu_toggle, select: kao_impotent}
+
+  Zcj: {label: 单字, functional: false, text: "{Home}{Right}{Right}"}
+  Tab: {label: Tab, send: Tab}
+  Tab1: {label: Tab, functional: false, send: Tab}
+  space_R: {label: "風二十二键", functional: false, send: Eisu_toggle, select: letter}
+  space_R1: {label: "EN", functional: false, send: Eisu_toggle, select: letter}
+  space_R2: {label: "中", functional: false, send: Eisu_toggle, select: fbj}
+  #符号
+  符号: {text: '{Escape}/fh', label: 符号, functional: false}
+  电脑: {text: '{Escape}/dn', label: 电脑, functional: false}
+  象棋: {text: '{Escape}/xq', label: 象棋, functional: false}
+  麻将: {text: '{Escape}/mj', label: 麻将, functional: false}
+  骰子: {text: '{Escape}/sz', label: 骰子, functional: false}
+  扑克: {text: '{Escape}/pk', label: 扑克, functional: false}
+  天气: {text: '{Escape}/tq', label: 天气, functional: false}
+  音乐: {text: '{Escape}/yy', label: 音乐, functional: false}
+  八卦: {text: '{Escape}/bg', label: 八卦, functional: false}
+  易经: {text: '{Escape}/lssg', label: 易经, functional: false}
+  天体: {text: '{Escape}/tt', label: 天体, functional: false}
+  星座: {text: '{Escape}/xz', label: 星座, functional: false}
+  星号: {text: '{Escape}/xh', label: 星号, functional: false}
+  方块: {text: '{Escape}/fk', label: 方块, functional: false}
+  几何: {text: '{Escape}/jh', label: 几何, functional: false}
+  箭头: {text: '{Escape}/jt', label: 箭头, functional: false}
+  数学: {text: '{Escape}/sx', label: 数学, functional: false}
+  上标: {text: '{Escape}/sb', label: 上标, functional: false}
+  下标: {text: '{Escape}/xb', label: 下标, functional: false}
+  单位: {text: '{Escape}/dw', label: 单位, functional: false}
+  货币: {text: '{Escape}/hb', label: 货币, functional: false}
+  拼音: {text: '{Escape}/py', label: 拼音, functional: false}
+  注音: {text: '{Escape}/zy', label: 注音, functional: false}
+  假名: {text: '{Escape}/jm', label: 假名, functional: false}
+  片假名: {text: '{Escape}/pjm', label: 片假名, functional: false}
+  韩文: {text: '{Escape}/hw', label: 韩文, functional: false}
+  希腊: {text: '{Escape}/xl', label: 希腊, functional: false}
+  希腊大写: {text: '{Escape}/xld', label: 大写, functional: false}
+  罗马: {text: '{Escape}/lm', label: 罗马, functional: false}
+  罗马大写: {text: '{Escape}/lmd', label: 大写, functional: false}
+  俄语: {text: '{Escape}/ey', label: 俄语, functional: false}
+  俄语大写: {text: '{Escape}/eyd', label: 大写, functional: false}
+  表情: {text: '{Escape}/bq', label: 😁}
+  一: {text: '{Escape}/1', label: 1}
+  二: {text: '{Escape}/2', label: 2}
+  三: {text: '{Escape}/3', label: 3}
+  四: {text: '{Escape}/4', label: 4}
+  五: {text: '{Escape}/5', label: 5}
+  六: {text: '{Escape}/6', label: 6}
+  七: {text: '{Escape}/7', label: 7}
+  八: {text: '{Escape}/8', label: 8}
+  九: {text: '{Escape}/9', label: 9}
+  零: {text: '{Escape}/0', label: 0}
+  十: {text: '{Escape}/10', label: 10}
+  分数: {text: '{Escape}/fs', label: 分数, functional: false}
+  标点: {text: '{Escape}/bd', label: 标点, functional: false}
+  偏旁: {text: '{Escape}/pp', label: 偏旁, functional: false}
+  竖标点: {text: '{Escape}/bdz', label: 竖标, functional: false}
+  
+  # =======自定义变量=======
+  douhao: 
+    label: ","
+    commit: ","
+  juhao: 
+    label: "."
+    commit: "."
+  shuangyin:
+    label: '"'
+    commit: '"'
+  danyinhao:
+    label: "'"
+    commit: "'"
+  fanxiegang:
+    label: "/"
+    commit: /
+  Esc1:
+    when: composing
+    accept: BackSpace
+    send: Escape
+  khj:
+    label: "<>"
+    commit: "<>"
+  khd:
+    label: "{}"
+    commit: "{}"
+  khz:
+    label: "[]"
+    commit: "[]"
+  khx:
+    label: "()"
+    commit: "()"
+  Keyboard_func:
+    function: false
+    label: "⚔"
+    select: "func"
+    send: Eisu_toggle
+  Keyboard_edit:
+    function: false
+    label: '编辑'
+    select: edit
+    send: Eisu_toggle
+  Keyboard_markdown:
+    function: false
+    label: '编辑'
+    select: markdown1
+    send: Eisu_toggle
+  liquid_keyboard_ascii:
+    command: liquid_keyboard
+    label: "En"
+    option: "英文"
+    send: function
+  liquid_keyboard_math:
+    command: liquid_keyboard
+    label: "∞"
+    option: "数学"
+    send: function
+  liquid_keyboard_markdown:
+    command: liquid_keyboard
+    label: "mark"
+    option: "mark"
+    send: function
+  Clears:
+    label: "全清"
+    text: '{Control+a}{BackSpace}'
+  Bing:
+    command: run
+    label: "必应"
+    option: "https://cn.bing.com/search?q=%4$s"
+    send: function
+  BackSpace1:
+    functional: false
+    label: "删除"
+    preview: "⇦"
+    repeatable: true
+    send: BackSpace
+  Tab2:
+    label: "\t"
+    commit: "\t"
+  space2:
+    functional: false
+    label: "␣"
+    preview: "空"
+    repeatable: false
+    send: space
+  space3:
+    functional: false
+    label: "_______"
+    repeatable: false
+    send: space
+  Share: 
+    label: 分享
+    command: send
+    option: '%s' #分享指定文本: %s或者%1$s为当前字符
+  Deploy: 
+    label: 部署备用
+    # send: function
+    # command: run
+    # option: "com.osfans.trime.action.DEPLOY"
+  Sync:
+    label: 同步备用
+    # send: function
+    # command: run
+    # option: 'com.osfans.trime.action.SYNC_USER_DATA'
+  select1: 
+    label: "首选"
+    send: 1
+  select2: 
+    label: "次选"
+    send: 2
+  select3: 
+    label: "三选"
+    send: 3
+  
+  #========Markdown=======
+  表格: {commit: "|||\n|:-:|:-:|\n|||", label: 表格, functional: false}
+  代码块: {commit: "```\n\n```", label: 代码块, functional: false}
+  链接: {commit: '[]()', label: 链接}
+  标注: {commit: ">[!note] "}
+  待办: {commit: "- [ ] "}
+  # =======自定义完毕=======
