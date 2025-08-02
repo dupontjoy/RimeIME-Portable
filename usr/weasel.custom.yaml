@@ -12,6 +12,4 @@ patch:
   "style/ascii_tip_follow_cursor": true
   "style/inline_preedit": true
   "style/color_scheme": solarized_rock
-  "style/comment_font_face": "TH-Tshyn-P1, TH-Tshyn-P2"
   "style/font_face": "TH-Tshyn-P1, TH-Tshyn-P2"
-  "style/label_font_face": "TH-Tshyn-P1, TH-Tshyn-P2"

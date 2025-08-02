@@ -1,8 +1,8 @@
 __build_info:
   rime_version: 1.13.1
   timestamps:
-    weasel: 1749011883
-    weasel.custom: 1753182476
+    weasel: 1749011884
+    weasel.custom: 1754052616
 app_options:
   cmd.exe:
     ascii_mode: true
@@ -494,7 +494,7 @@ style:
   candidate_abbreviate_length: 0
   click_to_capture: false
   color_scheme: solarized_rock
-  comment_font_face: "TH-Tshyn-P1, TH-Tshyn-P2"
+  comment_font_face: "Microsoft YaHei"
   comment_font_point: 14
   display_tray_icon: false
   font_face: "TH-Tshyn-P1, TH-Tshyn-P2"
@@ -503,7 +503,7 @@ style:
   horizontal: false
   hover_type: none
   inline_preedit: true
-  label_font_face: "TH-Tshyn-P1, TH-Tshyn-P2"
+  label_font_face: "Microsoft YaHei"
   label_font_point: 14
   label_format: "%s."
   layout:
